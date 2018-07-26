@@ -4,7 +4,6 @@
 
 html {
   background-color: color(main);
-	//margin-top: -8px;
   position: relative;
 	a {
 		color: color(darkmain);
@@ -37,7 +36,7 @@ body {
   @media screen and (max-width:  550px) {width: 100vw;}
 }
 
-img {color:gray; font-size: 10px;} /*Alt Text*/
+img {color:gray; font-size: 10px;} /*Image alt Text*/
 input[type='submit'] span {color: white;}
 .bracket {color: white;}
 .portfolioGroup {display: block;}
