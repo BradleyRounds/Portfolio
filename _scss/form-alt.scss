@@ -1,0 +1,289 @@
+@import "_variables.scss";
+@import "_functions.scss";
+@import "_mixins.scss";
+
+$cursor: pointer;
+
+/*-------------------------------------------BACKUP FORM---------------------------------------*/
+.formDefaultStyle {
+	background: color(main);
+	color: color(text);
+  border: 0;
+  
+	font-family: font(link);
+  text-transform: uppercase;
+	text-align: center;
+	font-size: 2em;
+  @media screen and (max-width: 550px) {font-size: 1.8em;}
+  font-weight: 300;
+  letter-spacing: .125rem;
+}
+.contact-button {
+  order: -1;
+  margin-bottom: 1em;
+  line-height: 3em;
+  span {font-family: font(main);}
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+  position: relative;
+  
+  width: 60vw;
+  @media screen and (max-width: 550px) {width: 95vw;}
+  margin: 3em auto;
+  
+  text-align: center;
+  
+  border-color: color(main);
+  border-style: solid;
+  border-width: 2px;
+  
+	box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+
+  input,
+  textarea,
+  button {
+    display: block;
+    width: calc(100% - 4em);
+    margin: .2em 1em;
+    border: 1px solid grey;
+    padding: 2px 1em;
+    
+    font-size: 1.2em;
+    line-height: 2.5em;
+    font-family: font(link);
+  }
+	textarea {height: 7rem;}
+  input[type='submit'] {
+    @media screen and (max-width: 550px) {width: 90%;}
+    margin: 1em auto;
+    border-radius: 5px;
+    line-height: 2em;
+    @media screen and (max-width: 550px) {font-size: 1.2em;}
+    
+    box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+  }
+}
+#SubmitingDelay {
+  display: none;
+  position: relative;
+  box-shadow: 0 3px 5px 1px rgba(0,0,0,0.5);
+  margin: 15% 6em;
+  padding: 1em;
+  
+  .text span {font-size: 4em;}
+  
+  .spinner {
+    width: 150px;
+    height: 75px;
+    position: absolute;
+    left: calc(50% - 75px);
+    top : 1em;
+    
+    > div {
+      background-color: #333;
+      height: 100%;
+      width: 15px;
+      display: inline-block;
+
+      animation: stretchdelay 1.7s infinite ease-in-out;
+    }
+
+    .rect2  {@include prefix('animation-delay', '-1.6s'); }
+    .rect3  {@include prefix('animation-delay', '-1.5s'); }
+    .rect4  {@include prefix('animation-delay', '-1.4s'); }
+    .rect5  {@include prefix('animation-delay', '-1.3s'); }
+    .rect6  {@include prefix('animation-delay', '-1.2s'); }
+    .rect7  {@include prefix('animation-delay', '-1.1s'); }
+    .rect8  {@include prefix('animation-delay', '-1.0s'); }
+    .rect9  {@include prefix('animation-delay', '-0.9s'); }
+    .rect10 {@include prefix('animation-delay', '-0.8s'); }
+  }
+  @keyframes stretchdelay {
+    0%, 40%, 100% {transform: scaleY(0.4); }
+    20% {transform: scaleY(1.0); }
+  }
+}
+
+form {
+  div.error {
+    margin: .5em 1em;
+    padding: .5em 0;
+    p {
+      display: inline-block;
+      text-align: left;
+      font-family: font(block);
+    }
+  }
+  label {
+    text-align: left;
+    span.label-text {
+      position: relative;
+      top : -81px;
+      left: 8px;
+        
+      font-family: font(main);
+    }
+    &:last-of-type span.label-text {top: -143px}
+  }
+  
+  
+  
+	.nav-dot p {
+		transition: all 1s;
+		position: absolute;
+		top: 1px;
+		right: -100px;
+    
+		width: 200px;
+		text-align: right;
+		font-size: .8rem;
+		opacity: 0;
+	}
+    
+	.validation-master {
+		* {box-sizing: border-box;}
+    
+		cursor: $cursor;
+    display: block;
+		position: absolute;
+    right: 10px;
+		width: 60px;
+    margin-top: -65px;
+		transition: all 1s ease;
+	}
+	label[for="input-4"] .validation-master {margin-top: -126px;}
+  
+	.boxA {
+		background: rgba(0, 0, 0, 0);
+		display: inline-block;
+		transition: all 1s;
+		@include prefix('transform', 'scaleX(1.5) rotate(45deg)');
+		border-width: 0 0 2px 2px;
+		border-color: black;
+		border-style: solid;
+		position: relative;
+		left: 20px;
+		width: 15px;
+		height: 15px;
+	}
+	.boxC {
+		background-color: color(main);
+		display: inline-block;
+		position: relative;
+		left: 10px;
+		width: 6px;
+		height: 6px;
+		border-radius: 4px;
+		margin: 4.5px 0;
+		transition: all 0.3s;
+	}
+	.boxB {
+		display: inline-block;
+		background: rgba(0, 0, 0, 0);
+		position: relative;
+		right: 0;
+		@include prefix('transform', 'scaleX(1.5) rotate(45deg)');
+		border-width: 2px 2px 0 0;
+		border-color: black;
+		border-style: solid;
+		width: 15px;
+		height: 15px;
+		transition: all 1s;
+	}
+  
+	.boxA_Error {
+		left: 30px;
+		border-color: red;
+		@include prefix('transform', 'scaleX(1) rotate(45deg)');
+	}
+	.boxB_Error {
+		right: 10px;
+		border-color: red;
+		@include prefix('transform', 'scaleX(1) rotate(45deg)');
+	}
+	.boxA_Valid {
+		animation: Valid_A;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	.boxB_Valid {
+		animation: Valid_B;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		background: rgba(0, 0, 0, 0)
+	}
+	.boxC_Valid {
+		background-color: white;
+		animation: Valid_C;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+  
+  @keyframes Valid_A {
+    66% {
+      left: 23px;
+      border-width: 1px;
+      @include prefix('transform', 'scaleX(1.5) rotate(45deg)');
+    }
+    100% {
+      left: 23px;
+      border-width: 1px;
+      @include prefix('transform', 'scaleX(1) rotate(0deg) scale(1.1)');
+    }
+  }
+  @keyframes Valid_B {
+    66% {
+      right: 3px;
+      border-width: 0;
+    }
+    100% {
+      right: 3px;
+      border-width: 0;
+    }
+  }
+  @keyframes Valid_C {
+    0% {
+      width: 4px;
+    }
+    33% {
+      width: 4px;
+      height: 2px;
+    }
+    66% {
+      width: 4px;
+      height: 8px;
+    }
+    100% {
+      width: 4px;
+      height: 8px;
+      border-width: 0 1px 1px 0;
+      border-color: green;
+      border-style: solid;
+      border-radius: 0 0 1.5px 0;
+      margin: 4.5px 0;
+      @include prefix('transform', 'scale(3.8) scaleY(1.7) rotate(37deg)');
+      background-color: rgba(0, 0, 0, 0);
+      position: relative;
+      top: -20px;
+      left: 17px;
+      z-index: z(upper);
+    }
+  }
+}
+
+#formNextButton,
+div.contact-button-trigger,
+.tip {display: none;}
+
+/*-----------------------------FORM LOGIC CHECK-BOXES-------------------------------*/
+[class^='validation-'] {display: none;}

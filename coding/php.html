@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link href="../_css/styles.css"                                                     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron"                       rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web"                  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway"                        rel="stylesheet">
+	<link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css"                   rel="stylesheet">
+	<link href="../fonts/PortfolioIcons/style.css"                                      rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--Recommended Meta Tags-->
+	<meta charset="utf-8">
+	<meta name="language" content="english"> 
+	<meta name="author" content="Bradley Rounds">
+
+	<!--Search Engine Optimization Meta Tags-->
+	<title>PHP | Coding</title>
+	<meta name="description" content="Bradley Rounds, his projects, interests and experience.">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="7 days">
+	<meta name="distribution" content="web">
+	<meta name="robots" content="noodp">
+
+	<!--Optional Meta Tags-->
+	<meta name="distribution" content="web">
+	<meta name="web_author" content="Bradley Rounds">
+	<meta name="rating" content="general">
+	<meta name="subject" content="Personal">
+	<meta name="title" content="Bradley Rounds - Official Portfolio.">
+	<meta name="copyright" content="Copyright 2017">
+	<meta name="reply-to" content="rounds.bradley@gmail.com">
+	<meta name="abstract" content="">
+	<meta name="city" content="Boulder">
+	<meta name="country" content="USA">
+	<meta name="distribution" content="global">
+	<meta name="classification" content="">
+
+	<!--Meta Tags for HTML pages on Mobile-->
+	<meta name="HandheldFriendly" content="true"/> 
+	<meta name="viewport" content="width=device-width"/>
+</head>
+<body onload="colorCode('php')">
+<header>
+	<img id="logoImg" src="../images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('../index.html')">
+  <nav>
+    <ul>
+      <li class="nav-item">
+				<a href="../index.html"><div class="nav-link"><i class="fa fa-home fa-lg"></i></div>
+          <span>HOME</span>
+        </a>
+			</li>
+      <li class="nav-item">
+				<a href="../portfolio.html"><div class="nav-link"><i class="fa fa-book fa-lg"></i></div>
+          <span>PORTFOLIO</span>
+        </a>
+			</li>
+      <li class="nav-item">
+        <div id="dropdown">
+          <a id="dropdownButton" href="#"><div class="nav-link"><i class="fa fa-gear fa-lg"></i></div>
+            <span>CODING</span>
+          </a>
+          <div id="dropdownContent">
+            <a href="javascript.html"><i class="fa fa-coffee fa-lg"></i>
+              <span>JAVASCRIPT</span>
+            </a>
+            <a href="#"><i class="fa fa-server fa-lg"></i>
+              <span>PHP</span>
+            </a>
+            <a href="psudocode.html"><i class="fa fa-cogs fa-lg"></i>
+              <span>PSUDOCODE</span>
+            </a>
+						<a href="python.html"><i class="icon-python fa-lg"></i>
+              <span>PYTHON</span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+				<a href="../contact_me.html"><div class="nav-link"><i class="fa fa-envelope fa-lg"></i></div>
+          <span>CONTACT</span>
+        </a>
+			</li>
+    </ul>
+  </nav>
+</header>
+<main>
+	<h1 class="title codingHeader">PHP</h1>
+	<hr>
+	<div class="tab">
+	  <button class="tablinks" onclick="openTopic(event,'directory')">Directory Listing</button>
+	  <button class="tablinks" onclick="openTopic(event,'directoryalt')">Directory Listing Alt</button>
+	  <button class="tablinks" onclick="openTopic(event,'phpproject')">PHP Project</button>
+	  <button class="tablinks" onclick="openTopic(event,'mailscript')">Mail Script</button>
+	</div>
+	<hr>
+	
+<section>
+<div id="directory" class="tabcontent">
+	<h1 class="title">Directory Listing</h1>
+<pre class="code_box">
+&lt;?php
+  $dirname = ".";
+  $dh = opendir($dirname);
+  while (gettype($file = readdir($dh)) != "boolean") {
+    if ($file == "." || $file == "..") continue;
+    if (is_dir("$dirname/$file") && "$file" != "cgi-bin") {
+      print "&lt;p&gt;&lt;a href='$file/'&gt;$file&lt;/a&gt;&lt;/p&gt;";
+    }
+  }
+  closedir($dh);
+?&gt;
+</pre>
+</div>
+  
+<div id="directoryalt" class="tabcontent">
+	<h1 class="title">Directory Listing Alt</h1>
+<pre class="code_box">
+&lt;?php
+  $dirname = "./images";
+  $dh = opendir($dirname);
+  while (gettype($file = readdir($dh)) != "boolean") {
+    if (preg_match('/^\./', $file)) continue;
+      $trimmed = str_replace('.png', '', $file);
+    print "&lt;div&gt;&lt;img src='images/$file' aria-hidden='true' title='$trimmed'/&gt;&lt;/div&gt;";
+  }
+  closedir($dh);
+?&gt;
+</pre>
+</div>
+
+<div id="phpproject" class="tabcontent">
+	<h1 class="title">PHP Project</h1>
+<pre class="code_box">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Rounds Comics&lt;/title&gt;
+	
+	&lt;link href="_css/styles.css" type="text/css" rel="stylesheet"&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;meta name="language" content="english"&gt; 
+	&lt;meta http-equiv="content-type" content="text/html"&gt;
+	&lt;meta name="author" content="Bradley Rounds"&gt;
+	
+	&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;?php
+	//THIS SECTION IS NOT NEEDED IF THE SITE IS ONLINE, IT CREATE A LOCAL DATABASE WITH CONTENTS
+	$DBConnect = @mysql_connect("localhost", "root", "");
+	if ($DBConnect === FALSE)
+		$error .= "&lt;p&gt;Unable to connect to the database server.&lt;/p&gt;" . "&lt;p&gt;Error code " . mysql_errno() . ": " . mysql_error() . "&lt;/p&gt;";
+	else {
+		$DBName = "comicbooks";
+		if (!@mysql_select_db($DBName, $DBConnect)) {
+			$SQLstring = "CREATE DATABASE $DBName";
+			$QueryResult = @mysql_query($SQLstring, $DBConnect);
+			if ($QueryResult === FALSE)
+				$error .= "&lt;p&gt;Unable to execute the query.&lt;/p&gt;" . "&lt;p&gt;Error code " . mysql_errno($DBConnect) . ": " . mysql_error($DBConnect) . "&lt;/p&gt;";
+		}
+		mysql_select_db($DBName, $DBConnect);
+		
+		$TableName = "books";
+		$SQLstring = "SHOW TABLES LIKE '$TableName'";
+		$QueryResult = @mysql_query($SQLstring, $DBConnect);
+		
+		if (mysql_num_rows($QueryResult) == 0) {
+			$commands = file_get_contents('books.sql');
+
+			//delete comments
+			$lines = explode("\n",$commands);
+			$commands = '';
+			foreach($lines as $line){
+					$line = trim($line);
+					if( $line && !startsWith($line,'-- ') ){
+							$commands .= $line . "\n";
+					}
+			}
+			//convert to array
+			$commands = explode(";", $commands);
+
+			//run commands
+			$total = $success = 0;
+			foreach($commands as $command){
+					if(trim($command)){
+							$success += (@mysql_query($command) == false ? 0 : 1);
+							$total += 1;
+					}
+			}
+			$output = "success = $success, total = $total";
+			 echo "&lt;script&gt;console.log('Books Table Commands: " . $output . "');&lt;/script&gt;";
+		} else
+			echo "&lt;script&gt;console.log('Database Ready');&lt;/script&gt;";
+	}
+	function startsWith($haystack, $needle){
+			$length = strlen($needle);
+			return (substr($haystack, 0, $length) === $needle);
+	}
+?&gt;
+&lt;body&gt;
+	&lt;div class="intro"&gt;
+		&lt;h1&gt;Rounds Comics&lt;/h1&gt;
+		&lt;ul&gt;
+			&lt;li&gt;Welcome, click on the book in the table row to add it to your cart.&lt;/li&gt;
+			&lt;li&gt;Blank rows are the quantity duplicates of the row directly above.&lt;/li&gt;
+			&lt;li&gt;To view your selected items hover over the cart icon.&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;article id="showcase"&gt;
+		&lt;div id="book1"&gt;&lt;img src="images/ROM-01.jpg" 					alt="Cover of ROM Issue 1"&gt;&lt;/div&gt;
+		&lt;div id="book2"&gt;&lt;img src="images/Thor-256.jpg" 				alt="Cover of Thor Issue 256"&gt;&lt;/div&gt;
+		&lt;div id="book3"&gt;&lt;img src="images/XMen-138.jpg" 				alt="Cover of X-Men Issue 138"&gt;&lt;/div&gt;
+		&lt;div id="book4"&gt;&lt;img src="images/Hulk-272.jpg" 				alt="Cover of Hulk Issue 272"&gt;&lt;/div&gt;
+		&lt;div id="book5"&gt;&lt;img src="images/PPSpiderMan-50.jpg"	alt="Cover of Peter Parker the Spectacular Spider Man Issue 50"&gt;&lt;/div&gt;
+		&lt;div id="book6"&gt;&lt;img src="images/SilverSurfer-1.jpg" 	alt="Cover of Silver Surfer Issue 1"&gt;&lt;/div&gt;
+		&lt;div id="book7"&gt;&lt;img src="images/Sable-01.jpg" 				alt="Cover of Sable Issue 1"&gt;&lt;/div&gt;
+		&lt;div id="book8"&gt;&lt;img src="images/GreenArrow-01.jpg" 	alt="Cover of Green Arrow Issue 1"&gt;&lt;/div&gt;
+		&lt;div id="book9"&gt;&lt;img src="images/Dreadstar-01.jpg" 		alt="Cover of Dreadstar Issue 1"&gt;&lt;/div&gt;
+	&lt;/article&gt;
+	&lt;button id="viewAll"&gt;View All Comic Books&lt;/button&gt;
+	&lt;article id="modal"&gt;
+		&lt;div id="interior"&gt;&lt;/div&gt;
+		&lt;div id=modalContainer&gt;
+			&lt;table&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th&gt;&lt;/th&gt;
+						&lt;th&gt;&lt;/th&gt;
+						&lt;th&gt;Quantity&lt;/th&gt;
+						&lt;th&gt;Title&lt;/th&gt;
+						&lt;th&gt;Publisher&lt;/thd&gt;
+						&lt;th&gt;Issue #&lt;/th&gt;
+						&lt;th&gt;Date&lt;/th&gt;
+						&lt;th&gt;Condition&lt;/th&gt;
+						&lt;th&gt;Price ($)&lt;/th&gt;
+						&lt;th&gt;Storyline&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;tbody&gt;
+					&lt;?php
+						//Retreve the data from the database
+						$SQLString = "SELECT * FROM books ORDER BY title";
+						$QueryResult = @mysql_query($SQLString, $DBConnect);
+
+						/*Assoc Array for formulating the price*/
+						$Quality = array("Near Mint" => "10.00",
+														 "Very Fine" => "8.00",
+														 "Fine"			=> "6.00",
+														 "Very Good" => "4.00",
+														 "Good"			=> "3.00",
+														 "Fair"			=> "1.00");
+					
+						//Format a num into a currency
+						function number_to_money($value, $decimals = 2) { 
+							return ($value &lt; 0 ? '-' : '') . number_format(abs($value), $decimals);
+						}
+
+						/*Create the table from the query data*/
+						while (($Row = mysql_fetch_assoc($QueryResult)) !== FALSE) {
+							$Listprice = $Row['listprice'];
+
+							$Price = $Listprice * $Row['demand'] * $Quality[$Row['condition_list']];
+							$Price = number_to_money($Price);
+
+							/*
+								ROW 0:  Table Row
+								ROW 1:  Checkbox for the JavaScipt and form
+								ROW 2:  If the book is an 'anual issue'
+								ROW 3:  Quantity of the book (If there is a duplicate issue_no and condition)
+								ROW 4:  Title of the book (series)
+								ROW 5:  Publisher
+								ROW 6:  Issue Number
+								ROW 7:  Date released
+								ROW 8:  Condition decided when entered into database
+								ROW 9:  Formulated Price
+								ROW 10: The ID from the database (Incase needed in JavaScript)
+								ROW 0:  End Table Row
+							*/
+							
+							echo "&lt;tr&gt;";
+							echo "&lt;td&gt;&lt;input type='checkbox'&gt;&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['annual']}&lt;/td&gt;";
+							echo "&lt;td&gt;1&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['title']}&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['publisher']}&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['issue_no']}&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['date']}&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['condition_list']}&lt;/td&gt;";
+							echo "&lt;td&gt;$Price&lt;/td&gt;";
+							echo "&lt;td&gt;{$Row['storyline']}&lt;/td&gt;";
+							echo "&lt;/tr&gt;";
+						}
+						mysql_free_result($QueryResult);
+					?&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+			&lt;footer&gt;
+				&lt;button id='clear'&gt;Clear Selections&lt;/button&gt;
+				&lt;button id="buy"&gt;Buy Selected&lt;/button&gt;
+			&lt;/footer&gt;
+		&lt;/div&gt;
+	&lt;/article&gt;
+	&lt;article id="buypage"&gt;
+		&lt;form method="post"&gt;
+			&lt;ul&gt;
+				&lt;li&gt;
+					&lt;label for="name"&gt;Name&lt;/label&gt;
+					&lt;input type="text" name="name" maxlength="100"&gt;
+					&lt;span&gt;Enter your full name here&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;label for="email"&gt;Email&lt;/label&gt;
+					&lt;input type="email" name="email"&gt;
+					&lt;span&gt;Enter your email here&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;fieldset id="formDisabled"&gt;
+					&lt;/fieldset&gt;
+				&lt;/li&gt;
+				&lt;li id="priceArea"&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;input type="submit" name="Submit" value="Submit Order"&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/form&gt;
+		&lt;?php
+			$errors = 0;
+		  //$error = '';
+			/*Reusable function for input validation*/
+			function validate($data, $type) {
+				global $errors;
+				global $error;
+	
+				if ($type === 'email') {
+					//IF EMAIL TYPE
+					$pattern = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+					if (preg_match($pattern, $data) == 0) {
+						$error .= "&lt;p&gt;\"$data\" is not a valid e-mail address.&lt;/p&gt;";
+						++$errors;
+					} else
+						return $data;
+				} else {
+					//IF ANY OTHER TYPE
+					$pattern = "/^[A-Za-z .'-]+$/";
+					if (strlen($data) &gt; 0) {
+						if (preg_match($pattern, $data) == 0) {
+							$error .= "&lt;p&gt;Name field cannot contain any numbers.&lt;/p&gt;";
+							++$errors;
+						} else
+							return $data;
+					} else {
+						$error .= "&lt;p&gt;Name is a required field.&lt;/p&gt;";
+						++$errors;
+					}
+				}
+			}
+			//When the user clicks submit
+			if ((isset($_POST['Submit'])) && (!empty($_POST['Submit']))) {
+				$Name = validate(stripslashes($_POST['name']),'text');
+				$Email = validate(stripslashes($_POST['email']),'email');
+				$Books = '';
+				
+				if ($errors &gt; 0)
+					$error .= "&lt;p&gt;Data Not Submited&lt;br&gt;Field Error&lt;/p&gt;";
+				//Add an entry to the order table in the database
+				else {
+					$TableName = "orders";
+					$SQLstring = "SHOW TABLES LIKE '$TableName'";
+					$QueryResult = @mysql_query($SQLstring, $DBConnect);
+					if (mysql_num_rows($QueryResult) == 0) {
+						$SQLstring = "CREATE TABLE $TableName (
+							ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+							name varchar(64),
+							email varchar(64),
+							books varchar(256)
+						)";
+						$QueryResult = @mysql_query($SQLstring, $DBConnect);
+						if ($QueryResult === FALSE)
+							$error .= "&lt;p&gt;Unable to execute the query.&lt;/p&gt;" . "&lt;p&gt;Error code " . mysql_errno($DBConnect) . ": " . mysql_error($DBConnect) . "&lt;/p&gt;";
+					}
+
+					foreach ($_POST['Books'] as $element) {
+						$Books .= ($element . ", ");
+					}
+
+					$SQLstring = "INSERT INTO $TableName VALUES(NULL, '$Name', '$Email', '$Books')";
+					$QueryResult = @mysql_query($SQLstring, $DBConnect);
+					if ($QueryResult === FALSE)
+						$error .= "&lt;p&gt;Unable to execute the query.&lt;/p&gt;" . "&lt;p&gt;Error code " . mysql_errno($DBConnect) . ": " . mysql_error($DBConnect) . "&lt;/p&gt;";
+					else
+						$error = "&lt;h1&gt;Your order has been submitted!&lt;/h1&gt;\n&lt;p&gt;I'll get back to you soon.";
+
+					mysql_close($DBConnect);
+					
+					//If site goes online Emails to both the shopper and to me the admin
+					//sendMail($Name, $Email, $Email, $Books, true);
+					//sendMail($Name, 'rounds.bradley@gmail.com', $Email, $Books, false);
+				}
+			}
+		
+			function sendMail($name, $email_to, $email, $books, $errMsg) {
+				$email_subject = "Your book order has been submitted";
+				$error_message = "I\'m sorry, but there appears to be a problem with the submission&lt;/p&gt;"; 
+
+
+				$email_message = "
+					&lt;h1&gt;Order Request has been Sumbited&lt;/h1&gt;
+					&lt;p&gt;&lt;strong&gt;Name: &lt;/strong&gt;" . $name . "&lt;/p&gt;
+					&lt;p&gt;&lt;strong&gt;Email: &lt;/strong&gt;" . $email . "&lt;/p&gt;
+					&lt;p&gt;&lt;strong&gt;Books Requested: &lt;/strong&gt;" . $books . "&lt;/p&gt;&lt;br&gt;
+					&lt;p&gt;I will contact you ASAP to complete your order&lt;/p&gt;&lt;br&gt;
+					&lt;p&gt;Bradley Rounds&lt;br&gt;Rounds Comics&lt;/p&gt;
+				";
+
+				$headers  = "MIME-Version: 1.0" . PHP_EOL;
+				$headers .= "Content-type: text/html; charset=UTF-8" . PHP_EOL;
+				$headers .= "From:" . $name . " &lt;" . $email_to . "&gt;" . PHP_EOL;
+
+
+				$sent = mail($email_to, $email_subject, $email_message, $headers);
+				
+				/*
+				echo "&lt;script&gt;console.log('Sent: $sent');&lt;/script&gt;";
+				echo "&lt;script&gt;console.log('Name: $name');&lt;/script&gt;";
+				echo "&lt;script&gt;console.log('Email To: $email_to');&lt;/script&gt;";
+				echo "&lt;script&gt;console.log('Email: $email');&lt;/script&gt;";
+				echo "&lt;script&gt;console.log('Books: $books');&lt;/script&gt;";
+				echo "&lt;script&gt;console.log('Error: $errMsg');&lt;/script&gt;";
+				*/
+
+				if(!$sent) {
+					$error_message = "Server could not send the email messages&lt;br&gt;I will get in contact with you from the information you provided, You may not get a confirmation message.&lt;/p&gt;";
+				} else {
+					$error_message = "And emails Sent! Thanks for your order.&lt;/p&gt;";
+				}
+				if ($errMsg) {
+					echo $error_message;
+				}
+			}
+		?&gt;
+	&lt;/article&gt;
+	&lt;img id="cartTrigger" src="images/cart.svg" alt="Shopping Cart Icon"&gt;
+	&lt;aside id="cart"&gt;&lt;p class="temp"&gt;Cart Empty&lt;/p&gt;&lt;/aside&gt;
+	&lt;?php if (isset($error)) { ?&gt;
+	&lt;section&gt;&lt;?php echo $error; ?&gt;&lt;/section&gt;
+	&lt;?php } ?&gt;
+	&lt;script src="scripts/showcase.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+</div>
+
+<div id="mailscript" class="tabcontent">
+	<h1 class="title">Mail Script</h1>
+<pre class="code_box">
+&lt;?php
+	function died($error) {
+		$error_message  =  
+			"Sorry, but there were error(s) found with the form you submitted.br&gt;br&gt;" . 
+			"These errors appear below.br&gt;br&gt;" . 
+			$error."br&gt;br&gt;hr&gt;br&gt;" . 
+			"Please go back and fix these errors.br&gt;br&gt;";
+	}
+
+	$email_to = "rounds.bradley@gmail.com";
+	$email_subject = "New contact form has been submitted";
+	$error_message = "I\'m sorry, but there appears to be a problem with the form you submitted."; 
+
+	$name = !empty($_POST['name'])?$_POST['name']:'';            // required
+	$email = !empty($_POST['email'])?$_POST['email']:'';         // required
+	$subject = !empty($_POST['subject'])?$_POST['subject']:'';   // required
+	$message = !empty($_POST['message'])?$_POST['message']:'';   // required
+
+	$string_exp = "/^[A-Za-z .'-]+$/";
+	if(!preg_match($string_exp,$name)) {
+		$error_message .= "The Name you entered does not appear to be valid.br /&gt;";
+	}
+	$email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+	if(!preg_match($email_exp,$email)) {
+		$error_message .= "The Email Address you entered does not appear to be valid.br /&gt;";
+	}
+	$string_exp = "/^[A-Za-z .'-]+$/";
+	if(!preg_match($string_exp,$subject)) {
+		$error_message .= "The Subject you entered does not appear to be valid.br /&gt;";
+	}
+	if(strlen($message)  10) {
+		$error_message .= "The Message you entered do not appear to be valid.br /&gt;";
+	}
+	// validation expected data exists
+	if(!isset($name) ||	!isset($email) ||	!isset($subject) || !isset($message)) {
+		died($error_message);
+	}
+
+	$email_message = "
+		h1&gt;Contact request details/h1&gt;
+		p&gt;strong&gt;Name: /strong&gt;".$name."/p&gt;
+		p&gt;strong&gt;Email: /strong&gt;".$email."/p&gt;
+		p&gt;strong&gt;Subject: /strong&gt;".$subject."/p&gt;
+		p&gt;strong&gt;Message: /strong&gt;".$message."/p&gt;
+	";
+
+	$headers  = "MIME-Version: 1.0".PHP_EOL;
+	$headers .= "Content-type: text/html; charset=UTF-8".PHP_EOL;
+	$headers .= "From:".$name." ".$email."&gt;".PHP_EOL;
+
+
+	$sent = mail($email_to, $email_subject, $email_message, $headers);
+
+	if(!$sent) {
+		$error_message = "Server could not send the email";
+		throw New Exception($error_message);
+	} else {
+		$error_message = "Message Sent! Thanks for contacting me.br/&gt;I will be in touch with you very soon.";
+	}
+?&gt;
+
+</pre>
+</div>
+</section>
+	<hr>
+	<div class="callToAction cut">
+		<button onclick="window.location.assign('psudocode.html')">Review my early psudocode?</button>
+	</div>
+</main>
+
+<!-- TAB Script -->
+<script>
+	document.getElementsByClassName("tab")[0].getElementsByTagName("button")[0].click();
+	function openTopic(evt, topicName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(topicName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+</script>
+<!-- Empty Node Removal -->
+<script>
+  function clean(node) {
+    for (var n = 0; n < node.childNodes.length; n ++) {
+      var child = node.childNodes[n];
+      if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+        node.removeChild(child);
+        n --;
+      } else if(child.nodeType === 1) {
+        clean(child);
+      }
+    }
+  }
+  clean(document);
+</script>
+<script src="codeColor.js"></script>
+<script src="../scripts/dropdown-nav.js"></script>
+</body>
+</html>

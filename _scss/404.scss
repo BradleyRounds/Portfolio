@@ -1,0 +1,103 @@
+article {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+}
+
+article#left-bracket,
+article#right-bracket {
+		width: 80px;
+		.black, .cover {
+			height: 100px;
+			width:  100px;
+			
+			background-color: black;
+			
+			position: absolute;
+			top: 50%;
+		}
+		.black {animation: colorfade 5.2s linear infinite;}
+		.cover {background-color: white;}
+	}
+		
+article#left-bracket {
+		.black, .cover {
+			left:  0;
+						
+			transform-origin: top left;
+			transform: rotate(-45deg);
+		}
+		.cover {left: 15px;}
+	}
+article#right-bracket {
+		.black, .cover {
+			top: 50%;
+			right: 0;
+			
+			transform-origin: top right;
+			transform: rotate(45deg);
+		}
+		.cover {right: 15px;}
+	}
+
+.submit_as_link {
+	font-family: sans-serif;
+	border: 0;
+   text-decoration: underline;
+   cursor: pointer;
+   margin: 10px;
+   padding: 10px 50px;
+	transition: .2s transform ease;
+	
+	&:hover {
+		border: 1px solid lightgray;
+		transform: scale(1.2);
+	}
+}
+.msg {
+   color: rgb(117, 117, 117);
+   font-size: 20px;
+   letter-spacing: .2px;
+   line-height: 20px;
+	text-align: center;
+	margin-top: -50px;
+}
+
+
+.svg {
+	position: relative;
+   display: block;
+   height: 200px;
+   width: 450px;
+   line-height: 200px;
+   text-align: center;
+	margin: 50px auto;
+   background-color: white;
+}
+#svg {
+   display: inline-block;
+	height: 200px;
+   fill: #19BAEE;
+	
+	path {animation: colorfade 5s linear infinite;}
+}
+
+$i: 1;
+$step: 0.04;
+@while $i < 59 {
+	#svg path:nth-child(#{$i}) {animation-delay: #{$step}s;}
+	
+	$step: $step + 0.04;
+	$i: $i + 1;
+}
+
+@keyframes colorfade {
+	0%   {fill: #19BAEE;     background-color: #19BAEE;}
+  16%  {fill: yellowgreen; background-color: yellowgreen;}
+  33%  {fill: orange;      background-color: orange;}
+  50%  {fill: red;         background-color: red;}
+	66%  {fill: magenta;     background-color: magenta;}
+  83%  {fill: purple;      background-color: purple;}
+  100% {fill: #19BAEE;     background-color: #19BAEE;}
+}

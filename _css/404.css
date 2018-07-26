@@ -1,0 +1,435 @@
+/* line 1, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+/* line 8, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#left-bracket,
+article#right-bracket {
+  width: 80px;
+}
+
+/* line 11, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#left-bracket .black, article#left-bracket .cover,
+article#right-bracket .black,
+article#right-bracket .cover {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+}
+
+/* line 20, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#left-bracket .black,
+article#right-bracket .black {
+  animation: colorfade 5.2s linear infinite;
+}
+
+/* line 21, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#left-bracket .cover,
+article#right-bracket .cover {
+  background-color: white;
+}
+
+/* line 25, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#left-bracket .black, article#left-bracket .cover {
+  left: 0;
+  transform-origin: top left;
+  transform: rotate(-45deg);
+}
+
+/* line 31, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#left-bracket .cover {
+  left: 15px;
+}
+
+/* line 34, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#right-bracket .black, article#right-bracket .cover {
+  top: 50%;
+  right: 0;
+  transform-origin: top right;
+  transform: rotate(45deg);
+}
+
+/* line 41, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+article#right-bracket .cover {
+  right: 15px;
+}
+
+/* line 44, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+.submit_as_link {
+  font-family: sans-serif;
+  border: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px 50px;
+  transition: .2s transform ease;
+}
+
+/* line 53, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+.submit_as_link:hover {
+  border: 1px solid lightgray;
+  transform: scale(1.2);
+}
+
+/* line 58, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+.msg {
+  color: #757575;
+  font-size: 20px;
+  letter-spacing: .2px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+/* line 68, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+.svg {
+  position: relative;
+  display: block;
+  height: 200px;
+  width: 450px;
+  line-height: 200px;
+  text-align: center;
+  margin: 50px auto;
+  background-color: white;
+}
+
+/* line 78, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg {
+  display: inline-block;
+  height: 200px;
+  fill: #19BAEE;
+}
+
+/* line 83, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path {
+  animation: colorfade 5s linear infinite;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(1) {
+  animation-delay: 0.04s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(4) {
+  animation-delay: 0.16s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(6) {
+  animation-delay: 0.24s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(7) {
+  animation-delay: 0.28s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(8) {
+  animation-delay: 0.32s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(9) {
+  animation-delay: 0.36s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(10) {
+  animation-delay: 0.4s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(11) {
+  animation-delay: 0.44s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(12) {
+  animation-delay: 0.48s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(13) {
+  animation-delay: 0.52s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(14) {
+  animation-delay: 0.56s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(15) {
+  animation-delay: 0.6s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(16) {
+  animation-delay: 0.64s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(17) {
+  animation-delay: 0.68s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(18) {
+  animation-delay: 0.72s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(19) {
+  animation-delay: 0.76s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(20) {
+  animation-delay: 0.8s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(21) {
+  animation-delay: 0.84s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(22) {
+  animation-delay: 0.88s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(23) {
+  animation-delay: 0.92s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(24) {
+  animation-delay: 0.96s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(25) {
+  animation-delay: 1s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(26) {
+  animation-delay: 1.04s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(27) {
+  animation-delay: 1.08s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(28) {
+  animation-delay: 1.12s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(29) {
+  animation-delay: 1.16s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(30) {
+  animation-delay: 1.2s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(31) {
+  animation-delay: 1.24s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(32) {
+  animation-delay: 1.28s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(33) {
+  animation-delay: 1.32s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(34) {
+  animation-delay: 1.36s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(35) {
+  animation-delay: 1.4s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(36) {
+  animation-delay: 1.44s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(37) {
+  animation-delay: 1.48s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(38) {
+  animation-delay: 1.52s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(39) {
+  animation-delay: 1.56s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(40) {
+  animation-delay: 1.6s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(41) {
+  animation-delay: 1.64s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(42) {
+  animation-delay: 1.68s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(43) {
+  animation-delay: 1.72s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(44) {
+  animation-delay: 1.76s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(45) {
+  animation-delay: 1.8s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(46) {
+  animation-delay: 1.84s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(47) {
+  animation-delay: 1.88s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(48) {
+  animation-delay: 1.92s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(49) {
+  animation-delay: 1.96s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(50) {
+  animation-delay: 2s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(51) {
+  animation-delay: 2.04s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(52) {
+  animation-delay: 2.08s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(53) {
+  animation-delay: 2.12s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(54) {
+  animation-delay: 2.16s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(55) {
+  animation-delay: 2.2s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(56) {
+  animation-delay: 2.24s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(57) {
+  animation-delay: 2.28s;
+}
+
+/* line 89, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/404.scss */
+#svg path:nth-child(58) {
+  animation-delay: 2.32s;
+}
+
+@keyframes colorfade {
+  0% {
+    fill: #19BAEE;
+    background-color: #19BAEE;
+  }
+  16% {
+    fill: yellowgreen;
+    background-color: yellowgreen;
+  }
+  33% {
+    fill: orange;
+    background-color: orange;
+  }
+  50% {
+    fill: red;
+    background-color: red;
+  }
+  66% {
+    fill: magenta;
+    background-color: magenta;
+  }
+  83% {
+    fill: purple;
+    background-color: purple;
+  }
+  100% {
+    fill: #19BAEE;
+    background-color: #19BAEE;
+  }
+}
+
+/*# sourceMappingURL=../_css/404.map */

@@ -1,0 +1,474 @@
+@import "_variables.scss";
+@import "_functions.scss";
+@import "_mixins.scss";
+
+/*-------------------------------------------DEFAULT FORM---------------------------------------*/
+body {height: 100vh; overflow: hidden;}
+
+
+$formWidth: 70vw;
+$formTop: 50%;
+$formLeft: 50%;
+
+.formDefaultStyle {
+	background: color(main);
+	color: color(text);
+	font-family: font(link);
+	text-align: center;
+	font-size: 2em;
+}
+
+button#formNextButton {
+ 	width: $formWidth - 20vw;
+ 	position: fixed;
+ 	top: 55%;
+ 	left: 50%;
+	@include prefix('transform', 'translate(-50%, -50%)');
+  
+  font-family: font(main);
+	line-height: 2em;
+	letter-spacing: .125em;
+	box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+ 	transition: opacity 1s ease-in;
+ 	opacity: 0;
+  border: 0;
+  border-radius: 3px;
+}
+div#SubmitingDelay {
+	display: none;
+	width: $formWidth + 20vw;
+	position: fixed;
+	top: 46%;
+	left: 45%;
+	@include prefix('transform', 'translate(-50%, -50%)');
+  
+	line-height: 3em;
+	letter-spacing: .0625em;
+	padding: .5em 0;
+	box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+	text-shadow: 0 -2px 0 transparentize(#000, 0.25), 0 1px 0 transparentize(#fff, 0.2);
+}
+
+form {
+  font-family: font(link);
+  background-color: white;
+  overflow: hidden;
+	color: color(main);
+	position: fixed;
+	
+	input,
+	textarea,
+	button {
+		width: $formWidth;
+		top: $formTop;
+		left: $formLeft - 5%;
+  	font-family: inherit;
+		position: fixed;
+		display: block;
+		@include prefix('transform', 'translate(-50%, -300%)');
+		opacity: 0;
+		outline: 0;
+		pointer-events: none;
+		transition: all .5s cubic-bezier(.4, .25, .8, .3);
+	}
+	input,
+	textarea {
+		padding: .25rem 0;
+		border: 0;
+		background: transparent;
+		font-size: 2.5rem;
+		line-height: 4rem;
+		letter-spacing: .125rem;
+		transition: all .5s cubic-bezier(.4, .25, .8, .3);
+		border-bottom: 1px solid color(main);
+	}
+	textarea {
+		font-size: 1.5rem;
+		line-height: 1.7rem;
+		height: 7rem;
+	}
+	label[for='input-4'] span.label-text {padding: 0 0 4.5rem}
+
+	.contact-button,
+	.contact-button-trigger {
+		width: $formWidth;
+		top: $formTop;
+		left: $formLeft - 5%;
+		position: fixed;
+		@include prefix('transform', 'translate(-50%, -100%)');
+		padding: .25rem 0;
+		line-height: 3.6rem;
+		pointer-events: none;
+		cursor: $cursor;
+		transition: opacity .4s .3s;
+    span {font-family: font(main);}
+	}
+	.contact-button-trigger {
+		opacity: 0; //Needed for change
+		pointer-events: auto;
+	}
+	.contact-button {
+		letter-spacing: .0625rem;
+		box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+		text-shadow: 0 -2px 0 transparentize(#000, 0.25), 0 1px 0 transparentize(#fff, 0.2);
+	}
+	
+	input:focus,
+	button:focus,
+	textarea:focus {
+		opacity: 1;
+		@include prefix('transform', 'translate(-50%, -100%)');
+		pointer-events: auto;
+		transition: all .4s cubic-bezier(.1, .45, .1, .85) .5s;
+		z-index: z(default) + 10;}
+	
+	input:focus ~ input,
+	input:focus ~ button,
+	input:focus ~ textarea {
+		@include prefix('transform', 'translate(-50%, 500%)');
+		transition: all .5s ease-in;}
+	
+	/*LABEL TEXT (ABOVE INPUT)*/
+	input:focus ~ label .label-text,
+	textarea:focus ~ label .label-text {
+		@include prefix('transform', 'translate(-50%, 300%)');
+		transition: all .5s ease-in;}
+	
+	/*TIP (BELOW INPUT)*/
+	input:focus ~ .tip,
+	textarea:focus ~ .tip {opacity: 1;}
+	
+	input:focus ~ .contact-button,
+	button:focus ~ .contact-button,
+	textarea:focus ~ .contact-button {opacity: 0;}
+	
+	input:focus + label .label-text,
+	textarea:focus + label .label-text {
+		opacity: 1;
+		@include prefix('transform', 'translate(-50%, -100%)');
+		transition: all .3s cubic-bezier(.1, .45, .1, .85) .4s;}
+	
+	input:focus + label .boxC,
+	textarea:focus + label .boxC {
+		transform: scale(1.5);
+		border: 1px solid black;}
+	
+	.tip,
+	.error {
+		width: $formWidth;
+		
+		position: fixed;
+		top: $formTop;
+		left: $formLeft - 5%;
+    transform-origin: center top;
+		@include prefix('transform', 'translate(-50%, -50%)');
+		
+		color: black;
+		font-size: .9rem;
+		font-weight: 300;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-align: right;
+		
+		transition: opacity .25s .5s;
+		opacity: 0;
+	}
+	div.error {
+		text-align: center;
+		top: $formTop + 6%;
+		left: $formLeft - 5%;
+		padding: 2px;
+		opacity: 1;
+		display: none;
+	}
+  input[type='submit'] {
+		width: $formWidth - 20vw;
+		
+		position: fixed;
+		top: $formTop + 10%;
+		left: $formLeft - 5%;
+		@include prefix('transform', 'translate(-50%, -50%)');
+		
+		pointer-events: auto;
+		cursor: $cursor;
+		box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+		opacity: 1;
+		display: none;
+		border: 0;
+		
+		font-size: 2rem;
+		line-height: 3rem;
+		letter-spacing: .0625rem;
+	}
+	.label-text {
+		width: $formWidth;
+		
+		position: fixed;
+		left: $formLeft - 5%;
+		top: $formTop - 6%;
+		@include prefix('transform', 'translate(-50%, -300%)');
+		
+		padding: 3rem 0 1.5rem;
+		opacity: 0;
+		
+		color: color(text);
+		text-transform: uppercase;
+		font-size: 1.125rem;
+		font-weight: 300;
+		letter-spacing: .125rem;
+		
+		pointer-events: none;
+		transition: all .4s cubic-bezier(.4, .25, .8, .3) .05s;
+	}
+	.nav-dot p {
+		transition: all 1s;
+		position: absolute;
+		top: 1px;
+		width: 200px;
+		text-align: right;
+		font-size: .8rem;
+		right: -100px;
+		opacity: 0;
+	}
+	label[for="input-1"] .validation-master {margin-top: -131px;}
+	label[for="input-2"] .validation-master {margin-top: -100px;}
+	label[for="input-3"] .validation-master {margin-top: -69px;}
+	label[for="input-4"] .validation-master {margin-top: -25px;}
+
+	.validation-master {
+		* {box-sizing: border-box;}
+		
+		position: fixed;
+		top: $formTop + 5%;
+		right: -60px;
+		transition: all 1s;
+		cursor: $cursor;
+		width: 60px;
+	}
+  
+	.boxA {
+		background: rgba(0, 0, 0, 0);
+		display: inline-block;
+		transition: all 1s;
+		@include prefix('transform', 'scaleX(1.5) rotate(45deg)');
+		border-width: 0 0 2px 2px;
+		border-color: black;
+		border-style: solid;
+		position: relative;
+		left: 20px;
+		width: 15px;
+		height: 15px;
+	}
+	.boxC {
+		background-color: color(main);
+		display: inline-block;
+		position: relative;
+		left: 10px;
+		width: 6px;
+		height: 6px;
+		border-radius: 4px;
+		margin: 4.5px 0;
+		transition: all 0.3s;
+	}
+	.boxB {
+		display: inline-block;
+		background: rgba(0, 0, 0, 0);
+		position: relative;
+		right: 0;
+		@include prefix('transform', 'scaleX(1.5) rotate(45deg)');
+		border-width: 2px 2px 0 0;
+		border-color: black;
+		border-style: solid;
+		width: 15px;
+		height: 15px;
+		transition: all 1s;
+	}
+	.boxA_Error {
+		left: 30px;
+		border-color: red;
+		@include prefix('transform', 'scaleX(1) rotate(45deg)');
+	}
+	.boxB_Error {
+		right: 10px;
+		border-color: red;
+		@include prefix('transform', 'scaleX(1) rotate(45deg)');
+	}
+	.boxA_Valid {
+		animation: Valid_A;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	.boxB_Valid {
+		animation: Valid_B;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		background: rgba(0, 0, 0, 0)
+	}
+	.boxC_Valid {
+		background-color: white;
+		animation: Valid_C;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+}
+
+#error_message {
+	font-family: font(link);
+	background: color(main);
+	color: transparentize(color(text), 0.85);
+	width: $formWidth;
+	box-shadow: 0 3px 5px 1px transparentize(#000, 0.25);
+	@include prefix('transform', 'translate(-50%, -100%)');
+	pointer-events: none;
+	cursor: $cursor;
+	position: fixed;
+	top: 47%;
+	left: 45%;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding: 1rem 0;
+	letter-spacing: .13rem;
+	font-size: 1.2rem;
+}
+
+@keyframes Valid_A {
+	66% {
+		left: 23px;
+		border-width: 1px;
+		@include prefix('transform', 'scaleX(1.5) rotate(45deg)');
+	}
+	100% {
+		left: 23px;
+		border-width: 1px;
+		@include prefix('transform', 'scaleX(1) rotate(0deg) scale(1.1)');
+	}
+}
+@keyframes Valid_B {
+	66% {
+		right: 3px;
+		border-width: 0;
+	}
+	100% {
+		right: 3px;
+		border-width: 0;
+	}
+}
+@keyframes Valid_C {
+  0% {
+		width: 4px;
+  }
+	33% {
+		width: 4px;
+    height: 2px;
+	}
+	66% {
+		width: 4px;
+		height: 8px;
+	}
+	100% {
+		width: 4px;
+		height: 8px;
+		border-width: 0 1px 1px 0;
+		border-color: green;
+		border-style: solid;
+		border-radius: 0 0 1.5px 0;
+		margin: 4.5px 0;
+		@include prefix('transform', 'scale(3.8) scaleY(1.7) rotate(37deg)');
+		background-color: rgba(0, 0, 0, 0);
+		position: relative;
+		top: -20px;
+		left: 17px;
+		z-index: z(upper);
+	}
+}
+
+/*-----------------------------FORM LOGIC CHECK-BOXES-------------------------------*/
+input.validation-ex,input.validation-check {display: none;}
+/*----------------------------------------------------------------------------------*/
+@media screen and (min-width: 1200px) {
+	$largeScreenFormWidth: 50vw;
+	$largeScreenFormPosition: 55%;
+  
+  form {
+    button#formNextButton,
+    .label-text,
+    .tip,
+    .error,
+    .contact-button,
+    .contact-button-trigger,
+    input,
+    textarea,
+    button,
+    input[type='submit'] {
+      width: $largeScreenFormWidth;
+      left: $largeScreenFormPosition;
+    }
+  }
+}
+@media screen and (max-width: 831px) {
+  form {
+		input, textarea, .tip,	.error,	.label-text, 
+    .contact-button, .contact-button-trigger {left: 50%;}
+	}
+}
+@media screen and (max-width: 550px) {
+  button#formNextButton {
+    top: 75%;
+    left: 50%;
+    width: 80vw;
+    font-size: 1em;
+    line-height: 3em;
+  }
+  #SubmitingDelay {
+    left: 49%;
+    top : 42%;
+    width: 94vw;
+    
+    font-size: 1.5em;
+    text-shadow: none;
+  }
+  
+  form {
+    input,
+		textarea{
+      font-size: 1.2em;
+      line-height: 2em;
+      width: 90vw;
+      left: 50%;
+      top: 50%;
+    }
+		
+    .contact-button,
+		.contact-button-trigger {
+      font-size: 1.2em;
+      line-height: 2em;
+      width: 90vw;
+      top: 50%; 
+    }
+    .label-text {
+      top: 28%;
+      left: 38%;
+    }
+    .tip,.error {
+      top: 50%;
+      left: 50%;
+      width: 90vw;
+    }
+    .validation-master {
+      width: 60px;
+      top: 90%;
+      right: -400px;
+    }
+    label[for="input-1"] .validation-master {margin: 0 48% 0 0;}
+    label[for="input-2"] .validation-master {margin: 0 32% 0 0;}
+    label[for="input-3"] .validation-master {margin: 0 16% 0 0;}
+    label[for="input-4"] .validation-master {margin: 0;}
+  }
+}

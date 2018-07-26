@@ -1,0 +1,2930 @@
+@font-face {
+  font-family: 'MainFont';
+  src: url("../fonts/mainframe-bb.regular.ttf");
+}
+
+/* line 5, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+html {
+  background-color: #19BAEE;
+  position: relative;
+}
+
+/* line 9, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+html a {
+  color: #0b7496;
+  text-decoration: none;
+}
+
+/* line 12, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+html a:hover {
+  cursor: pointer;
+}
+
+/* line 16, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+body {
+  z-index: -10;
+  overflow-x: hidden;
+  width: 90%;
+  min-width: 310px;
+  padding: 0;
+  margin: 0 5%;
+  border-style: outset;
+  border-width: 0 2px;
+  border-color: #ccc;
+  box-shadow: 0px -10px 50px black;
+  background-color: white;
+}
+
+@media screen and (min-width: 2000px) {
+  /* line 16, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  body {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 16, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  body {
+    width: 100%;
+    border: 0;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 16, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  body {
+    width: 100vw;
+  }
+}
+
+/* line 40, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+img {
+  color: gray;
+  font-size: 10px;
+}
+
+/*Alt Text*/
+/* line 41, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+input[type='submit'] span {
+  color: white;
+}
+
+/* line 42, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.bracket {
+  color: white;
+}
+
+/* line 43, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.portfolioGroup {
+  display: block;
+}
+
+/* line 44, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.nopadding {
+  padding: 0;
+}
+
+/* line 45, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.nomargin {
+  margin: 0;
+}
+
+/* line 46, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.visible {
+  visibility: visible;
+}
+
+/* line 47, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.notvisible {
+  visibility: hidden;
+}
+
+/* line 48, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.printonly {
+  display: none;
+}
+
+/* line 49, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.noscroll {
+  overflow: hidden;
+}
+
+/* line 50, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.flip-vertical {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* line 51, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.letterpress {
+  color: transparent;
+  background-color: #000;
+  text-shadow: 0 1px 1px #FFF;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+}
+
+/* line 53, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+i.valid {
+  color: rgba(0, 255, 0, 0.4);
+}
+
+/* line 54, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+i.invalid {
+  color: rgba(255, 0, 0, 0.4);
+}
+
+/* line 56, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 0 5px 5px 8px;
+  transition: .5s ease;
+}
+
+/* line 63, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.arrow_up {
+  -webkit-transform: rotate(-136deg);
+  -moz-transform: rotate(-136deg);
+  -ms-transform: rotate(-136deg);
+  -o-transform: rotate(-136deg);
+  transform: rotate(-136deg);
+}
+
+/* line 64, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.arrow_down {
+  -webkit-transform: rotate(  45deg);
+  -moz-transform: rotate(  45deg);
+  -ms-transform: rotate(  45deg);
+  -o-transform: rotate(  45deg);
+  transform: rotate(  45deg);
+}
+
+/* line 68, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div hr {
+  clear: both;
+  border-color: #414244;
+}
+
+/* line 79, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.clearfix::after,
+body::after,
+header::after,
+main::after,
+article::after,
+section::after,
+footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 88, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* line 93, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.scrollbar::-webkit-scrollbar {
+  margin: 0 10px;
+  width: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/* line 99, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0ae;
+  background: -webkit-linear-gradient(left, #19BAEE 0%, #207cca 50%, #19BAEE 100%);
+}
+
+/* line 106, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#logoImg {
+  max-width: 300px;
+  width: 40%;
+  margin: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 106, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #logoImg {
+    display: block;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+}
+
+/* line 121, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading {
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 4001;
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 121, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #loading {
+    width: 100%;
+  }
+}
+
+/* line 132, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading #poof {
+  animation: a-h 0.5s 1.25s 1 linear forwards, a-nt 0.6s 1.25s 1 cubic-bezier(0, 0, 0.2, 1);
+  background: #eee;
+  border-radius: 25%;
+  height: 800px;
+  left: 50%;
+  margin: -415px -400px 0;
+  position: absolute;
+  top: 50%;
+  transform: scale(0);
+  width: 800px;
+}
+
+/* line 144, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading main {
+  height: 100%;
+  transition: all 1.5s ease-in;
+}
+
+/* line 148, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading #animation {
+  animation: a-s 0.5s 0.5s 1 linear forwards, a-e 1.75s 0.5s 1 cubic-bezier(0, 0, 0.67, 1) forwards;
+  opacity: 0;
+  transform: scale(0.68);
+  margin: 0 auto;
+  background-color: white;
+}
+
+/* line 155, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading div.spacer {
+  height: 450px;
+  margin-bottom: -140px;
+  transition: all 1.5s ease-in;
+}
+
+/* line 160, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading progress {
+  width: 90%;
+  margin: 30% auto;
+  height: 2em;
+  transition: all ease;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  color: #19BAEE;
+  animation: a-s .5s 1.25s 1 forwards;
+  margin: 10px auto 20px;
+  opacity: 0;
+  position: relative;
+}
+
+/* line 169, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* line 174, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading progress::-moz-progress-bar {
+  background: #19BAEE;
+}
+
+/* line 175, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading progress::-webkit-progress-value {
+  background: #19BAEE;
+}
+
+/* line 184, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 120px;
+  height: 250px;
+  margin: 0 2px;
+}
+
+/* line 191, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article > * {
+  pointer-events: none;
+}
+
+/* line 194, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#left-bracket {
+  width: 100px;
+}
+
+/* line 196, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#left-bracket .black, #loading article#left-bracket .cover {
+  height: 130px;
+  width: 130px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform-origin: top left;
+  transform: rotate(-45deg);
+}
+
+/* line 209, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#left-bracket .black {
+  background-color: lightgray;
+}
+
+/* line 210, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#left-bracket .cover {
+  background-color: white;
+  left: 15px;
+}
+
+/* line 215, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#right-bracket {
+  width: 100px;
+}
+
+/* line 217, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#right-bracket .black, #loading article#right-bracket .cover {
+  height: 130px;
+  width: 130px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform-origin: top right;
+  transform: rotate(45deg);
+}
+
+/* line 231, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#right-bracket .black {
+  background-color: lightgray;
+}
+
+/* line 232, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#right-bracket .cover {
+  background-color: white;
+  right: 15px;
+}
+
+/* line 239, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#left-bracket section,
+#loading article#right-bracket section {
+  height: 0px;
+  width: 0px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  animation: a-gc 3s 1.5s 1 forwards;
+}
+
+/* line 250, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#left-bracket section {
+  top: calc(50% - 120px);
+  left: calc(50% - 120px);
+}
+
+/* line 254, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#right-bracket section {
+  top: calc(50% - 120px);
+  right: calc(50% - 120px);
+}
+
+/* line 260, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#B {
+  height: 190px;
+  top: -30px;
+  background-color: lightgrey;
+}
+
+/* line 265, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#B div {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+/* line 274, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#B div:nth-of-type(1) {
+  top: -30px;
+  right: -30px;
+}
+
+/* line 278, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#B div:nth-of-type(2) {
+  top: 35%;
+  right: -45px;
+}
+
+/* line 282, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#B div:nth-of-type(3) {
+  bottom: -30px;
+  right: -30px;
+}
+
+/* line 287, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R {
+  height: 190px;
+  top: -30px;
+  background-color: lightgrey;
+}
+
+/* line 292, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R div {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+/* line 301, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R div:nth-of-type(1) {
+  top: -30px;
+  right: -30px;
+}
+
+/* line 305, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R div:nth-of-type(2) {
+  top: 35%;
+  right: -45px;
+}
+
+/* line 309, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R div:nth-of-type(3) {
+  transform: rotate(0deg);
+  width: 35px;
+  height: 62px;
+  bottom: 0;
+  left: 36%;
+}
+
+/* line 316, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R div:nth-of-type(4) {
+  transform-origin: top left;
+  height: 20px;
+  width: 20px;
+  top: 60%;
+  left: 64px;
+}
+
+/* line 324, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R div:nth-of-type(5) {
+  transform: rotate(0);
+  height: 20px;
+  width: 21px;
+  top: 112.9px;
+  left: 43px;
+}
+
+/* line 335, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#B section,
+#loading article#R section {
+  height: 300px;
+  width: 600px;
+  background-color: #19BAEE;
+  position: absolute;
+  top: 0;
+  left: 500px;
+  transform-origin: left 50%;
+  animation: a-grA 3s 1 ease forwards;
+}
+
+/* line 349, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading article#R section {
+  animation-name: a-grB;
+}
+
+/* line 351, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading .msg {
+  color: #757575;
+  font-size: 20px;
+  letter-spacing: .2px;
+  line-height: 20px;
+  text-align: center;
+  animation: a-s .25s 1.25s 1 forwards;
+  opacity: 0;
+}
+
+/* line 362, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate {
+  position: absolute;
+  transition: background-color 1s ease;
+  animation: a-fp 3s 1.5s 1 forwards;
+  background-color: transparent;
+  transform-origin: top left;
+}
+
+/* line 370, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate progress {
+  display: none;
+}
+
+/* line 371, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate .msg {
+  display: none;
+}
+
+/* line 372, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate main {
+  width: 465px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* line 376, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate main article {
+  cursor: pointer;
+}
+
+/* line 378, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate .spacer {
+  height: 0;
+  margin-bottom: 0;
+}
+
+/* line 379, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate #left-bracket {
+  background-color: transparent;
+}
+
+/* line 380, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#loading.translate #right-bracket {
+  background-color: transparent;
+}
+
+@keyframes a-fp {
+  10% {
+    height: 250px;
+    transform: scale(0.7);
+  }
+  100% {
+    height: 250px;
+    width: 500px;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes a-gc {
+  100% {
+    height: 240px;
+    width: 240px;
+  }
+}
+
+@keyframes a-grA {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes a-grB {
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes a-nt {
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes a-h {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes a-s {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes a-e {
+  43% {
+    animation-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    transform: scale(0.75);
+  }
+  60% {
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateY(-16px);
+  }
+  77% {
+    animation-timing-function: cubic-bezier(0.16, 0, 0.2, 1);
+    transform: none;
+  }
+  89% {
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* line 444, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+header {
+  height: 175px;
+}
+
+/* line 445, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav {
+  float: right;
+  top: 5px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 445, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav {
+    float: none;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 445, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav {
+    text-align: center;
+    float: none;
+  }
+}
+
+/* line 462, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav ul {
+  margin-top: 10px;
+  padding: 0;
+}
+
+/* line 463, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li {
+  display: inline-block;
+  list-style-type: none;
+  vertical-align: top;
+  text-align: center;
+}
+
+/* line 469, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li a {
+  display: block;
+  position: relative;
+  color: #0b7496;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* line 478, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li a i {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* line 480, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li a .nav-link {
+  width: 75px;
+  height: 30px;
+  line-height: 30px;
+  font-family: "Orbitron";
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 480, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav li a .nav-link {
+    padding: 0;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 auto;
+  }
+}
+
+/* line 496, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li a span {
+  display: block;
+  position: relative;
+  opacity: 0;
+  width: 150%;
+  bottom: 18px;
+  margin-left: -25%;
+  color: black;
+  font-family: MainFont;
+  font-size: 9px;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 496, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav li a span {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+/* line 518, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li a:hover i {
+  opacity: 0;
+}
+
+/* line 519, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li a:hover span {
+  opacity: 1;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 521, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav li a:hover i {
+    opacity: 1;
+  }
+  /* line 522, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav li a:hover span {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
+/* line 529, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li .active, nav li a:hover {
+  color: black;
+}
+
+/* line 532, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li #dropdown {
+  position: relative;
+}
+
+/* line 533, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+nav li #dropdownContent {
+  display: none;
+  position: absolute;
+  width: auto;
+  margin-top: -1.6px;
+  margin-left: -8px;
+  color: #0b7496;
+  background-color: white;
+  font-family: "Orbitron";
+  z-index: 1000;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 533, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav li #dropdownContent {
+    width: 1300%;
+    left: -600%;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    margin-top: 2px;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 552, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  nav li #dropdownContent a {
+    margin-top: 10px;
+  }
+}
+
+/* line 561, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img {
+  position: relative;
+  float: right;
+  margin: 10px;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 561, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img {
+    float: left;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 561, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img {
+    float: none;
+    text-align: center;
+  }
+}
+
+/* line 574, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img p {
+  font-family: "Raleway";
+  text-align: right;
+  font-size: 1.1em;
+  float: left;
+  width: 300px;
+  bottom: 0;
+  position: absolute;
+  margin-left: -315px;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 574, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img p {
+    float: right;
+    margin-left: 215px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 574, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img p {
+    border-top: 2px solid black;
+    text-align: center;
+    font-size: 1em;
+    float: none;
+    position: relative;
+    width: 100%;
+    padding: 8px 0;
+    margin: 0 auto;
+  }
+}
+
+/* line 600, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img p strong {
+  font-family: MainFont;
+  color: #0b7496;
+}
+
+/* line 604, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img p span {
+  width: 500px;
+  font-style: italic;
+  font-size: 0.8em;
+  float: right;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 604, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img p span {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 604, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img p span {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+/* line 615, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img p:first-child {
+  bottom: 50px;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 615, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img p:first-child {
+    bottom: 0;
+  }
+}
+
+/* line 620, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img img[class^='portrait_img'] {
+  border: 2px black solid;
+  filter: grayscale(100%);
+}
+
+@media screen and (max-width: 831px) {
+  /* line 620, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img img[class^='portrait_img'] {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+/* line 628, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img img[class^='portrait_img'][class$='-small'] {
+  display: none;
+  width: 200px;
+  height: auto;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 628, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img img[class^='portrait_img'][class$='-small'] {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 628, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img img[class^='portrait_img'][class$='-small'] {
+    position: relative;
+    bottom: 0;
+  }
+}
+
+/* line 638, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+aside.portrait_img img[class^='portrait_img'][class$='-large'] {
+  width: 320px;
+  height: 400px;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 638, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  aside.portrait_img img[class^='portrait_img'][class$='-large'] {
+    display: none;
+  }
+}
+
+/* line 646, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#homepageGet {
+  font-family: MainFont;
+  font-size: 3em;
+  margin: 120px auto 0;
+  max-width: 1000px;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
+@media screen and (min-width: 2000px) {
+  /* line 646, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #homepageGet {
+    max-width: 1200px;
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 646, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #homepageGet {
+    position: relative;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    transform: rotate(20deg);
+    margin-top: 3em;
+    padding: 0;
+    width: 90%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 646, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #homepageGet {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    width: calc(100% - 50px);
+    padding: 0 25px;
+    font-size: 2em;
+    margin-top: 0;
+  }
+}
+
+/*-------------------------------------- CALL TO ACTIONS -----------------------------------------*/
+/* line 676, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction {
+  text-align: center;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  margin: 4% 0;
+}
+
+/* line 684, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  font-family: MainFont;
+  outline: none !important;
+  background: transparent;
+  border: 2px solid #19BAEE;
+  text-decoration: none;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  height: 50px;
+  width: 250px;
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/*=================================SHUTTER===================================*/
+/* line 708, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.shutter button::before, .callToAction.shutter button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  z-index: -1;
+  -webkit-transform: translate3D(-50%,0,0) rotate(-50deg);
+  -moz-transform: translate3D(-50%,0,0) rotate(-50deg);
+  -ms-transform: translate3D(-50%,0,0) rotate(-50deg);
+  -o-transform: translate3D(-50%,0,0) rotate(-50deg);
+  transform: translate3D(-50%,0,0) rotate(-50deg);
+  background: rgba(25, 186, 238, 0.5);
+  transform-origin: 0 bottom;
+  transition: all .25s;
+}
+
+/* line 726, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.shutter button::before {
+  background: #17b9ee;
+  transition-delay: .25s;
+  opacity: .4;
+  z-index: -2;
+}
+
+/* line 733, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.shutter button:hover {
+  color: white;
+  border-color: black;
+}
+
+/* line 737, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.shutter button:hover::before, .callToAction.shutter button:hover::after {
+  -webkit-transform: translate3D(-50%,0,0) rotate(0deg);
+  -moz-transform: translate3D(-50%,0,0) rotate(0deg);
+  -ms-transform: translate3D(-50%,0,0) rotate(0deg);
+  -o-transform: translate3D(-50%,0,0) rotate(0deg);
+  transform: translate3D(-50%,0,0) rotate(0deg);
+}
+
+/*=================================UNDERLINE=================================*/
+/* line 741, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button {
+  overflow: visible;
+}
+
+/* line 743, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button::before, .callToAction.underline button::after {
+  position: absolute;
+  content: ' ';
+  z-index: -1;
+  width: 10%;
+  top: 50%;
+  height: 2px;
+  background: #19BAEE;
+  transition: all 0.3s ease;
+}
+
+/* line 754, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button::before {
+  left: -10%;
+}
+
+/* line 755, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button::after {
+  right: -10%;
+}
+
+/* line 757, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button:hover {
+  font-size: 1.1rem;
+}
+
+/* line 758, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button:hover::before, .callToAction.underline button:hover::after {
+  width: 40%;
+  top: 75%;
+}
+
+/* line 763, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button:hover::before {
+  left: 10%;
+}
+
+/* line 764, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.underline button:hover::after {
+  right: 10%;
+}
+
+/*=================================CURTAIN===================================*/
+/* line 768, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.curtain button::before, .callToAction.curtain button::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #19BAEE;
+  transition: all .5s ease;
+}
+
+/* line 781, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.curtain button::before {
+  left: -50%;
+}
+
+/* line 782, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.curtain button::after {
+  right: -50%;
+}
+
+/* line 784, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.curtain button:hover {
+  color: white;
+  border-color: black;
+}
+
+/* line 788, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.curtain button:hover::before {
+  left: 50%;
+}
+
+/* line 789, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.curtain button:hover::after {
+  right: 50%;
+}
+
+/*=================================SPIN======================================*/
+/* line 793, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.spin button::before, .callToAction.spin button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  z-index: -1;
+  background: rgba(25, 186, 238, 0.5);
+  transform-origin: 0 bottom;
+  transition: all .5s ease;
+}
+
+/* line 810, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.spin button::before {
+  -webkit-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  -moz-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  -ms-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  -o-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  transform: translate3D(-75%,    0,0) rotate(-50deg);
+}
+
+/* line 811, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.spin button::after {
+  -webkit-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  -moz-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  -ms-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  -o-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  transform: translate3D(125%,-100%,0) rotate( 50deg);
+}
+
+/* line 813, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.spin button:hover {
+  color: white;
+  border-color: black;
+}
+
+/* line 817, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.spin button:hover::before {
+  -webkit-transform: translate3D(-75%,    0,0) rotate(  0deg);
+  -moz-transform: translate3D(-75%,    0,0) rotate(  0deg);
+  -ms-transform: translate3D(-75%,    0,0) rotate(  0deg);
+  -o-transform: translate3D(-75%,    0,0) rotate(  0deg);
+  transform: translate3D(-75%,    0,0) rotate(  0deg);
+}
+
+/* line 818, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.spin button:hover::after {
+  -webkit-transform: translate3D(125%,-100%,0) rotate(180deg);
+  -moz-transform: translate3D(125%,-100%,0) rotate(180deg);
+  -ms-transform: translate3D(125%,-100%,0) rotate(180deg);
+  -o-transform: translate3D(125%,-100%,0) rotate(180deg);
+  transform: translate3D(125%,-100%,0) rotate(180deg);
+}
+
+/*=================================CUT=======================================*/
+/* line 821, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button {
+  color: white;
+}
+
+/* line 824, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button::before, .callToAction.cut button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 110%;
+  width: 200%;
+  z-index: -1;
+  background: rgba(25, 186, 238, 0.8);
+  transform-origin: 0 bottom;
+  transition: all 2s ease;
+}
+
+/* line 842, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button::before {
+  -webkit-transform: translate3D( -25%, -46%,0) rotate( 11deg);
+  -moz-transform: translate3D( -25%, -46%,0) rotate( 11deg);
+  -ms-transform: translate3D( -25%, -46%,0) rotate( 11deg);
+  -o-transform: translate3D( -25%, -46%,0) rotate( 11deg);
+  transform: translate3D( -25%, -46%,0) rotate( 11deg);
+}
+
+/* line 843, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button::after {
+  -webkit-transform: translate3D(  75%, -60%,0) rotate(191deg);
+  -moz-transform: translate3D(  75%, -60%,0) rotate(191deg);
+  -ms-transform: translate3D(  75%, -60%,0) rotate(191deg);
+  -o-transform: translate3D(  75%, -60%,0) rotate(191deg);
+  transform: translate3D(  75%, -60%,0) rotate(191deg);
+}
+
+/* line 845, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button:hover {
+  color: black;
+  border-color: black;
+}
+
+/* line 849, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button:hover::before {
+  -webkit-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  -moz-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  -ms-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  -o-transform: translate3D(-75%,    0,0) rotate(-50deg);
+  transform: translate3D(-75%,    0,0) rotate(-50deg);
+}
+
+/* line 850, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.cut button:hover::after {
+  -webkit-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  -moz-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  -ms-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  -o-transform: translate3D(125%,-100%,0) rotate( 50deg);
+  transform: translate3D(125%,-100%,0) rotate( 50deg);
+}
+
+/*=================================GROW======================================*/
+/* line 853, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button {
+  overflow: visible;
+  box-shadow: 0 0 5px black;
+  text-shadow: 2px 4px 3px rgba(25, 186, 238, 0.6);
+  border-color: black;
+}
+
+/* line 859, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button::before, .callToAction.grow button::after {
+  position: absolute;
+  content: ' ';
+  z-index: -1;
+  width: 10%;
+  top: 50%;
+  height: 2px;
+  background: black;
+  transition: all .5s ease;
+}
+
+/* line 870, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button::before {
+  left: -10%;
+}
+
+/* line 871, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button::after {
+  right: -10%;
+}
+
+/* line 873, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button:hover {
+  font-size: .9rem;
+  box-shadow: none;
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.7);
+  border-color: #0b7496;
+  background-color: rgba(25, 186, 238, 0.7);
+  -webkit-transform: scaleX(1.7) scaleY(1.5);
+  -moz-transform: scaleX(1.7) scaleY(1.5);
+  -ms-transform: scaleX(1.7) scaleY(1.5);
+  -o-transform: scaleX(1.7) scaleY(1.5);
+  transform: scaleX(1.7) scaleY(1.5);
+}
+
+/* line 882, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button:hover::before, .callToAction.grow button:hover::after {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  background: #0b7496;
+  width: 10%;
+  top: 50%;
+}
+
+/* line 889, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button:hover::before {
+  left: 5%;
+}
+
+/* line 890, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.grow button:hover::after {
+  right: 5%;
+}
+
+/*=================================BOUNCE====================================*/
+/* line 894, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.bounce button::before, .callToAction.bounce button::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #19BAEE;
+  transition: all 2s cubic-bezier(0.41, 1.37, 0.02, -0.03);
+}
+
+/* line 907, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.bounce button::before {
+  left: -50%;
+}
+
+/* line 908, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.bounce button::after {
+  right: -50%;
+}
+
+/* line 910, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.bounce button:hover {
+  color: #19BAEE;
+  border-color: black;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 915, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.bounce button:hover::before {
+  left: 150%;
+}
+
+/* line 916, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.callToAction.bounce button:hover::after {
+  right: 150%;
+}
+
+/*-------------------------------------- CALL TO ACTIONS -----------------------------------------*/
+/* line 922, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer {
+  display: block;
+  position: relative;
+  width: 100vw;
+  left: -5.7%;
+  bottom: -2px;
+  text-align: right;
+  background: -webkit-linear-gradient( #0b7496  70%, black);
+  background: -moz-linear-gradient( #0b7496  70%, black);
+  background: -ms-linear-gradient( #0b7496  70%, black);
+  background: -o-linear-gradient( #0b7496  70%, black);
+  background: linear-gradient( #0b7496  70%, black);
+}
+
+@media screen and (min-width: 2000px) {
+  /* line 922, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 922, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer {
+    left: 0;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 922, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer {
+    font-size: 15px;
+  }
+}
+
+/* line 940, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio {
+  text-align: left;
+}
+
+/* line 942, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio div {
+  display: inline-block;
+  position: relative;
+  vertical-align: text-top;
+  margin: 4px 0;
+  font-family: "Raleway";
+  color: #fff;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 942, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div {
+    height: auto;
+  }
+}
+
+/* line 951, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio div.text {
+  padding-left: 1rem;
+  width: 30%;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 951, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div.text {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+/* line 962, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio div.stats {
+  text-align: center;
+  width: 65%;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 962, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div.stats {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* line 971, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio div.stats div {
+  width: 30%;
+  padding: 2px 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 971, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div.stats div {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 971, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div.stats div {
+    width: auto;
+    display: block;
+    max-width: none;
+    padding: 0;
+    border-width: 0 2px;
+    border-color: black;
+    border-style: solid;
+  }
+}
+
+/* line 985, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio div.stats div:nth-of-type(2) {
+  border-width: 0 2px;
+  border-style: solid;
+  border-color: black;
+}
+
+/* line 990, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.bio div.stats div span {
+  font-family: MainFont;
+  font-size: 5rem;
+  color: transparent;
+  background-color: white;
+  text-shadow: 0 3px 3px rgba(25, 186, 238, 0.3);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 990, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div.stats div span {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 990, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.bio div.stats div span {
+    font-size: 4rem;
+  }
+}
+
+/* line 1003, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.sub {
+  font-family: "Raleway";
+  color: white;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1003, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.sub {
+    padding-top: 1rem;
+  }
+}
+
+/* line 1010, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.sub span {
+  padding: 2px 5px;
+}
+
+/* line 1012, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.sub span.copywrite {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: "Orbitron";
+  letter-spacing: 1.5px;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 1012, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  footer div.sub span.copywrite {
+    font-size: 0.5rem;
+  }
+}
+
+/* line 1021, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+footer div.sub span.compatibility {
+  font-size: 1rem;
+}
+
+/* line 1027, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar {
+  text-align: right;
+  height: 75px;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1027, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar {
+    height: auto;
+    text-align: center;
+  }
+}
+
+/* line 1035, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar p.title {
+  /*BRADLEY ROUNDS*/
+  font-family: MainFont;
+  font-size: 44px;
+  text-align: left;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1035, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar p.title {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+/* line 1046, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.desc {
+  font-family: "Raleway";
+  font-size: 15px;
+  text-indent: 1rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1046, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.desc {
+    text-indent: 0;
+    text-align: center;
+  }
+}
+
+/* line 1057, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.desc span:not(:last-of-type)::after {
+  display: inline;
+  content: ' - ';
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1056, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.desc span {
+    display: block;
+    text-align: center;
+  }
+  /* line 1064, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.desc span::after {
+    content: '';
+  }
+  /* line 1065, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.desc span:not(:last-of-type)::after {
+    content: '';
+  }
+}
+
+/* line 1069, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight {
+  font-family: "Raleway";
+  vertical-align: middle;
+  text-align: left;
+  display: inline-block;
+  width: 222px;
+  padding: 0 10px 0 4px;
+  margin: 0 11%;
+  position: relative;
+  top: -60px;
+  background-color: white;
+  border-left: 1px grey solid;
+  border-right: 1px grey solid;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1069, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.contactRight {
+    text-align: center;
+    background-color: transparent;
+    margin: 0;
+    margin-top: 15px;
+    float: none;
+    top: auto;
+    border: 0;
+    padding: 0;
+  }
+}
+
+/* line 1093, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight p {
+  display: inline;
+  font-size: 15px;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1098, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.contactRight div {
+    display: inline-block;
+    border: 0;
+    padding: 0 5px 0 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 1104, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.contactRight div::after {
+    display: block;
+  }
+}
+
+/* line 1106, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia {
+  margin: 5px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1106, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.contactRight section#socialMedia {
+    margin: 15px 0 0 0;
+  }
+}
+
+/* line 1111, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia a i {
+  margin: 0 2.5px;
+}
+
+/* line 1112, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 1115, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltip:hover + .shareTooltipText {
+  opacity: 1;
+}
+
+/* line 1117, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText {
+  display: block;
+  width: 175px;
+  position: absolute;
+  top: 102%;
+  left: 50%;
+  margin-left: -90px;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0;
+  background-color: #0b7496;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  transition: .5s opacity;
+}
+
+/* line 1136, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #0b7496 transparent;
+}
+
+/* line 1150, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText:nth-of-type(1)::after {
+  left: 9%;
+}
+
+/* line 1150, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText:nth-of-type(2)::after {
+  left: 25%;
+}
+
+/* line 1150, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText:nth-of-type(3)::after {
+  left: 42%;
+}
+
+/* line 1150, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText:nth-of-type(4)::after {
+  left: 58%;
+}
+
+/* line 1150, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText:nth-of-type(5)::after {
+  left: 74%;
+}
+
+/* line 1150, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia .shareTooltipText:nth-of-type(6)::after {
+  left: 91%;
+}
+
+/* line 1154, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia #sharePopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4001;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  border: 2px black dotted;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 1168, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia #sharePopup div {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1168, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  div.contactBar div.contactRight section#socialMedia #sharePopup div {
+    margin-top: 125px;
+  }
+}
+
+/* line 1172, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia #sharePopup a {
+  display: inline-block;
+}
+
+/* line 1174, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia #sharePopup a img {
+  width: 128px;
+  height: 128px;
+  vertical-align: middle;
+  margin: 2px;
+}
+
+/* line 1181, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
+  color: white;
+  position: absolute;
+  right: 25px;
+  font-size: 8em;
+  line-height: 80px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/* line 1196, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume article {
+  width: 56%;
+  float: left;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1196, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article {
+    float: none;
+    width: 90%;
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1196, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article {
+    text-align: left;
+    position: relative;
+    top: auto;
+  }
+}
+
+/* line 1212, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume article h1:first-child {
+  margin-top: 0;
+}
+
+/* line 1214, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume article h1.collapsible i {
+  display: none;
+}
+
+/* line 1215, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume article h1.collapsible + div {
+  display: block;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 1213, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1.collapsible {
+    cursor: pointer;
+  }
+  /* line 1219, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1.collapsible i {
+    display: inline-block;
+  }
+  /* line 1220, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1.collapsible + div {
+    display: none;
+  }
+  /* line 1221, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1.collapsible:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1211, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1 {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1211, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1 {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 1211, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume article h1 {
+    padding: 5px;
+    background-color: #cccccc;
+    transition-delay: 1s;
+    transition-timing-function: ease-in;
+  }
+}
+
+/* line 1234, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume aside {
+  position: relative;
+  float: right;
+  margin-right: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1234, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume aside {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 81%;
+    text-align: center;
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1247, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume aside div {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1250, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume div[id$="Section"] {
+    margin-left: 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1250, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume div[id$="Section"] {
+    margin-left: 25px;
+  }
+}
+
+/* line 1255, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #aboutSection {
+  font-family: "Raleway";
+}
+
+/* line 1257, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #aboutSection p {
+  text-indent: 1em;
+  font-size: .9em;
+}
+
+/* line 1262, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #degreeSection {
+  font-family: "Raleway";
+  transition: opacity 1s ease;
+}
+
+/* line 1264, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #degreeSection :not(span) {
+  font-size: .9em;
+}
+
+/* line 1267, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #degreeSection span:first-child {
+  font-weight: 900;
+  color: black;
+}
+
+/* line 1271, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #degreeSection span:nth-child(2) {
+  display: block;
+  text-indent: 2em;
+}
+
+/* line 1277, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #workSection {
+  letter-spacing: 1px;
+  font-family: "Raleway";
+  transition: opacity 1s ease;
+}
+
+/* line 1278, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #workSection :not(span) {
+  font-size: .9em;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1277, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #workSection {
+    text-indent: 0;
+  }
+}
+
+/* line 1284, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #workSection p span {
+  font-size: 1.1em;
+  font-weight: 900;
+  color: black;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1289, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #workSection p span:first-child::after {
+    content: ' ';
+    display: block;
+  }
+}
+
+/* line 1295, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #workSection ul {
+  padding: 0;
+}
+
+/* line 1296, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #workSection ul li {
+  list-style-type: none;
+  margin-left: 2em;
+}
+
+/* line 1300, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #workSection ul li span {
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+/* line 1305, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #achievementSection {
+  font-family: "Raleway";
+  font-size: .9em;
+  transition: opacity 1s ease;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1309, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #achievementSection ul {
+    margin-left: 0;
+  }
+}
+
+/* line 1312, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #achievementSection ul li {
+  list-style-type: none;
+}
+
+/* line 1314, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #achievementSection ul li span {
+  font-size: .8em;
+}
+
+/* line 1318, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #certificationsSection {
+  font-size: .9em;
+  font-family: "Raleway";
+}
+
+/* line 1321, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #certificationsSection i.fa-caret-square-o-right {
+  margin-right: 3px;
+}
+
+/* line 1322, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #certificationsSection ul li span {
+  text-decoration: underline;
+}
+
+/* line 1324, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection {
+  text-align: left;
+  font-family: "Raleway";
+}
+
+/* line 1328, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #languagesSection {
+  text-align: left;
+  font-family: "Raleway";
+}
+
+/* line 1331, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #languagesSection tbody:first-child td:nth-child(1) {
+  width: 40px;
+}
+
+/* line 1332, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #languagesSection tbody:first-child td:nth-child(2) {
+  width: 133px;
+}
+
+/* line 1333, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #languagesSection tr td:nth-of-type(3n) {
+  width: 80px;
+  text-align: center;
+}
+
+/* line 1338, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #programSection {
+  text-align: left;
+  font-family: "Raleway";
+}
+
+/* line 1341, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #programSection span:not(:first-child) {
+  text-align: right;
+}
+
+/* line 1342, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #programSection tr td:nth-of-type(1) {
+  text-align: left;
+}
+
+/* line 1343, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #programSection tr td:nth-of-type(3n) {
+  width: 80px;
+  text-align: center;
+}
+
+/* line 1348, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection, #resume #languagesSection, #resume #programSection {
+  margin-left: 0;
+}
+
+/* line 1350, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection h1, #resume #languagesSection h1, #resume #programSection h1 {
+  line-height: 1em;
+  border-bottom: 2px solid black;
+}
+
+/* line 1355, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(1), #resume #languagesSection tr td:nth-of-type(1), #resume #programSection tr td:nth-of-type(1) {
+  width: 40px;
+}
+
+/* line 1356, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(2), #resume #languagesSection tr td:nth-of-type(2), #resume #programSection tr td:nth-of-type(2) {
+  width: 180px;
+  font-weight: 700;
+}
+
+/* line 1360, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(3), #resume #languagesSection tr td:nth-of-type(3), #resume #programSection tr td:nth-of-type(3) {
+  width: 74px;
+}
+
+/* line 1363, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(3) span, #resume #languagesSection tr td:nth-of-type(3) span, #resume #programSection tr td:nth-of-type(3) span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  line-height: 0;
+  border-color: #0b7496;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+/* line 1376, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(3) span.-o, #resume #languagesSection tr td:nth-of-type(3) span.-o, #resume #programSection tr td:nth-of-type(3) span.-o {
+  background-color: white;
+}
+
+/* line 1377, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(3) span.-c, #resume #languagesSection tr td:nth-of-type(3) span.-c, #resume #programSection tr td:nth-of-type(3) span.-c {
+  background-color: #0b7496;
+}
+
+/* line 1378, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr td:nth-of-type(3) span:not(:last-of-type), #resume #languagesSection tr td:nth-of-type(3) span:not(:last-of-type), #resume #programSection tr td:nth-of-type(3) span:not(:last-of-type) {
+  margin-right: 1px;
+}
+
+/* line 1383, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr.indented td:nth-of-type(1)::before, #resume #languagesSection tr.indented td:nth-of-type(1)::before, #resume #programSection tr.indented td:nth-of-type(1)::before {
+  content: '\00a0\00a0\00a0\00a0';
+}
+
+/* line 1384, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #skillSection tr.indented td:nth-of-type(2), #resume #languagesSection tr.indented td:nth-of-type(2), #resume #programSection tr.indented td:nth-of-type(2) {
+  font-size: 0.9rem;
+  font-weight: 100;
+  padding-left: 10px;
+}
+
+/* line 1391, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #hobbieSection {
+  font-family: "Raleway";
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1391, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #hobbieSection {
+    margin-left: 10px;
+  }
+}
+
+/* line 1395, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #hobbieSection div {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1395, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #hobbieSection div {
+    margin: 0;
+    margin-top: 15px;
+  }
+}
+
+/* line 1404, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #hobbieSection div h4 {
+  text-align: center;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1404, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #hobbieSection div h4 {
+    width: 90px;
+  }
+}
+
+/* line 1409, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #hobbieSection div div {
+  font-size: 4rem;
+  line-height: 2rem;
+  margin: 0 10px;
+  padding: 10px;
+  display: inline-block;
+  border: #19BAEE 4px double;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1409, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #hobbieSection div div {
+    margin: 0 auto;
+    font-size: 3rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1391, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #hobbieSection {
+    text-align: center;
+  }
+}
+
+/* line 1428, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #mapSection ul {
+  font-family: "Raleway";
+  padding-left: 15px;
+}
+
+/* line 1431, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #mapSection ul li span {
+  font-weight: 700;
+}
+
+/* line 1433, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #mapSection div {
+  background-repeat: no-repeat;
+  background-image: url("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAE0mz1ppVHe3gW0d0gIAEBWVz0A8RkZ1k&center=Kansas&zoom=4&format=png&size=640x640&maptype=roadmap&markers=color:red|Boulder,CO&style=feature:administrative|element:geometry|lightness:30|weight:1.5&style=feature:administrative|element:labels|lightness:100|visibility:simplified&style=feature:administrative.land_parcel|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:simplified&style=feature:administrative.neighborhood|element:labels|visibility:off&style=feature:landscape|color:0x19baee&style=feature:landscape.man_made|saturation:-65&style=feature:poi|visibility:off&style=feature:poi|element:labels|visibility:off&style=feature:road|color:0xffffff|lightness:25|visibility:off&style=feature:road|element:labels.icon|visibility:off&style=feature:road|element:labels.text|visibility:simplified&style=feature:road|element:labels.text.stroke|visibility:off&style=feature:road.local|lightness:55&style=feature:road.local|element:labels|visibility:off&style=feature:transit|visibility:off&style=feature:water|lightness:-30|visibility:simplified&style=feature:water|element:labels.icon|visibility:off");
+  width: 640px;
+  height: 640px;
+  margin: 20px auto;
+  display: block;
+  border: 2px solid black;
+  position: relative;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1433, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #mapSection div {
+    background-image: url("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAE0mz1ppVHe3gW0d0gIAEBWVz0A8RkZ1k&center=Kansas&zoom=4&format=png&size=440x440&maptype=roadmap&markers=color:red|Boulder,CO&style=feature:administrative|element:geometry|lightness:30|weight:1.5&style=feature:administrative|element:labels|lightness:100|visibility:simplified&style=feature:administrative.land_parcel|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:simplified&style=feature:administrative.neighborhood|element:labels|visibility:off&style=feature:landscape|color:0x19baee&style=feature:landscape.man_made|saturation:-65&style=feature:poi|visibility:off&style=feature:poi|element:labels|visibility:off&style=feature:road|color:0xffffff|lightness:25|visibility:off&style=feature:road|element:labels.icon|visibility:off&style=feature:road|element:labels.text|visibility:simplified&style=feature:road|element:labels.text.stroke|visibility:off&style=feature:road.local|lightness:55&style=feature:road.local|element:labels|visibility:off&style=feature:transit|visibility:off&style=feature:water|lightness:-30|visibility:simplified&style=feature:water|element:labels.icon|visibility:off");
+    width: 440px;
+    height: 440px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 1433, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #resume #mapSection div {
+    background-image: url("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAE0mz1ppVHe3gW0d0gIAEBWVz0A8RkZ1k&center=Kansas&zoom=3&format=png&size=300x300&maptype=roadmap&markers=color:red|Boulder,CO&style=feature:administrative|element:geometry|lightness:30|weight:1.5&style=feature:administrative|element:labels|lightness:100|visibility:simplified&style=feature:administrative.land_parcel|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:simplified&style=feature:administrative.neighborhood|element:labels|visibility:off&style=feature:landscape|color:0x19baee&style=feature:landscape.man_made|saturation:-65&style=feature:poi|visibility:off&style=feature:poi|element:labels|visibility:off&style=feature:road|color:0xffffff|lightness:25|visibility:off&style=feature:road|element:labels.icon|visibility:off&style=feature:road|element:labels.text|visibility:simplified&style=feature:road|element:labels.text.stroke|visibility:off&style=feature:road.local|lightness:55&style=feature:road.local|element:labels|visibility:off&style=feature:transit|visibility:off&style=feature:water|lightness:-30|visibility:simplified&style=feature:water|element:labels.icon|visibility:off");
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* line 1463, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#resume #mapSection div.mapoverlay::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  background: radial-gradient(ellipse at center, rgba(30, 87, 153, 0) 0%, rgba(27, 153, 210, 0) 67%, #19baee 100%);
+}
+
+/* line 1483, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#gallery {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 1483, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #gallery {
+    width: 95%;
+  }
+}
+
+/* line 1489, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#gallery p#page_desc {
+  font-family: MainFont;
+}
+
+/* line 1490, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#gallery h1 {
+  font-size: 1.8em;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  text-align: left;
+  margin: 8px 0;
+  padding-left: 50px;
+  background: #19BAEE;
+  background: -webkit-linear-gradient(right,  #19BAEE , white);
+  background: -moz-linear-gradient(right,  #19BAEE , white);
+  background: -ms-linear-gradient(right,  #19BAEE , white);
+  background: -o-linear-gradient(right,  #19BAEE , white);
+  background: linear-gradient(right,  #19BAEE , white);
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1490, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #gallery h1 {
+    padding-left: 20px;
+  }
+}
+
+/* line 1501, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#gallery article::before {
+  content: '';
+  display: block;
+  position: absolute;
+  float: right;
+  right: 0;
+  width: 40%;
+  height: 260px;
+  pointer-events: none;
+  background: transparent;
+  background: -webkit-linear-gradient(left, transparent, white);
+  background: -moz-linear-gradient(left, transparent, white);
+  background: -ms-linear-gradient(left, transparent, white);
+  background: -o-linear-gradient(left, transparent, white);
+  background: linear-gradient(left, transparent, white);
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1501, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  #gallery article::before {
+    display: none !important;
+  }
+}
+
+/* line 1518, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.iconImg {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+/* line 1523, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.title {
+  font-variant: small-caps;
+  font-weight: 900;
+  font-size: 1.6em;
+  font-family: "Titillium Web";
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 1531, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.codingHeader {
+  font-family: MainFont;
+  text-align: center;
+  font-size: 44px;
+  height: 50px;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1537, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .codingHeader:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1531, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .codingHeader {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* line 1531, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .codingHeader {
+    height: auto;
+    margin: auto;
+  }
+}
+
+/* line 1544, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.subtitle {
+  font-size: 25px;
+  font-family: "Titillium Web";
+  color: #333;
+  padding-left: 5px;
+  margin-top: 10px;
+}
+
+/*------------------------------------------- LIGHTBOX ------------------------------------*/
+/* line 1559, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.myLightbox {
+  /* The lightbox (Main Container) */
+  display: none;
+  position: relative;
+  background-color: white;
+  border: 2px solid black;
+  z-index: 4000;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 1559, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .myLightbox {
+    left: calc(100% - 96%);
+    width: calc(100% - 8%);
+  }
+}
+
+/* line 1572, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_content {
+  /* lightbox Content */
+  position: relative;
+  text-align: center;
+  background-color: white;
+  margin: 70px auto 30px;
+  width: 90%;
+  max-width: 1290px;
+}
+
+/* line 1580, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_row {
+  height: 277px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1580, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .lightbox_row {
+    max-width: 490px;
+    margin: 0 auto;
+    height: auto;
+    max-height: 277px;
+  }
+}
+
+/* line 1592, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_row > img {
+  width: auto;
+  height: 250px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: white;
+  cursor: zoom-in;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 1602, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_row > img:hover {
+  -webkit-animation: border 5s linear 1s infinite;
+  -moz-animation: border 5s linear 1s infinite;
+  -ms-animation: border 5s linear 1s infinite;
+  -o-animation: border 5s linear 1s infinite;
+  animation: border 5s linear 1s infinite;
+}
+
+@keyframes border {
+  0% {
+    border-color: white;
+  }
+  25% {
+    border-color: black;
+  }
+  50% {
+    border-color: cyan;
+  }
+  75% {
+    border-color: black;
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+/* line 1613, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_row-placeholder {
+  width: 35%;
+  height: 250px;
+  display: inline-block;
+  position: relative;
+  background: transparent;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1613, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .lightbox_row-placeholder {
+    display: none;
+  }
+}
+
+/* line 1621, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_close {
+  cursor: pointer;
+  /* The Close Button */
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  text-decoration: none;
+  font-size: 4em;
+  font-weight: 700;
+}
+
+/* line 1632, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_close:hover,
+.lightbox_close:focus {
+  color: #999;
+}
+
+/* line 1635, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightboxSlides {
+  display: block;
+  margin: 0 auto;
+  max-width: 875px;
+  width: auto;
+  height: auto;
+}
+
+/* line 1641, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightboxSlides > img,
+.lightboxSlides > object {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 1647, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+[class*='-lightbox_previewImg'] {
+  opacity: 0.6;
+  height: 124px;
+  padding: 4px;
+}
+
+/* line 1652, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_prevBtn, .lightbox_nextBtn {
+  position: absolute;
+  left: 0;
+  top: 448px;
+  padding: 14px;
+  color: black;
+  background-color: rgba(25, 186, 238, 0.5);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* line 1666, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_nextBtn {
+  right: 0;
+  left: auto;
+  border-radius: 3px 0 0 3px;
+}
+
+/* line 1670, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_prevBtn:hover,
+.lightbox_nextBtn:hover {
+  background-color: white;
+}
+
+/* line 1673, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_numbertext {
+  /* Number text (1/3 etc) */
+  position: absolute;
+  top: -50px;
+  left: 0;
+  padding: 8px 12px;
+  font-family: "Raleway";
+  color: black;
+  font-size: 1.1em;
+  letter-spacing: -0.1em;
+}
+
+/* line 1683, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+div.lightbox_captionContainer {
+  font-family: MainFont;
+  color: black;
+  padding: 2px 16px;
+}
+
+/* line 1688, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.lightbox_column {
+  display: inline;
+}
+
+/* line 1689, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+p.lightbox_description {
+  font-family: "Raleway";
+  text-align: left;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  height: auto;
+  width: 90%;
+  max-width: 1290px;
+}
+
+/* line 1699, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+p.lightbox_description strong {
+  font-family: MainFont;
+  font-variant: small-caps;
+}
+
+/* line 1704, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.activelightbox,
+[class$='-lightbox_previewImg']:hover {
+  opacity: 1;
+}
+
+/* line 1707, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#animation-controls {
+  display: block;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+}
+
+/* line 1713, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#animation-controls a {
+  font-size: 3em;
+}
+
+/* line 1714, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#animation-controls a:last-of-type {
+  display: none;
+}
+
+/* line 1715, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#animation-controls div.grayout {
+  display: block;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* line 1727, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.code_box {
+  background-color: ghostwhite;
+  text-align: left;
+  padding: 0 5px 5px;
+  margin: 0;
+  margin-top: 8px;
+  height: 50em;
+  overflow-y: scroll;
+  font-size: .95em;
+}
+
+/* line 1738, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+stringdata {
+  color: green;
+}
+
+/* line 1739, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+commentdata {
+  color: grey;
+}
+
+/* line 1740, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+functiondata {
+  color: #900090;
+}
+
+/* line 1741, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+locationdata {
+  color: darkorange;
+}
+
+/* line 1742, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+eventdata {
+  color: darkcyan;
+}
+
+/* line 1743, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+booleandata {
+  color: green;
+}
+
+/* line 1744, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+methoddata {
+  color: #0055FF;
+}
+
+/* line 1745, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+variabledata {
+  color: #0055FF;
+}
+
+/* line 1746, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+externaldata {
+  color: darkorange;
+}
+
+/* line 1747, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+attrdata {
+  color: darkorange;
+}
+
+/* line 1748, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+tagdata {
+  color: #8A2C33;
+}
+
+/* line 1749, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+pythondata {
+  color: darkorange;
+}
+
+/* line 1750, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+pythoncomment {
+  color: red;
+}
+
+/* line 1753, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+stringdata commentdata, stringdata functiondata, stringdata locationdata, stringdata eventdata,
+stringdata booleandata, stringdata methoddata, stringdata variabledata, stringdata attrdata,
+stringdata tagdata, stringdata pythondata, stringdata pythoncomment {
+  color: inherit;
+}
+
+/* line 1758, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+commentdata commentdata, commentdata stringdata, commentdata functiondata, commentdata locationdata,
+commentdata eventdata, commentdata booleandata, commentdata methoddata, commentdata variabledata,
+commentdata attrdata, commentdata tagdata, commentdata pythondata, commentdata pythoncomment, pythoncomment commentdata, pythoncomment stringdata, pythoncomment functiondata, pythoncomment locationdata,
+pythoncomment eventdata, pythoncomment booleandata, pythoncomment methoddata, pythoncomment variabledata,
+pythoncomment attrdata, pythoncomment tagdata, pythoncomment pythondata, pythoncomment pythoncomment {
+  color: inherit;
+}
+
+/* line 1763, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+attrdata functiondata {
+  color: inherit;
+}
+
+/* line 1766, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+variabledata attrdata, variabledata methoddata {
+  color: inherit;
+}
+
+/* line 1769, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.tab {
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 831px) {
+  /* line 1769, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  .tab {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+  }
+}
+
+/* line 1778, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.tab button {
+  cursor: pointer;
+  vertical-align: middle;
+  background-color: white;
+  font-family: "Orbitron";
+  font-size: 1.22em;
+  height: 50px;
+  padding: 10px 14px;
+  border: none;
+  transition: 0.3s;
+}
+
+/* line 1789, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* line 1790, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* line 1795, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+main section div h1.title {
+  margin: 0;
+  margin-left: 50px;
+  font-size: 4rem;
+  position: absolute;
+  right: 9%;
+  top: 45%;
+  color: transparent;
+  background-color: #c8;
+  text-shadow: 0 1px 1px rgba(248, 248, 255, 0.7);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+}
+
+/*--------------------------------------FORM STYLE SWITCHER------------------------------------*/
+/* line 1807, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+#change-style {
+  width: 100%;
+  font-family: MainFont;
+  padding: .3em 0;
+  position: fixed;
+  bottom: -1px;
+}
+
+/*----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+@media screen and (max-width: 831px) {
+  /* line 1821, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/styles.scss */
+  main div h1.title {
+    display: none;
+  }
+}
+
+/*----------------------------------------------------------------------------------*/
+/*------------------------------------ MOBLE NAV -----------------------------------*/
+/*----------------------------------------------------------------------------------*/
+/*
+(max-width: 1200px)
+(max-width: 831px)
+(max-width: 650px)
+(max-width: 550px)
+*/
+
+/*# sourceMappingURL=../_css/styles.map */

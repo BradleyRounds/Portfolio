@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="_css/styles.css"                                                     rel="stylesheet">
+  <link href="_css/form-def.css" id="formCSS_link"                                 rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron"                    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web"               rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway"                     rel="stylesheet">
+	<link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"                   rel="stylesheet">
+	<link href="fonts/PortfolioIcons/style.css"                                      rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--Recommended Meta Tags-->
+	<meta charset="utf-8">
+	<meta name="language" content="english"> 
+	<meta name="author" content="Bradley Rounds">
+
+	<!--Search Engine Optimization Meta Tags-->
+	<title>Contact Me | Bradley's Portfolio</title>
+	<meta name="description" content="Bradley Rounds, his projects, interests and experience.">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="7 days">
+	<meta name="distribution" content="web">
+	<meta name="robots" content="noodp">
+
+	<!--Optional Meta Tags-->
+	<meta name="distribution" content="web">
+	<meta name="web_author" content="Bradley Rounds">
+	<meta name="rating" content="general">
+	<meta name="subject" content="Personal">
+	<meta name="title" content="Bradley Rounds - Official Portfolio.">
+	<meta name="copyright" content="Copyright 2017">
+	<meta name="reply-to" content="rounds.bradley@gmail.com">
+	<meta name="abstract" content="">
+	<meta name="city" content="Boulder">
+	<meta name="country" content="USA">
+	<meta name="distribution" content="global">
+	<meta name="classification" content="">
+
+	<!--Meta Tags for HTML pages on Mobile-->
+	<meta name="HandheldFriendly" content="true"/> 
+	<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+	<img id="logoImg" src="images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('index.html')">
+  <nav>
+    <ul>
+      <li class="nav-item">
+				<a href="index.html"><div class="nav-link"><i class="fa fa-home fa-lg"></i></div>
+          <span>HOME</span>
+        </a>
+			</li>
+      <li class="nav-item">
+				<a href="portfolio.html"><div class="nav-link"><i class="fa fa-book fa-lg"></i></div>
+          <span>PORTFOLIO</span>
+        </a>
+			</li>
+      <li class="nav-item">
+        <div id="dropdown">
+				  <a id="dropdownButton" href="#"><div class="nav-link"><i class="fa fa-gear fa-lg"></i></div>
+            <span>CODING</span>
+          </a>
+          <div id="dropdownContent">
+            <a href="coding/javascript.html"><i class="fa fa-coffee fa-lg"></i>
+              <span>JAVASCRIPT</span>
+            </a>
+            <a href="coding/php.html"><i class="fa fa-server fa-lg"></i>
+              <span>PHP</span>
+            </a>
+            <a href="coding/psudocode.html"><i class="fa fa-cogs fa-lg"></i>
+              <span>PSUDOCODE</span>
+            </a>
+						<a href="coding/python.html"><i class="icon-python fa-lg"></i>
+              <span>PYTHON</span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+				<a href="#"><div class="nav-link"><i class="fa fa-envelope fa-lg"></i></div>
+          <span>CONTACT</span>
+        </a>
+			</li>
+    </ul>
+  </nav>
+</header>
+
+<input type="radio" id="form-style_fancy" name="form-style" value="Fancy">
+<input type="radio" id="form-style_simple" name="form-style" value="Simple">
+
+<input type="checkbox" id="input-for1T" class="validation-check"/>
+<input type="checkbox" id="input-for1F" class="validation-ex"/>
+<input type="checkbox" id="input-for2T" class="validation-check"/>
+<input type="checkbox" id="input-for2F" class="validation-ex"/>
+<input type="checkbox" id="input-for3T" class="validation-check"/>
+<input type="checkbox" id="input-for3F" class="validation-ex"/>
+<input type="checkbox" id="input-for4T" class="validation-check"/>
+<input type="checkbox" id="input-for4F" class="validation-ex"/>
+  
+<article>
+  <button id="formNextButton" class="formDefaultStyle">Next Field</button>
+  <form action="ml.php" method="post" novalidate>
+    <input name="name" id="input-1" type="text" placeholder="John Doe" required />
+    <label for="input-1">
+        <span class="label-text">Full Name</span>
+        <div class="validation-master">
+            <span class="nav-dot"><p class="nomargin"></p></span>
+            <div class="box1">
+                <div class="boxA"></div>
+                <div class="boxC"></div>
+                <div class="boxB"></div>
+            </div>
+        </div>
+        <div class="contact-button-trigger formDefaultStyle">Send the Message</div>
+    </label>
+    
+    <input name="email" id="input-2" type="email" placeholder="email@address.com" required />
+    <label for="input-2">
+        <span class="label-text">Email</span>
+        <div class="validation-master">
+            <span class="nav-dot"><p class="nomargin"></p></span>
+            <div class="box2">
+                <div class="boxA"></div>
+                <div class="boxC"></div>
+                <div class="boxB"></div>
+            </div>
+        </div>
+    </label>
+    
+    <input name="subject" id="input-3" type="text" required />
+    <label for="input-3">
+        <span class="label-text">Subject</span>
+        <div class="validation-master">
+            <span class="nav-dot"><p class="nomargin"></p></span>
+            <div class="box3">
+                <div class="boxA"></div>
+                <div class="boxC"></div>
+                <div class="boxB"></div>
+            </div>
+        </div>
+    </label>
+    
+    <textarea name="message" id="input-4" onkeydown="return stopTab(event);" required></textarea>
+    <label for="input-4">
+        <span class="label-text">Message</span>
+        <div class="validation-master">
+            <span class="nav-dot"><p class="nomargin"></p></span>
+            <div class="box4">
+              <div class="boxA"></div>
+              <div class="boxC"></div>
+              <div class="boxB"></div>
+            </div>
+        </div>
+    </label>
+    
+    <p class="tip">Press Tab</p>
+    <div class="error"></div>
+		<p id="tip-submit"></p>
+    
+    <input class="formDefaultStyle" type='submit' value='&lt; Click To Submit &gt;'>
+    <div class="contact-button formDefaultStyle"><span class="bracket">&lt;</span> Contact Me <span class="bracket">&gt;</span></div>
+  </form>
+  <div id="SubmitingDelay" class="formDefaultStyle">
+    <div class="text">
+      <span class="bracket letterpress"><i class="fa fa-chevron-left"></i></span> Sending Message <span class="bracket letterpress"><i class="fa fa-chevron-right"></i></span>
+    </div>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+      <div class="rect6"></div>
+      <div class="rect7"></div>
+      <div class="rect8"></div>
+      <div class="rect9"></div>
+      <div class="rect10"></div>
+    </div>
+  </div>
+  <button id="change-style">Simple Form</button>
+</article>
+  
+<!-- Change form theme + Cookie -->
+<script>
+$(document).ready(function($) {
+  /* Check to see if we have saved a style cookie already */
+  var theme = getCookie('bradleyrounds.com_formscheme');
+  if (!theme)
+    setCookie('bradleyrounds.com_formscheme','fancy',90);
+  updateTheme();
+  
+  $('#change-style').click(function() {
+    var theme = getCookie('bradleyrounds.com_formscheme');
+    if (theme === 'simple')
+      theme = 'fancy';
+    else
+      theme = 'simple';
+    
+    setCookie('bradleyrounds.com_formscheme',theme,90)
+    updateTheme();
+    return false;
+  });
+});
+/*======================= change active stylesheet ======================*/
+function updateTheme() {
+  var buttonText, sheet, theme = getCookie('bradleyrounds.com_formscheme');
+  if ( theme == 'fancy' ) { sheet = "_css/form-def.css"; buttonText = 'Simple Form'; $("#form-style_fancy").click();}
+  if ( theme == 'simple' ) { sheet = "_css/form-alt.css"; buttonText = 'Fancy Form'; $("#form-style_simple").click();}
+  $("#formCSS_link").attr("href", sheet);
+  $("#change-style").text(buttonText);
+}
+/*======================= create browser cookie =========================*/
+function setCookie(sKey, sValue, nDays) {
+  var expires = new Date();
+  expires.setTime(expires.getTime() + 3600000*24*nDays);
+  document.cookie = sKey + '=' + sValue + ';expires=' + expires.toUTCString();
+}
+/*======================= retrieve browser cookie =======================*/
+function getCookie(sKey) {
+  var keyValue = document.cookie.match('(^|;) ?' + sKey + '=([^;]*)(;|$)');
+  return keyValue ? keyValue[2] : null;
+}
+</script>
+<!-- Empty Node Removal -->
+<script>
+  function clean(node) {
+    for (var n = 0; n < node.childNodes.length; n ++) {
+      var child = node.childNodes[n];
+      if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+        node.removeChild(child);
+        n --;
+      } else if(child.nodeType === 1) {
+        clean(child);
+      }
+    }
+  }
+  clean(document);
+</script>
+
+<script src="scripts/contactForm.js"></script>
+<script src="scripts/dropdown-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+</body>
+</html>

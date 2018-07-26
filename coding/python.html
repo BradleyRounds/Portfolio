@@ -1,0 +1,854 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link href="../_css/styles.css"                                                     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron"                       rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web"                  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway"                        rel="stylesheet">
+	<link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css"                   rel="stylesheet">
+	<link href="../fonts/PortfolioIcons/style.css"                                      rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--Recommended Meta Tags-->
+	<meta charset="utf-8">
+	<meta name="language" content="english"> 
+	<meta name="author" content="Bradley Rounds">
+
+	<!--Search Engine Optimization Meta Tags-->
+	<title>Python | Coding</title>
+	<meta name="description" content="Bradley Rounds, his projects, interests and experience.">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="7 days">
+	<meta name="distribution" content="web">
+	<meta name="robots" content="noodp">
+
+	<!--Optional Meta Tags-->
+	<meta name="distribution" content="web">
+	<meta name="web_author" content="Bradley Rounds">
+	<meta name="rating" content="general">
+	<meta name="subject" content="Personal">
+	<meta name="title" content="Bradley Rounds - Official Portfolio.">
+	<meta name="copyright" content="Copyright 2017">
+	<meta name="reply-to" content="rounds.bradley@gmail.com">
+	<meta name="abstract" content="">
+	<meta name="city" content="Boulder">
+	<meta name="country" content="USA">
+	<meta name="distribution" content="global">
+	<meta name="classification" content="">
+
+	<!--Meta Tags for HTML pages on Mobile-->
+	<meta name="HandheldFriendly" content="true"/> 
+	<meta name="viewport" content="width=device-width"/>
+</head>
+<body onload="colorCode('python')">
+<header>
+	<img id="logoImg" src="../images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('../index.html')">
+  <nav>
+    <ul>
+      <li class="nav-item">
+				<a href="../index.html"><div class="nav-link"><i class="fa fa-home fa-lg"></i></div>
+          <span>HOME</span>
+        </a>
+			</li>
+      <li class="nav-item">
+				<a href="../portfolio.html"><div class="nav-link"><i class="fa fa-book fa-lg"></i></div>
+          <span>PORTFOLIO</span>
+        </a>
+			</li>
+      <li class="nav-item">
+        <div id="dropdown">
+          <a id="dropdownButton" href="#"><div class="nav-link"><i class="fa fa-gear fa-lg"></i></div>
+            <span>CODING</span>
+          </a>
+          <div id="dropdownContent">
+            <a href="javascript.html"><i class="fa fa-coffee fa-lg"></i>
+              <span>JAVASCRIPT</span>
+            </a>
+            <a href="php.html"><i class="fa fa-server fa-lg"></i>
+              <span>PHP</span>
+            </a>
+            <a href="psudocode.html"><i class="fa fa-cogs fa-lg"></i>
+              <span>PSUDOCODE</span>
+            </a>
+						<a href="#"><i class="icon-python fa-lg"></i>
+              <span>PYTHON</span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+				<a href="../contact_me.html"><div class="nav-link"><i class="fa fa-envelope fa-lg"></i></div>
+          <span>CONTACT</span>
+        </a>
+			</li>
+    </ul>
+  </nav>
+</header>
+<main>
+	<h1 class="title codingHeader">Python</h1>
+	<hr>
+	<div class="tab">
+	  <button class="tablinks" onclick="openTopic(event,'eliza')">Eliza</button>
+	  <button class="tablinks" onclick="openTopic(event,'stockmarket')">Stock Market Data</button>
+	  <button class="tablinks" onclick="openTopic(event,'surveystats')">Survey Research Question</button>
+	  <button class="tablinks" onclick="openTopic(event,'geojson')">JSON Parsing</button>
+	</div>
+	<hr>
+	
+<section>
+<div id="eliza" class="tabcontent">
+	<h1 class="title">Eliza Chatbox</h1>
+<pre class="code_box">
+import random
+
+replacements = {
+    "am"    : "are",
+    "was"   : "were",
+    "i"     : "you",
+    "i'd"   : "you would",
+    "i've"  : "you have",
+    "i'll"  : "you will",
+    "my"    : "your",
+    "are"   : "am",
+    "you've": "I've",
+    "you'll": "I'll",
+    "your"  : "my",
+    "you"   : "I",
+}
+
+evade = [
+    "Please tell me more.",
+    "Many of my patients tell me the same thing.",
+    "Please continue.",
+]
+
+qualifiers = [
+    "Why do you say that ",
+    "You seem to think that ",
+    "Can you explain why ",
+]
+
+# Take a string and return changed perspectives, your to my, etc...
+def modifyString(statement):
+    wordList = statement.lower().split()
+
+    for i, word in enumerate(wordList):
+        if word in replacements:
+            wordList[i] = replacements[word]
+    return " ".join(wordList)
+
+def response(statement,count,userHistory):
+    # 25% chance to evade
+    if random.randint(0,4) == 1:
+        return random.choice(evade)
+    # restriction on the "earlier you said that ..." qualifier (Else normal)
+    elif count >= 3:
+        # 50/50 chanse to revert to history to respond with a normal qualifier 
+        if random.randint(0,2) == 1:
+            return 'Earlier you said that ' + modifyString(statement)
+        else:
+            return random.choice(qualifiers) + modifyString(statement)
+    else:
+        return random.choice(qualifiers) + modifyString(statement)
+        
+# Greet the person, then start a input loop.
+def main():
+    print("Hello. What can I help you with today?")
+    print("Say 'quit' when done.\n",'-'*50)
+
+    count = 0
+    userHistory = list()
+
+    # Program loop, storing the statments and keeping count of inputs.
+    while True:
+        statement = input(": ")
+        count += 1
+        userHistory.append(statement)
+        print(response(statement,count,userHistory))
+
+        if statement == "quit":
+            print ("Good-Bye")
+            break
+
+
+main()
+</pre>
+</div>
+
+<div id="stockmarket" class="tabcontent">
+	<h1 class="title">Stock Market Data</h1>
+<pre class="code_box">
+import datetime
+
+def openFile(fname):
+    try:
+        return open(fname)
+    except:
+        print('File cannot be opened: ', fname)
+        exit()
+
+
+def getMarketData(fileName, beginDate, endDate):
+    dates = []
+    stockClose = []
+    data = openFile(fileName) # Open file
+
+    data.readline()     # Skip over column title line
+
+    read = False
+    for lines in data:  # Go through first csv file
+        dateValues = lines.split(',')
+        if dateValues[0] == beginDate:  # Going through the files, dont read until begin date is reached
+            read = True
+        if dateValues[0] == endDate:    # Stop reading once the end date in reached
+            read = False
+        if read:           
+            dates.append(dateValues[0])             # Append the dates to an array
+            stockClose.append(float(dateValues[5])) # Append the closing value to an array
+    data.close()
+
+    return dict(zip(dates,stockClose))              # Zip the paralell arrays into a dictionary
+
+def getDaysAfterBeginDate(beginDate, date):         # Return the amount of days after the begining date
+    return abs(((datetime.datetime.strptime(beginDate, "%m/%d/%Y").date()) - (datetime.datetime.strptime(date, "%m/%d/%Y").date())).days)
+
+def graph(monthsList, ticker, stockData, beginDate, endDate):
+    import turtle
+    import math as m
+
+    xMax = abs(((datetime.datetime.strptime(beginDate, "%m/%d/%Y").date()) - (datetime.datetime.strptime(endDate, "%m/%d/%Y").date())).days)+20         # Cord Length DATES
+
+    maxValue = 0
+    for index,item in enumerate(stockData):
+        if item[1] > maxValue:                      # Set to the highest value stock
+            maxValue = item[1]
+            
+    maxValue = m.ceil(maxValue)
+    yMax = int(m.ceil(maxValue / 100.0)) * 100      # y Cord Length PRICES ROUNDED to nearest hundred
+
+    # Initialize turtle nesessities
+    wn = turtle.Screen()
+    wn.title("Stock %s" %ticker)
+    chartT = turtle.Turtle()
+    wn.setworldcoordinates(-30, -30, xMax+10, yMax+10)
+    chartT.hideturtle()
+    wn.colormode(255)
+
+    # DRAW A GRID -----------------------------------------
+    #Horizontal graph lines
+    for x in range(10,yMax,10):
+        chartT.pencolor('#d3d3d3')
+        chartT.speed(0)
+        
+        chartT.goto(0,x)
+        chartT.down()
+        chartT.goto(xMax,x)
+        chartT.up()
+        
+    #Vertical graph lines  
+    for x in range(10,xMax,10):
+        chartT.pencolor('#d3d3d3')
+        chartT.speed(0)
+        chartT.goto(x,0)
+        chartT.down()
+        if (x % 30) == 0:
+            chartT.pencolor("#a9a9a9")
+            chartT.width(2)
+        chartT.goto(x,yMax)
+        chartT.up()
+
+    # Thick border lines 
+    chartT.pencolor("black")
+    chartT.speed(4)
+    chartT.width(5)
+    
+    chartT.goto(0,0)
+    chartT.down()
+    chartT.goto(0,yMax)
+    chartT.goto(0,0)
+    chartT.down()
+    chartT.goto(xMax,0)
+    
+    chartT.up()
+    chartT.speed(6)
+
+    # END GRID ----------------------------------------------
+
+    # LABEL GRAPH -------------------------------------------
+    x = 0
+    for i in range(10,xMax,30):                # LABEL GRAPH WITH DATES
+        chartT.goto(i,-12)
+        chartT.write("0%d/2017" %monthsList[x], font=("Helvetica",12,"bold"))
+        x += 1
+
+    x = 0
+    for i in range(0,yMax,20):                 # LABEL GRAPH WITH DATES
+        chartT.goto(-2,i-5)
+        chartT.write('$'+str(i), align=("right"), font=("Helvetica",12,"bold"))
+        x += 1
+
+    chartT.goto(0,0)
+    # END LABEL ----------------------------------------------
+
+    chartT.pencolor("red")
+    chartT.width(1)
+    for index,value in enumerate(stockData):
+        # print(getDaysAfterBeginDate(beginDate, value[0])+(datetime.datetime.strptime(beginDate, "%m/%d/%Y").day))
+        # print(value[0])
+
+        # GoTo X
+            #  Days after begining date (Horizontal axis)
+        # GoTo Y
+            #  Date value[1]
+        chartT.goto((getDaysAfterBeginDate(beginDate, value[0])+(datetime.datetime.strptime(beginDate, "%m/%d/%Y").day)),value[1])
+        # Place dot at x,y intercept
+        chartT.dot(5,'red')
+        # Draw a thin line between points
+        chartT.down()
+
+# Figure out the months used, return range for lables
+def getMonthsUsed(date1, date2):
+    dates = []
+    months = []
+    i = 1
+    while i &lt; 3:
+        date = list(eval("date" + str(i)))
+        dates.append(date[0])
+        i += 1
+    for i in range(int(dates[0]),int(dates[1])+1):
+        months.append(i)
+    return months
+
+# The main function, get the input aurguments and call the nessisary functions
+def graphStockPreformance(fileName, ticker, beginDate, endDate):
+    # Get the data from the file
+    stockDataFinal = list(map(list, [(v,k) for v,k in getMarketData(fileName, beginDate, endDate).items()]))
+    # Get the lables for the graph, months used
+    monthsList = getMonthsUsed(beginDate, endDate)
+    # Call the graph function.
+    graph(monthsList, ticker, stockDataFinal, beginDate, endDate)
+
+# Calling the main function and passing it the range of dates that I want graphed and the file and TICKER I want used.
+graphStockPreformance('tsla.csv','TSLA','4/5/2017','9/5/2017')
+# graphStockPreformance('ba.csv','BA','4/5/2017','9/5/2017')
+</pre>
+</div>
+
+<div id="surveystats" class="tabcontent">
+	<h1 class="title">Young People Survey</h1>
+<pre class="code_box">
+"""
+Research question: Does the age and gender of a person relate to their phobias
+
+Procedure: I created my Python program in stages, testing the code after each stage:
+
+1. My first query retrieved the age and gender (from the Demographics table) and assigned it to a list
+2. My first query retrieved the phobias for each person (from the Phobias table) and assigned it to a list
+
+3. I populated the dictionary from the two lists, removed the outliers and sorted the two genders 
+4. Got the average of each phobia for each person Running Sum / Count for each gender
+
+5. Function to draw the graphs using location data via the location list and the margin lists, and the grid tuples
+6. Fill in the bar graph from the master dictionary sorted by phobia then age, then gender
+7. Fill the line graph with summary from the Averages generated step 4.
+
+
+Results: The chart and graph display the results of the calculations.
+        In summary, there is no major correlation between an age and phobia and with only slight differences the most common phobia is of Snakes for both genders
+"""
+
+# Global Variables
+phobiasLabelList = [('Flying','#641e16'),('Storm','#2e86c1'),('Darkness','#27ae60'),('Heights','#d4ac0d'),('Spiders','#6e2c00'),('Snakes','#dc7633'),('Rats','#8e44ad'),('Ageing','#ff33e6'),('Dogs','#f1948a'),('Public Speaking','#000080')]
+
+def getData():
+    import sqlite3
+
+    # Variables
+    demographics = list()
+    phobias = list()
+
+    # Connect to the database file and cursor
+    conn = sqlite3.connect('YoungPeopleSurvey.db')
+    cur  = conn.cursor()
+
+    #Select the columns 
+    cur.execute("""
+                SELECT   PersonID, Age, Gender
+                FROM     Demographics
+                ORDER BY PersonID
+                """)
+
+    # Populate the demographics list from the database
+    for col in cur:
+        demographics.append([col[1], col[2]])
+
+    #Select the columns 
+    cur.execute("""
+                SELECT   PersonID, Flying, Storm, Darkness, Heights, Spiders, Snakes, Rats, Ageing, DangerousDogs, FearOfPublicspeaking
+                FROM     Phobias
+                ORDER BY PersonID
+                """)
+
+    # Populate the phobias list from the database
+    for col in cur:
+        phobias.append([col[1], col[2], col[3], col[4], col[5], col[6], col[7], col[8], col[9], col[10]])
+
+    #Close the cursor and the database
+    cur.close()
+    conn.close()
+    
+    return [demographics, phobias]
+
+def populateData(data):
+    # Main variables
+    locationList = data[0]
+    dataList = data[1]
+
+    
+    # Person Counter
+    personIndex = 0
+    # Outliers in the data
+    outliers = 0
+    totalCount = [0,0]
+    
+    # Phobia count list
+    dictionary = {
+        'Flying'                    : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Storm'                     : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Darkness'                  : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Heights'                   : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Spiders'                   : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Snakes'                    : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Rats'                      : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Ageing'                    : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Dogs'                      : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Public Speaking'           : {15:[0,0], 16:[0,0], 17:[0,0], 18:[0,0], 19:[0,0], 20:[0,0], 21:[0,0], 22:[0,0], 23:[0,0], 24:[0,0], 25:[0,0], 26:[0,0], 27:[0,0], 28:[0,0], 29:[0,0], 30:[0,0]},
+        'Average'                   : {0:[0,0,0,0], 1:[0,0,0,0], 2:[0,0,0,0], 3:[0,0,0,0], 4:[0,0,0,0], 5:[0,0,0,0], 6:[0,0,0,0], 7:[0,0,0,0], 8:[0,0,0,0], 9:[0,0,0,0]}
+        }
+    # Average is 0: Running Sum 1: Running Sum 3: Male Count 4: Female Count
+
+
+    for age, gender in locationList:
+        # Watch for unanswered questions
+        if age == -1:
+            outliers += 1
+            continue
+        if gender == -1:
+            outliers += 1
+            continue
+        
+        # Seperate the Male Stats
+        if gender == 'male':
+            genderIndex = 0
+            totalCount[0] += 1
+        elif gender == 'female':
+            genderIndex = 1
+            totalCount[1] += 1
+            
+        # Rank each phobia
+        for phobiaIndex in range(0,10):
+            # Get the total of each rating for each phobia (FOR AVERAGE)
+            if dataList[personIndex][phobiaIndex] != -1:
+                dictionary['Average'][phobiaIndex][genderIndex] += dataList[personIndex][phobiaIndex]
+            
+            # Rank Dictionary by name from phobia List, into age from key, first index of the tuple for male second for female
+            if   dataList[personIndex][phobiaIndex] == 5:
+                dictionary[phobiasLabelList[phobiaIndex][0]][age][genderIndex] += 4
+                dictionary['Average'][phobiaIndex][genderIndex + 2] += 1
+            elif dataList[personIndex][phobiaIndex] == 4:
+                dictionary[phobiasLabelList[phobiaIndex][0]][age][genderIndex] += 3
+                dictionary['Average'][phobiaIndex][genderIndex + 2] += 1
+            elif dataList[personIndex][phobiaIndex] == 3:
+                dictionary[phobiasLabelList[phobiaIndex][0]][age][genderIndex] += 2
+                dictionary['Average'][phobiaIndex][genderIndex + 2] += 1
+            elif dataList[personIndex][phobiaIndex] == 2:
+                dictionary[phobiasLabelList[phobiaIndex][0]][age][genderIndex] += 1
+                dictionary['Average'][phobiaIndex][genderIndex + 2] += 1
+            elif dataList[personIndex][phobiaIndex] == 1:
+                dictionary[phobiasLabelList[phobiaIndex][0]][age][genderIndex] += 0
+            elif dataList[personIndex][phobiaIndex] == -1:
+                outliers += 1
+        
+        personIndex += 1
+
+    # Finish the AVERAGE row
+    for gender in range(0,2):
+        for phobiaIndex in range(0,10):
+            # COUNT OF PHOBIA DIVIDED BY TOTAL COUNT OF PEOPLE
+            dictionary['Average'][phobiaIndex][gender] = (dictionary['Average'][phobiaIndex][gender] / dictionary['Average'][phobiaIndex][gender + 2])
+
+##    for key,value in dictionary['Average'].items():
+##        print(key)
+##        print(value)
+##        print()
+
+        
+    return [dictionary, [outliers,totalCount]]
+
+def graph(data):
+
+    phobiaRankDict = data[0]
+    outliers = data[1][0]
+    totalCount = data[1][1]
+
+    
+    import turtle
+    
+    graphs   = [False, False, True, True]
+    grid     = [(10,10),(10,10),(25,10),(25,10)]
+    xMax     = [180, 180, 250, 250] # X = Horizontal
+    yMax     = [200, 200, 50, 50] # Y = Vertical
+
+    # First index in the Male grid location, section index in the female grid location
+    marginX      = [0, 50, 0, 0]
+    marginY      = [0, 0, 260, 350]
+    location     = [0,250,100,100]
+
+    # Labeling variables
+    labelTitlePadding = [80, 80, 100, 98]
+    locationInfo     = [['Male: Phobias Severity','blue'],['Female: Phobias Severity','red'],['Male: Likelyhood of severe phobia',''],['Female: Likelyhood of severe phobia','']]
+
+    # Initialize turtle nesessities
+    wn = turtle.Screen()
+    wn.setup(width=.99, height=.99)
+    wn.title("Project 3 Data")
+    chartT = turtle.Turtle()
+    
+    wn.setworldcoordinates(-30, -50, 500, 500)
+    wn.colormode(255)
+    chartT.hideturtle()
+
+    # DRAW A GRID -----------------------------------------
+    for i in range(0,len(graphs)):
+
+        special = graphs[i]
+        
+        chartT.pencolor('#d3d3d3')
+        chartT.width(1)
+        chartT.speed(0)
+        chartT.up()
+        
+        # Create the gender graphs
+        if not special:
+            # Horizontal graph lines
+            for x in range(grid[i][1], yMax[i] + 1, grid[i][1]):
+                chartT.goto(marginX[i] + location[i], x + marginY[i])
+                chartT.down()
+                chartT.goto(marginX[i] + location[i] + xMax[i], x + marginY[i])
+                chartT.up()
+                
+            # Vertical graph lines
+            for x in range(grid[i][0], xMax[i] + 1, grid[i][0]):
+                chartT.goto(x + marginX[i] + location[i], 0 + marginY[i])
+                chartT.down()
+                chartT.goto(x + marginX[i] + location[i], yMax[i] + marginY[i])
+                chartT.up()
+        # Create the summary graph
+        else:
+            # Horizontal graph lines
+            for x in range(grid[i][1], yMax[i] + 1, grid[i][1]):
+                chartT.goto(marginX[i] + location[i], x + marginY[i])
+                chartT.down()
+                chartT.goto(marginX[i] + location[i] + xMax[i], x + marginY[i])
+                chartT.up()
+                
+            # Vertical graph lines
+            for x in range(grid[i][0], xMax[i] + 1, grid[i][0]):
+                chartT.goto(x + marginX[i] + location[i], 0 + marginY[i])
+                chartT.down()
+                chartT.goto(x + marginX[i] + location[i], yMax[i] + marginY[i])
+                chartT.up()
+            
+
+        # Thicker border lines
+        chartT.pencolor("black")
+        chartT.speed(4)
+        chartT.width(5)
+        # Horizontal
+        chartT.goto(location[i] + marginX[i] + xMax[i], 0 + marginY[i])
+        chartT.down()
+        chartT.goto(location[i] + marginX[i], 0 + marginY[i])
+        # Vertical
+        chartT.goto(location[i] + marginX[i], yMax[i] + marginY[i])
+        chartT.up()
+        
+    # END GRID--------------------------------------------
+
+    # LABELING ----------------------------------------------
+        
+        # Label Charts TOP
+        chartT.goto(location[i] + marginX[i] + labelTitlePadding[i], (yMax[i] + 10) + marginY[i])
+        chartT.write(locationInfo[i][0], font = ("Arial", 9))
+
+        
+        # Label the gender graphs
+        if not special:
+            # Label Horizontal Age 
+            for x in range(1,17):
+                #           \/ Which Graph  \/ Margin between   \/ Distance Between the lines
+                #                                                                  \/ into the margin + which margin
+                chartT.goto(location[i] + marginX[i] + ((x * grid[i][0]) + 3), -10 + marginY[i])
+                #               \/ Age 15-30
+                chartT.write(x + 14, font = ("Arial", 9))
+                
+            # Label Vertical Percentage
+            for x in range(1,int(yMax[i]/10)+1):
+                #             \/into the margin     \/ Margin between   \/ Distance Between the lines
+                #                       \/ Which Graph                                   \/ Which margin
+                chartT.goto(-10 + location[i] + marginX[i], ((x * grid[i][1]) - 4) + marginY[i])
+                chartT.write("%d" %(x * 100), font = ("Arial", 9))
+                
+        # Label the summary graph
+        else:
+            # Label Horizontal Age 
+            for x in range(1,11):
+                #             \/into the margin     \/ Margin between   \/ Distance Between the lines
+                #               \/ Which Graph                                              \/ Which margin
+                chartT.goto(location[i] + marginX[i] + ((x * grid[i][0]) - 22), -10 + marginY[i])
+                #                       \/ COLOR DOTS
+                chartT.pencolor(phobiasLabelList[x - 1][1])
+                chartT.write("%s" %(phobiasLabelList[x - 1][0]), font = ("Arial", 9))
+                
+            chartT.pencolor('black')
+            
+            # Label Vertical Percentage
+            for x in range(0,int(yMax[i]/10)+1):
+                #           \/ Which Graph  \/ Margin between   \/ Distance Between the lines
+                #                                                                   \/ Into the margin + which margin
+                chartT.goto(-10 + location[i] + marginX[i], ((x * grid[i][1]) - 5) + marginY[i])
+                #               \/ Percent Values
+                chartT.write("%d%s" %(x,'%'), font = ("Arial", 9))
+
+
+    chartT.pencolor("black")
+    # Print the total count
+    chartT.goto(30,300)
+    chartT.write("%s: %d" %('Total People', totalCount[0] + totalCount[1]), font = ("Arial", 9))
+    
+    # Print the total male (-outliers)
+    chartT.goto(25,290)
+    chartT.write("%s: %d" %('Male', totalCount[0]), font = ("Arial", 9))
+    # Print the total female (-outliers)
+    chartT.goto(45,290)
+    chartT.write("%s: %d" %('Female', totalCount[1]), font = ("Arial", 9))
+    
+    # Print the outlier count
+    chartT.goto(28,280)
+    chartT.write("%s: %d" %('Outliers Ignored', outliers), font = ("Arial", 9))
+
+    for i in range(0,2):
+        # Label Charts TOP
+        chartT.goto(location[i] + marginX[i] + labelTitlePadding[i], -20)
+        chartT.write('Age', font = ("Arial", 9))
+    
+
+    # Label Lengend
+    # m = marginX
+    m = 50
+    for i in range(1,11):
+        if i%2 != 0:
+            chartT.goto(-m + (i * m), -20)
+        else :
+            #                     \/ THIS IS TO STACK THEM
+            chartT.goto(-m + ((i - 1) * m), -35)
+
+        # Get the dot color
+        chartT.pencolor(phobiasLabelList[i-1][1])
+        chartT.dot(8)
+        # Then Label the Dot
+        loc = chartT.pos()
+        chartT.goto(loc[0] + 5, loc[1] - 5)
+        chartT.write("%d:%s" %(i,phobiasLabelList[i-1][0]), font = ("Arial", 9))
+    
+    # END LABELING ---------------------------------------------
+
+    # START CHARTING -------------------------------------------
+
+
+    # Make the lines wider than 1 pixel
+    sizeMultiplier = 2
+
+    chartT.width(sizeMultiplier)
+    chartT.speed(0)
+
+## FIRST ATTEMPT (TAKES TO LONG)
+####################------------FILLED IN BY PHOBIA FIRST-----------------###################
+##
+##    
+##    for gender in range(0,2):
+##        for phobia in range(0,10):
+##            for age in range(15,31):
+##                # GoTo the starting line point
+##                chartT.goto((location[gender][1] + marginX[gender]) + ((age - 14)* 10) + phobia, int(yMax[gender]/2))
+##                # Set the color depending on the phobia
+##                chartT.pencolor(phobiasLabelList[phobia][1])
+##                # Start drawing a line
+##                chartT.down()
+##
+##                # Get the current location
+##                loc = chartT.pos()
+##                
+####                print(phobiasLabelList[phobia][0])
+####                print(phobiaRankDict[phobiasLabelList[phobia][0]])
+####                print(phobiaRankDict[phobiasLabelList[phobia][0]][age])
+####                print(phobiaRankDict[phobiasLabelList[phobia][0]][age][gender])
+####                print((phobiaRankDict[phobiasLabelList[phobia][0]][age][gender]) * 10)
+##                
+##                # Draw the line to the rating calculated
+##                chartT.goto(loc[0], loc[1] + (phobiaRankDict[phobiasLabelList[phobia][0]][age][gender]))
+##                # Stop drawing a line
+##                chartT.up()
+
+
+##################------------FILLED IN BY AGE FIRST---------------------###################
+
+    # AGE GRAPHS
+    for gender in range(0,2):
+        for age in range(1,17):
+            for phobia in range(0,10):
+                # GoTo the starting line point
+                #               \/ Which graph          \/Space horizontal between graph \/ Moveing accross the graph
+                #                                                          \/For each age        \/ Bottom of graph
+                chartT.goto((location[gender] + marginX[gender]) + (age * 10) + (phobia + 1), 1)
+                # Set the color depending on the phobia
+                chartT.pencolor(phobiasLabelList[phobia][1])
+                # Start drawing a line
+                chartT.down()
+
+                # Get the current position coords
+                loc = chartT.pos()                
+                # Draw the line to the rating calculated from current position                \/Correct age in dict
+                #                     \/Go up on the vertical axis                                      \/Correct gender data
+                chartT.goto(loc[0], loc[1] + (phobiaRankDict[phobiasLabelList[phobia][0]][age + 14][gender]))
+                # Stop drawing a line
+                chartT.up()
+
+
+    # AVERAGE GRAPHS
+    chartT.width(1)
+    for gender in range(0,2):
+        # Line Color
+        chartT.pencolor(locationInfo[gender][1])
+        graph = gender + 2
+
+        for phobia in range(0,10):
+            #               \/ Which graph                                     \/ Each column     \/Which Graph
+            #                                        \/Space between graphs               \/ From bottom of graph               \/The Precented calculated earlier
+            chartT.goto(location[graph] + marginX[graph] + (((phobia + 1) * 25) - 12), 0 + marginY[graph] + (phobiaRankDict['Average'][phobia][gender] * 10))
+            
+            # Place dot at x,y intercept AVERAGE
+            chartT.dot(5)
+
+            loc = chartT.pos()                
+            # Go up a bit
+            chartT.up()
+            chartT.goto(loc[0] - 2, loc[1] + 5)
+            chartT.pencolor(phobiasLabelList[phobia][1])
+            # Label the dot
+            chartT.write('%.2f:%s' %(phobiaRankDict['Average'][phobia][gender], '%'), font = ("Arial", 9))
+
+
+            #Drop back to the dot, then draw a thin line between points
+            chartT.goto(loc[0], loc[1])
+            chartT.pencolor(locationInfo[gender][1])
+            chartT.down()
+        
+        chartT.up()
+    
+
+graph(populateData(getData()))
+</pre>
+</div>
+
+<div id="geojson" class="tabcontent">
+	<h1 class="title">JSON Parsing</h1>
+<pre class="code_box">
+import urllib.request, urllib.parse, urllib.error
+import json
+
+# Note that Google is increasingly requiring keys for this API
+serviceurl = 'http://maps.googleapis.com/maps/api/geocode/json?'
+
+while True:
+    address = input('Enter location: ')
+    if len(address) &lt; 1: break
+
+    url = serviceurl + urllib.parse.urlencode(
+        {'address': address})
+
+    print('Retrieving', url)
+    uh = urllib.request.urlopen(url)
+    data = uh.read().decode()
+    print('Retrieved', len(data), 'characters')
+
+    try:
+        js = json.loads(data)
+    except:
+        js = None
+
+    if not js or 'status' not in js or js['status'] != 'OK':
+        print('==== Failure To Retrieve ====')
+        print(data)
+        continue
+
+    print(json.dumps(js, indent=2))
+
+    lat = js["results"][0]["geometry"]["location"]["lat"]
+    lng = js["results"][0]["geometry"]["location"]["lng"]
+    countryCode = js["results"][0]["address_components"][-1]["short_name"]
+    print('lat', lat, 'lng', lng)
+    if len(countryCode) == 2:
+        print('Country code:',countryCode)
+    else:
+        # If "country code" is over than 2 char (Incorect retreved data)
+        print('Unclaimed land')
+    location = js['results'][0]['formatted_address']
+    print(location)
+</pre>
+</div>
+</section>
+	<hr>
+	<div class="callToAction bounce">
+		<button onclick="window.location.assign('../contact_me.html')">What could be next?</button>
+	</div>
+</main>
+	
+
+<!-- TAB Script -->
+<script>
+	document.getElementsByClassName("tab")[0].getElementsByTagName("button")[0].click();
+	function openTopic(evt, topicName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(topicName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+</script>
+<!-- Empty Node Removal -->
+<script>
+  function clean(node) {
+    for (var n = 0; n < node.childNodes.length; n ++) {
+      var child = node.childNodes[n];
+      if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+        node.removeChild(child);
+        n --;
+      } else if(child.nodeType === 1) {
+        clean(child);
+      }
+    }
+  }
+  clean(document);
+</script>
+<script src="codeColor.js"></script>
+<script src="../scripts/dropdown-nav.js"></script>
+</body>
+</html>

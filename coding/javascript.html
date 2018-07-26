@@ -1,0 +1,652 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link href="../_css/styles.css"                                                     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron"                       rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web"                  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway"                        rel="stylesheet">
+	<link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css"                   rel="stylesheet">
+	<link href="../fonts/PortfolioIcons/style.css"                                      rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--Recommended Meta Tags-->
+	<meta charset="utf-8">
+	<meta name="language" content="english"> 
+	<meta name="author" content="Bradley Rounds">
+
+	<!--Search Engine Optimization Meta Tags-->
+	<title>Javascript | Coding</title>
+	<meta name="description" content="Bradley Rounds, his projects, interests and experience.">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="7 days">
+	<meta name="distribution" content="web">
+	<meta name="robots" content="noodp">
+
+	<!--Optional Meta Tags-->
+	<meta name="distribution" content="web">
+	<meta name="web_author" content="Bradley Rounds">
+	<meta name="rating" content="general">
+	<meta name="subject" content="Personal">
+	<meta name="title" content="Bradley Rounds - Official Portfolio.">
+	<meta name="copyright" content="Copyright 2017">
+	<meta name="reply-to" content="rounds.bradley@gmail.com">
+	<meta name="abstract" content="">
+	<meta name="city" content="Boulder">
+	<meta name="country" content="USA">
+	<meta name="distribution" content="global">
+	<meta name="classification" content="">
+
+	<!--Meta Tags for HTML pages on Mobile-->
+	<meta name="HandheldFriendly" content="true"/> 
+	<meta name="viewport" content="width=device-width"/>
+</head>
+
+<body onload="colorCode('javascript')">
+<header>
+	<img id="logoImg" src="../images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('../index.html')">
+  <nav>
+    <ul>
+      <li class="nav-item">
+				<a href="../index.html"><div class="nav-link"><i class="fa fa-home fa-lg"></i></div>
+          <span>HOME</span>
+        </a>
+			</li>
+      <li class="nav-item">
+				<a href="../portfolio.html"><div class="nav-link"><i class="fa fa-book fa-lg"></i></div>
+          <span>PORTFOLIO</span>
+        </a>
+			</li>
+      <li class="nav-item">
+        <div id="dropdown">
+          <a id="dropdownButton" href="#"><div class="nav-link"><i class="fa fa-gear fa-lg"></i></div>
+            <span>CODING</span>
+          </a>
+          <div id="dropdownContent">
+            <a href="#"><i class="fa fa-coffee fa-lg"></i>
+              <span>JAVASCRIPT</span>
+            </a>
+            <a href="php.html"><i class="fa fa-server fa-lg"></i>
+              <span>PHP</span>
+            </a>
+            <a href="psudocode.html"><i class="fa fa-cogs fa-lg"></i>
+              <span>PSUDOCODE</span>
+            </a>
+						<a href="python.html"><i class="icon-python fa-lg"></i>
+              <span>PYTHON</span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+				<a href="../contact_me.html"><div class="nav-link"><i class="fa fa-envelope fa-lg"></i></div>
+          <span>CONTACT</span>
+        </a>
+			</li>
+    </ul>
+  </nav>
+</header>
+<main>
+	<h1 class="title codingHeader">JavaScript / jQuery</h1>
+  <hr>
+	<div class="tab">
+	  <button class="tablinks" onclick="openTopic(event,'contactform')">Contact Form</button>
+	  <button class="tablinks" onclick="openTopic(event,'colorcode')">Syntax Coloring</button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	</div>
+	<h1 class="title codingHeader">AJAX</h1>
+  <hr>
+	<div class="tab">
+    <button class="tablinks">No Ajax Projects Yet!</button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	</div>
+	<h1 class="title codingHeader">AngularJS</h1>
+  <hr>
+	<div class="tab">
+    <button class="tablinks">No Angular Projects Yet!</button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	</div>
+  <hr>
+	
+<section>
+<div id="contactform" class="tabcontent">
+	<h1 class="title">Contact Form Script</h1>
+<pre class="code_box">
+	//TEXT REGEX
+var patternText = /^([^0-9]*)$/,
+	//EMAIL REGEX
+	patternEmail = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
+	input_1, input_2, input_3, input_4;
+
+function testFormInputs(input, boolean) {
+	var substring = input.substr(-1),
+			input = input.substring(0, 5),
+			InputSelectorValid = input + "-for" + substring + "1",
+			InputSelectorError = input + "-for" + substring + "2";
+
+	//console.log('Input: ',input);
+	//console.log('Input #: ', substring);
+	//console.log('New Input: ',input);
+	//console.log('InputSelectorValid: ', InputSelectorValid);
+	//console.log('InputSelectorError: ', InputSelectorError);
+			
+	if (boolean) {
+		if ($('#' + InputSelectorError).prop('checked'))
+			$('#' + InputSelectorError).trigger('click');
+		if (!($('#' + InputSelectorValid).prop('checked')))
+			$('#' + InputSelectorValid).trigger('click');
+	}	else {
+		if ($('#' + InputSelectorValid).prop('checked'))
+			$('#' + InputSelectorValid).trigger('click');
+		if (!($('#' + InputSelectorError).prop('checked')))
+			$('#' + InputSelectorError).trigger('click');
+
+		$('#' + input).next().find('p').css('text-decoration', 'line-through');
+	}
+}
+function resetForm() {
+	$('#formNextButton').removeAttr('style');
+	$('#logoImg').slideDown();
+	$('form input').removeAttr('style');
+	$('form .contact-button').removeAttr('style');
+	$('form .contact-button-trigger').removeAttr('style');
+	$('form .tip').removeAttr('style');
+	$('form .error').removeAttr('style');
+	$('form .label-text').removeAttr('style');
+	$('form .validation-master').removeAttr('style');
+	$('.nav-dot p').removeAttr('style');
+}
+function stopTab(e) {
+	var evt = e || window.event;
+	
+	if (evt.keyCode === 9) {
+		evt.preventDefault();
+	}
+}
+function preventTab(input) {
+	if ($('button#formNextButton').click()) {$(input).focus();}
+	$(input).keypress(function(event){
+		if (event.keyCode == 9) {
+			$(input).focus();
+		}
+	});
+}	
+function validateLoop() {
+		if ($('#input-for12').prop('checked')) {
+				preventTab('#input-1');
+		}
+}
+
+function checkSize() {
+	console.log(window.matchMedia("(max-width: 831px)"));
+		var active;
+		$("#input-1, #input-2, #input-3, #input-4, input[type='submit']").focus(function() {
+			$('.validation-master').css('right','5%');
+			$('.nav-dot p').css('opacity','0');
+			
+			//If Mobile Size
+			if (window.matchMedia("(max-width: 831px)").matches) {
+				console.log('max-width:831px Media Query in jQuery');
+				$('body').removeAttr('style').css('height',window.innerHeight);
+				$('#formNextButton').css('opacity','1');
+				$('.tip').hide();
+				$('#logoImg').slideUp();
+
+				//Move Form Up when keybord appears
+				var heightToMove = {'top':'45%'};
+				
+				$('form textarea').css('top','50%');
+				$('form input').css(heightToMove);
+				$('form .contact-button').css(heightToMove);
+				$('form .contact-button-trigger').css(heightToMove);
+				$('form .tip').css(heightToMove);
+				$('form .error').css(heightToMove);
+				
+				$('form .label-text').css('top','30%');
+				$('form .validation-master').css('right','18.5%');
+			}
+			active = document.activeElement;
+		});
+	
+		$('#input-4').blur(function() {
+			//resetForm();
+		});
+		$(document).mouseup(function(event){
+			var target = $("#input-1, #input-2, #input-3, #input-4");
+			if(!target.is(event.target)) {
+				resetForm();
+			}
+		});
+		//Moble 'Tab'
+		$('button#formNextButton').click(function() {
+			$(active).next().next().focus();
+		});
+
+
+	//ON NEXT FOCUS TEST INPUT
+	$('#input-2').focus(function() {
+		if ($('#input-1').val().length > 0) {
+			input_1  = patternText.test($('#input-1').val());
+		} else
+			input_1 = false;
+		
+		testFormInputs('input-1',input_1);
+		if (window.matchMedia("(max-width:501px)").matches != true) {
+			$('#input-1').next().find('p')
+				.text($('#input-1').val())
+				.css('transform','translateX(-150px)');
+		}
+	});
+	$('#input-3').focus(function() {
+		if ($('#input-2').val().length > 0) {
+			input_2  = patternEmail.test($('#input-2').val());
+		} else
+			input_2 = false;
+		
+		testFormInputs('input-2',input_2);
+		if (window.matchMedia("(max-width:501px)").matches != true) {
+			$('#input-2').next().find('p')
+				.text($('#input-2').val())
+				.css('transform','translateX(-150px)');
+		}
+	});
+	$('#input-4').focus(function() {
+		if ($('#input-3').val().length > 0) {
+			input_3  = patternText.test($('#input-3').val());
+		} else
+			input_3 = false;
+		
+		testFormInputs('input-3',input_3);
+		if (window.matchMedia("(max-width:501px)").matches != true) {
+			$('#input-3').next().find('p')
+				.text($('#input-3').val())
+				.css('transform','translateX(-150px)');
+		}
+	});
+
+	//VALID Clicks Tests
+	$('#input-for12').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box1 .boxA').addClass('boxA_Error');
+			$('.box1 .boxC').css('opacity','0');
+			$('.box1 .boxB').addClass('boxB_Error');
+		} else {
+			$('.box1 .boxA').removeClass('boxA_Error');
+			$('.box1 .boxC').css('opacity','1');
+			$('.box1 .boxB').removeClass('boxB_Error');
+		}
+	});
+	$('#input-for22').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box2 .boxA').addClass('boxA_Error');
+			$('.box2 .boxC').css('opacity','0');
+			$('.box2 .boxB').addClass('boxB_Error');
+		} else {
+			$('.box2 .boxA').removeClass('boxA_Error');
+			$('.box2 .boxC').css('opacity','1');
+			$('.box2 .boxB').removeClass('boxB_Error');
+		}
+	});
+	$('#input-for32').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box3 .boxA').addClass('boxA_Error');
+			$('.box3 .boxC').css('opacity','0');
+			$('.box3 .boxB').addClass('boxB_Error');
+		} else {
+			$('.box3 .boxA').removeClass('boxA_Error');
+			$('.box3 .boxC').css('opacity','1');
+			$('.box3 .boxB').removeClass('boxB_Error');
+		}
+	});
+	$('#input-for42').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box4 .boxA').addClass('boxA_Error');
+			$('.box4 .boxC').css('opacity','0');
+			$('.box4 .boxB').addClass('boxB_Error');
+		} else {
+			$('.box4 .boxA').removeClass('boxA_Error');
+			$('.box4 .boxC').css('opacity','1');
+			$('.box4 .boxB').removeClass('boxB_Error');
+		}
+	});
+
+	//INVALID Clicks Tests
+	$('#input-for11').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box1 .boxA').addClass('boxA_ValidCheck');
+			$('.box1 .boxC').addClass('boxC_ValidCheck');
+			$('.box1 .boxB').addClass('boxB_ValidCheck');
+		} else {
+			$('.box1 .boxA').removeClass('boxA_ValidCheck');
+			$('.box1 .boxC').removeClass('boxC_ValidCheck');
+			$('.box1 .boxB').removeClass('boxB_ValidCheck');
+		}
+	});
+	$('#input-for21').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box2 .boxA').addClass('boxA_ValidCheck');
+			$('.box2 .boxC').addClass('boxC_ValidCheck');
+			$('.box2 .boxB').addClass('boxB_ValidCheck');
+		} else {
+			$('.box2 .boxA').removeClass('boxA_ValidCheck');
+			$('.box2 .boxC').removeClass('boxC_ValidCheck');
+			$('.box2 .boxB').removeClass('boxB_ValidCheck');
+		}
+	});
+	$('#input-for31').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box3 .boxA').addClass('boxA_ValidCheck');
+			$('.box3 .boxC').addClass('boxC_ValidCheck');
+			$('.box3 .boxB').addClass('boxB_ValidCheck');
+		} else {
+			$('.box3 .boxA').removeClass('boxA_ValidCheck');
+			$('.box3 .boxC').removeClass('boxC_ValidCheck');
+			$('.box3 .boxB').removeClass('boxB_ValidCheck');
+		}
+	});
+	$('#input-for41').click(function() {
+		if ($(this).prop("checked")) {
+			$('.box4 .boxA').addClass('boxA_ValidCheck');
+			$('.box4 .boxC').addClass('boxC_ValidCheck');
+			$('.box4 .boxB').addClass('boxB_ValidCheck');
+		} else {
+			$('.box4 .boxA').removeClass('boxA_ValidCheck');
+			$('.box4 .boxC').removeClass('boxC_ValidCheck');
+			$('.box4 .boxB').removeClass('boxB_ValidCheck');
+		}
+	});
+ 
+ 	//Click tests VALIDATION
+ 	$('#input-for12').click(function() {
+		if (!input_1) {
+		 console.log('INPUT 1 INVALID');
+			var errorMessage1 = "Name field must be only letters.&lt;i class='fa fa-hand-pointer'&gt;&lt;/i&gt;&lt;br&gt;";
+			$('form p.error').append(errorMessage1).css('border','1px solid red').show();
+		}
+	});
+  $('#input-for22').click(function() {
+		if (!input_2) {
+		 console.log('INPUT 2 INVALID');
+			var	errorMessage2 = "Emails must contain an @ sign and a domain.&lt;i class='fa fa-hand-pointer'&gt;&lt;/i&gt;&lt;br&gt;";
+			$('form p.error').append(errorMessage2).css('border','1px solid red').show();
+		}
+	});
+  $('#input-for32').click(function() {
+		if (!input_3) {
+		 console.log('INPUT 3 INVALID');
+			var errorMessage3 = "Subject field must be only letters.&lt;i class='fa fa-hand-pointer'&gt;&lt;/i&gt;&lt;br&gt;";
+			$('form p.error').append(errorMessage3).css('border','1px solid red').show();
+		}
+	});
+  $('#input-for42').click(function() {
+		if (!input_4) {
+		 console.log('INPUT 4 INVALID');
+			var errorMessage4 = "Message must be longer than 10 characters.&lt;i class='fa fa-hand-pointer'&gt;&lt;/i&gt;&lt;br&gt;";
+			$('form p.error').append(errorMessage4).css('border','1px solid red').show();
+		}
+	});
+	
+	$('#input-4').keypress(function(e) {
+		if (e.keyCode == 32 || e.keyCode == 0) {
+			if ($('#input-4').val().length > 10) {
+				input_4 = ($('#input-4').val().length > 10);
+				testFormInputs('input-4', input_4);
+				
+				$('form').validate();
+				if ((input_1) && (input_2) && (input_3) && (input_4)) {
+					$('#input-4').next().find('p').css('transform','translateX(-150px)');
+					$('.tip').html("All Fields Valid");
+					$('#tip-submit input').fadeIn();
+				} else {
+					$('.tip').css('opacity','1').text("Please fix the errors to submit");
+				 $('form .error').show();
+				}
+			}
+		}
+	});
+	$("#tip-submit input").click(function(e) {
+		e.preventDefault();
+		$('form').validate()
+		
+		console.log('Validates? :',$('form').valid());
+		if ($('form').valid())
+			$('form').hide();
+		
+		$('#SubmitingDelay').fadeIn('fast');
+		setTimeout(function() {$('form').submit();}, 5000);
+	});
+}
+
+$(document).ready(function() {
+	//Reset the Form Control Checkboxes on page load
+	var i, controlBoxes = $("body input[type='checkbox']");
+	for (i = 0; i &lt; controlBoxes.length-1; i++) {
+					controlBoxes.prop('checked', false);
+	}
+	checkSize();
+	$(window).resize(checkSize);
+	
+	$('form a').click(function(e) {
+		console.log('HERE');
+		e.preventDefault();
+		console.log($(this).attr('href'));
+		//$().focus();
+	});
+});
+</pre>
+</div>
+
+<div id="colorcode" class="tabcontent">
+	<h1 class="title">Color Coding Script</h1>
+<pre class="code_box">
+
+// global document
+'use strict';
+
+function strip(html) {
+	var tmp = document.createElement("DIV");
+	tmp.innerHTML = html;
+	
+	return tmp.textContent || tmp.innerText;
+}
+
+var psudocodeDict = {
+		'head'		: 'color: mediumblue;',
+		'type'		: 'color: mediumblue; font-weight: 600; font-style: italic;',
+		'boolean'	: 'color: darkred; font-weight: 600; font-style: italic;',
+		'logic'		: 'color: green; font-style: italic;',
+		'string'	: 'color: rebeccapurple;',
+		'funct'		: 'color: darkviolet; font-weight: 600;',
+		'comment'	: 'color: green; font-weight: 600;'
+	},
+	psudocodeKeywords = /\bConstant\b|\bDeclare\b|\bInteger\b|\bFloat\b|\bReal\b|\bFunction\b|\bReturn\b|\bString\b|\bBoolean\b|\bTo\b|\bDo\b|\bModule\b|\bIf\b|\bElse\b|\bSelect\b|\bCase\b|\bInput\b|\bDisplay\b|\bSet\b|\bCall\b|\bWhile\b|\bUntil\b|\bFor\b|\bEnd\b|\bTab\b|\bCR\b|\bCLR\b|\bThen\b|\bRef\b|\bNOT\b|\bOR\b|\bAND\b|\bTrue\b|\bFalse\b|\bsqrt\b|\bround\b|\bappend\b|\brandom\b|\bcurrency\b|\bsleep\b|\btoReal\b|\btoString\b|\btoUpper\b|\btoFloat\b/g,
+	psudocodeList = {
+		/*Psudocode Keywords*/
+		'Constant' : "&lt;span style='" + psudocodeDict.head + "'&gt;Constant&lt;/span&gt;",
+		'Declare'	: "&lt;span style='" + psudocodeDict.head + "'&gt;Declare&lt;/span&gt;",
+		'Module'	 : "&lt;span style='" + psudocodeDict.head + "'&gt;Module&lt;/span&gt;",
+		'Select'	 : "&lt;span style='" + psudocodeDict.head + "'&gt;Select&lt;/span&gt;",
+		'Case'		 : "&lt;span style='" + psudocodeDict.head + "'&gt;Case&lt;/span&gt;",
+		'Input'		: "&lt;span style='" + psudocodeDict.head + "'&gt;Input&lt;/span&gt;",
+		'If'			 : "&lt;span style='" + psudocodeDict.head + "'&gt;If&lt;/span&gt;",
+		'Else'		 : "&lt;span style='" + psudocodeDict.head + "'&gt;Else&lt;/span&gt;",
+		'End'			: "&lt;span style='" + psudocodeDict.head + "'&gt;End&lt;/span&gt;",
+		'Do'			 : "&lt;span style='" + psudocodeDict.head + "'&gt;Do&lt;/span&gt;",
+		'While'		: "&lt;span style='" + psudocodeDict.head + "'&gt;While&lt;/span&gt;",
+		'Until'		: "&lt;span style='" + psudocodeDict.head + "'&gt;Until&lt;/span&gt;",
+		'For'			: "&lt;span style='" + psudocodeDict.head + "'&gt;For&lt;/span&gt;",
+		'To'			 : "&lt;span style='" + psudocodeDict.head + "'&gt;To&lt;/span&gt;",
+		'Call'		 : "&lt;span style='" + psudocodeDict.head + "'&gt;Call&lt;/span&gt;",
+		'Display'	: "&lt;span style='" + psudocodeDict.head + "'&gt;Display&lt;/span&gt;",
+		'Function' : "&lt;span style='" + psudocodeDict.head + "'&gt;Function&lt;/span&gt;",
+		'Return'	 : "&lt;span style='" + psudocodeDict.head + "'&gt;Return&lt;/span&gt;",
+		'Set'			: "&lt;span style='" + psudocodeDict.head + "'&gt;Set&lt;/span&gt;",
+		'Then'		 : "&lt;span style='" + psudocodeDict.head + "'&gt;Then&lt;/span&gt;",
+		'Ref'			: "&lt;span style='" + psudocodeDict.head + "'&gt;Ref&lt;/span&gt;",
+			
+		'Integer'	: "&lt;span style='" + psudocodeDict.type + "'&gt;Integer&lt;/span&gt;",
+		'Float'		: "&lt;span style='" + psudocodeDict.type + "'&gt;Float&lt;/span&gt;",
+		'String'	 : "&lt;span style='" + psudocodeDict.type + "'&gt;String&lt;/span&gt;",
+		'Real'		 : "&lt;span style='" + psudocodeDict.type + "'&gt;Real&lt;/span&gt;",
+		'Boolean'	: "&lt;span style='" + psudocodeDict.type + "'&gt;Boolean&lt;/span&gt;",
+		
+		'NOT'			: "&lt;span style='" + psudocodeDict.logic + "'&gt;NOT&lt;/span&gt;",
+		'OR'			 : "&lt;span style='" + psudocodeDict.logic + "'&gt;OR&lt;/span&gt;",
+		'AND'			: "&lt;span style='" + psudocodeDict.logic + "'&gt;AND&lt;/span&gt;",
+			
+		'True'		 : "&lt;span style='" + psudocodeDict.boolean + "'&gt;True&lt;/span&gt;",
+		'False'		: "&lt;span style='" + psudocodeDict.boolean + "'&gt;False&lt;/span&gt;",
+			
+		'round'		: "&lt;span style='" + psudocodeDict.funct + "'&gt;Round&lt;/span&gt;",
+		'sqrt'		 : "&lt;span style='" + psudocodeDict.funct + "'&gt;sqrt&lt;/span&gt;",
+		'Tab'			: "&lt;span style='" + psudocodeDict.funct + "'&gt;Tab&lt;/span&gt;",
+		'CR'			 : "&lt;span style='" + psudocodeDict.funct + "'&gt;CR&lt;/span&gt;",
+		'CLR'			: "&lt;span style='" + psudocodeDict.funct + "'&gt;CLR&lt;/span&gt;",
+		'currency' : "&lt;span style='" + psudocodeDict.funct + "'&gt;currency&lt;/span&gt;",
+		'sleep'		: "&lt;span style='" + psudocodeDict.funct + "'&gt;sleep&lt;/span&gt;",
+		'append'	 : "&lt;span style='" + psudocodeDict.funct + "'&gt;append&lt;/span&gt;",
+		'random'	 : "&lt;span style='" + psudocodeDict.funct + "'&gt;random&lt;/span&gt;",
+		'toReal'	 : "&lt;span style='" + psudocodeDict.funct + "'&gt;toReal&lt;/span&gt;",
+		'toString' : "&lt;span style='" + psudocodeDict.funct + "'&gt;toString&lt;/span&gt;",
+		'toFloat'	: "&lt;span style='" + psudocodeDict.funct + "'&gt;toFloat&lt;/span&gt;",
+		'toUpper'	: "&lt;span style='" + psudocodeDict.funct + "'&gt;toUpper&lt;/span&gt;"
+	},
+		
+	javascriptKeywords = /\bfunction\b|\bvar\b|\bfor\b|\bwhile\b|\bthis\b|\breturn\b|\bif\b|\belse\b|(\$\()|\bwindow\b|\bdocument\b|\bconsole\b|\be\b|\bevt\b|\bevent\b|\btrue\b|\bfalse\b/g,
+		
+	javascriptList = {
+		'function' : "&lt;functiondata&gt;function&lt;/functiondata&gt;",
+		'return'	 : "&lt;functiondata&gt;return&lt;/functiondata&gt;",
+		'var'			: "&lt;functiondata&gt;var&lt;/functiondata&gt;",
+		'for'			: "&lt;functiondata&gt;for&lt;/functiondata&gt;",
+		'while'		: "&lt;functiondata&gt;while&lt;/functiondata&gt;",
+		'if'			 : "&lt;functiondata&gt;if&lt;/functiondata&gt;",
+		'else'		 : "&lt;functiondata&gt;else&lt;/functiondata&gt;",
+		'this'		 : "&lt;functiondata&gt;this&lt;/functiondata&gt;",
+			
+		'$('			 : "&lt;locationdata&gt;$&lt;/locationdata&gt;(",
+		'window'	 : "&lt;locationdata&gt;window&lt;/locationdata&gt;",
+		'document' : "&lt;locationdata&gt;document&lt;/locationdata&gt;",
+		'console'	: "&lt;locationdata&gt;console&lt;/locationdata&gt;",
+		
+		'e'				: "&lt;eventdata&gt;e&lt;/eventdata&gt;",
+		'evt'			: "&lt;eventdata&gt;evt&lt;/eventdata&gt;",
+		'event'		: "&lt;eventdata&gt;event&lt;/eventdata&gt;",
+			
+		'true'		 : "&lt;booleandata&gt;true&lt;/booleandata&gt;",
+		'false'		: "&lt;booleandata&gt;false&lt;/booleandata&gt;"
+	};
+
+function colorCode(type) {
+	$("pre").each(function() {
+		var oldHTML = $(this).html();
+		if (type === 'psudo') {
+			
+			//FOR TEXT WITHIN QUOTES
+			oldHTML = oldHTML.replace(/"(?:[^"\\]|\\.)*"/g, "&lt;span style='" + psudocodeDict.string + "'&gt;$&&lt;/span&gt;");
+
+			// FOR PSUDOCODE LIST
+			oldHTML = oldHTML.replace(psudocodeKeywords, function(matched) {
+				matched = strip(matched);
+				return psudocodeList[matched];
+			}
+			);
+			// FOR PSUDOCODE COMMENTS
+			oldHTML = oldHTML.replace(/(\/{2}(.*)|$)/g, function(matched) {
+				matched = strip(matched);
+				return "&lt;span style='" + psudocodeDict.comment + "'&gt;" + matched + "&lt;/span&gt;";
+			}
+			);
+		}
+		if (type === 'javascript') {
+			//FOR SINGLE QUOTES
+			oldHTML = oldHTML.replace(/'(?:[^'\\]|\\.){0,60}'/g, "&lt;stringdata&gt;$&&lt;/stringdata&gt;");
+			//FOR TEXT WITHIN DOUBLE QUOTES
+			oldHTML = oldHTML.replace(/"(?:[^"\\]|\\.){0,60}"/g, "&lt;stringdata&gt;$&&lt;/stringdata&gt;");
+			//FOR REGEXES
+			oldHTML = oldHTML.replace(/(\/[^*](?:[^\/]|\\.)+\/)([g|i|m|,]){1,2}/g, "&lt;stringdata&gt;$&&lt;/stringdata&gt;");
+			// FOR JAVASCRIPT LIST
+			oldHTML = oldHTML.replace(javascriptKeywords, function(x){return javascriptList[x]});
+			// FOR JAVASCRIPT SINGLE LINE COMMENTS
+			oldHTML = oldHTML.replace(/((?:\n)|[\t])\/\/(?:.*)/g, "&lt;commentdata&gt;$&&lt;/commentdata&gt;");
+			// FOR JAVASCRIPT BLOCK COMMENTS
+			oldHTML = oldHTML.replace(/\/\*\n((.*?)\n)+\*\//g, "&lt;commentdata&gt;$&&lt;/commentdata&gt;");
+		}
+		
+		var oldHTML = oldHTML.replace(/\t/g, "  ");
+		$(this).html(oldHTML);
+	});
+}
+</pre>
+</div>
+
+<div id="ajaxsimple" class="tabcontent">
+	<h1 class="title">Learning AJAX</h1>
+<pre class="code_box">
+
+</pre>
+</div>
+
+<div id="" class="tabcontent">
+	<h1 class="title"></h1>
+<pre class="code_box">
+
+</pre>
+</div>
+
+</section>
+	<hr>
+	<div class="callToAction spin">
+		<button onclick="window.location.assign('php.html')">Check out some PHP?</button>
+	</div>
+</main>
+
+<script>
+  $(document).ready(function() {
+    $('.tablinks').each(function() {
+      if ($(this).text() == '') {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+<!-- TAB Script -->
+<script>
+	document.getElementsByClassName("tab")[0].getElementsByTagName("button")[0].click();
+	function openTopic(evt, topicName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(topicName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+</script>
+<!-- Empty Node Removal -->
+<script>
+  function clean(node) {
+    for (var n = 0; n < node.childNodes.length; n ++) {
+      var child = node.childNodes[n];
+      if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+        node.removeChild(child);
+        n --;
+      } else if(child.nodeType === 1) {
+        clean(child);
+      }
+    }
+  }
+  clean(document);
+</script>
+<script src="codeColor.js"></script>
+<script src="../scripts/dropdown-nav.js"></script>
+</body>
+</html>

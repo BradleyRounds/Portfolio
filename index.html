@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	
+  <link href="_css/styles.css"																				rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" 			rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" 	rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" 				rel="stylesheet">
+	<link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"			rel="stylesheet">
+	<link href="fonts/PortfolioIcons/style.css" 												rel="stylesheet">	
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--Recommended Meta Tags-->
+	<meta charset="utf-8">
+	<meta name="language" content="english"> 
+	<meta name="author" content="Bradley Rounds">
+	<meta name="google-site-verification" content="WZoAG_W2nfKKeR74c2QFfFt_z-p1gjTrimfucSSu4II" />
+
+	<!--Search Engine Optimization Meta Tags-->
+	<title>Bradley Rounds - Official Portfolio</title>
+	<meta name="description" content="Bradley Rounds, his projects, interests and experience.">
+	<meta name="keywords" content="Web Developer, Web Designer, passion, freelance, for hire, html, css, javascript, python, php, contact, boulder, longmont, broomfield, louisville, lafayette, thornton, westminster">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="7 days">
+	<meta name="distribution" content="web">
+	<meta name="robots" content="noodp">
+
+	<!--Optional Meta Tags-->
+	<meta name="distribution" content="web">
+	<meta name="web_author" content="Bradley Rounds">
+	<meta name="rating" content="general">
+	<meta name="subject" content="Personal">
+	<meta name="title" content="Bradley Rounds - Official Portfolio.">
+	<meta name="copyright" content="Copyright 2018">
+	<meta name="reply-to" content="rounds.bradley@gmail.com">
+	<meta name="city" content="Boulder">
+	<meta name="country" content="USA">
+	<meta name="distribution" content="global">
+
+	<!--Meta Tags for HTML pages on Mobile-->
+	<meta name="HandheldFriendly" content="true"/> 
+	<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<header>
+  <img id="logoImg" src="images/logo.png" alt="My Logo, A Handmade BR Tag">
+  <nav>
+    <ul>
+      <li class="nav-item">
+				<a href="#"><div class="nav-link"><i class="fa fa-home fa-lg"></i></div>
+          <span>HOME</span>
+        </a>
+			</li>
+      <li class="nav-item">
+				<a href="portfolio.html"><div class="nav-link"><i class="fa fa-book fa-lg"></i></div>
+          <span>PORTFOLIO</span>
+        </a>
+			</li>
+      <li class="nav-item">
+        <div id="dropdown">
+				  <a id="dropdownButton" href="#"><div class="nav-link"><i class="fa fa-gear fa-lg"></i></div>
+            <span>CODING</span>
+          </a>
+          <div id="dropdownContent">
+            <a href="coding/javascript.html"><i class="fa fa-coffee fa-lg"></i>
+              <span>JAVASCRIPT</span>
+            </a>
+            <a href="coding/php.html"><i class="fa fa-server fa-lg"></i>
+              <span>PHP</span>
+            </a>
+            <a href="coding/psudocode.html"><i class="fa fa-cogs fa-lg"></i>
+              <span>PSUDOCODE</span>
+            </a>
+						<a href="coding/python.html"><i class="icon-python fa-lg"></i>
+              <span>PYTHON</span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+				<a href="contact_me.html"><div class="nav-link"><i class="fa fa-envelope fa-lg"></i></div>
+          <span>CONTACT</span>
+        </a>
+			</li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <article>
+		<h1 id="homepageGet">I'M A WEB DESIGNER. IF YOU'RE NOT, THEN WE SHOULD WORK TOGETHER!</h1>
+		<aside class="portrait_img">
+			<p>Be introduced to the temporary, ever-fluid portfolio of an educated web designer who is so impressive, you should really contact him.</p>
+			<p>
+				<strong>Hi</strong>. I'm Bradley<br/>
+				<span>WebDesigner - Illustrator - Developer</span>
+			</p>
+			<img class="portrait_img-small" src="images/BradleyRounds2018.jpg" alt="Image of myself">
+			<img class="portrait_img-large" src="images/BradleyRounds2018.jpg" alt="Image of myself">
+		</aside>
+  </article>
+	<div class="callToAction underline">
+		<button onclick="window.location.assign('portfolio.html')">Learn About Me!</button>
+	</div>
+ </main>
+<footer>
+  <div class="bio">
+    <div class="text">
+      <p>Hello, my name is Bradley Rounds and I am a <span id="bioText_age">20</span> year old web and front end developer currently living in Boulder Colorado with a passion for all computer, gaming and outdoor activities.<br><br>I also love bluetooth, because what can't be improved with bluetooth  <i class="fa fa-bluetooth-b fa-lg"></i></p>
+    </div>
+    <div class="stats">
+      <div><span>100%</span><br>Love for web development</div>
+      <div><span id="bioStats_drinks"></span><br>Energy drinks consumed this week</div>
+      <div><span>900+</span><br>Hours of work in this portfolio</div>
+    </div>
+  </div>
+  <div class="sub">
+    <span class="copywrite">&copy; Bradley Rounds <span>2018</span></span>
+    <span class="compatibility">
+      <i class="icon-chrome  iconImg valid" aria-hidden="true"></i>
+      <i class="icon-firefox iconImg valid" aria-hidden="true"></i>
+      <i class="icon-safari  iconImg valid" aria-hidden="true"></i>
+      <i class="icon-opera   iconImg valid" aria-hidden="true"></i>
+      <i class="icon-edge    iconImg valid" aria-hidden="true"></i>
+      <i class="icon-IE      iconImg invalid" aria-hidden="true"></i>
+    </span>
+  </div>
+</footer>
+  
+<!-- Age -->
+<script type="text/javascript">
+  var today = new Date();
+	var birthDate = new Date(1998, 0, 3);
+	var age = today.getFullYear() - birthDate.getFullYear();
+	var m = today.getMonth() - birthDate.getMonth();
+	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {age--;}
+  $('#bioText_age').text(age);
+</script>
+<!-- Copywrite Year -->
+<script type="text/javascript">
+  $('.copywrite span').text(new Date().getFullYear());
+</script>
+<!-- Energy Drinks -->
+<script type="text/javascript">
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+  // checks if one day has passed. return "true" is so
+  function hasOneDayPassed() {
+    var date = new Date().toLocaleDateString();
+    if( localStorage.BradleyRounds_date == date ) 
+      return false;
+    localStorage.BradleyRounds_date = date;
+    return true;
+  }
+  var counter;
+  function runOncePerDay() {
+    if( !hasOneDayPassed() ) return false;
+    
+    localStorage.BradleyRounds_drink = 0;
+    counter = getRndInteger(parseInt(localStorage.BradleyRounds_drink), 5);
+    localStorage.BradleyRounds_drink = counter;
+  }
+  runOncePerDay();
+  if ( localStorage.getItem("BradleyRounds_drink") ) {
+    $('#bioStats_drinks').text(localStorage.BradleyRounds_drink);
+  } else {
+    localStorage.BradleyRounds_drink = counter;
+    $('#bioStats_drinks').text(counter);
+  }
+</script>
+<!-- Empty Node Removal -->
+<script>
+  function clean(node) {
+    for (var n = 0; n < node.childNodes.length; n ++) {
+      var child = node.childNodes[n];
+      if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+        node.removeChild(child);
+        n --;
+      } else if(child.nodeType === 1) {
+        clean(child);
+      }
+    }
+  }
+  clean(document);
+</script>
+<script src="scripts/dropdown-nav.js"></script>
+</body>
+</html>

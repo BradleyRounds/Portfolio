@@ -1,0 +1,1516 @@
+@import "_variables.scss";
+@import "_functions.scss";
+@import "_mixins.scss";
+
+html {
+  background-color: color(main);
+	margin-top: -8px;
+	a {
+		color: color(darkmain);
+		text-decoration: none;
+		&:hover {cursor: $cursor;}
+	}
+}
+
+body {
+  z-index: z(deep);
+	overflow-x: hidden;
+  width: 90%;
+	min-width: 310px;
+  padding: 0;
+  margin: 0 5%;
+	
+  border-style: outset;
+	border-width: 0 2px;
+	border-color: #ccc;
+
+  box-shadow: 0px -10px 50px black;
+  background-color: color(secondary);
+}
+
+img {color:gray; font-size: 10px;} /*Alt Text*/
+input[type='submit'] span {color: white;}
+.bracket {color: white;}
+.portfolioGroup {display: block;}
+.nopadding {padding: 0;}
+.nomargin {margin: 0;}
+.visible {visibility: visible;}
+.notvisible {visibility: hidden;}
+.flip-vertical {@include prefix('transform', 'rotate(180deg)');}
+.letterpress {@include letterpress('#000', '#FFF', '1px');}
+
+i.valid   {color: rgba(0,255,0,0.4);}
+i.invalid {color: rgba(255,0,0,0.4);}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 0 5px 5px 8px;
+  transition: .5s ease;
+  &_up   {@include prefix('transform', 'rotate(-136deg)');}
+  &_down {@include prefix('transform', 'rotate(  45deg)');}
+}
+
+//------------------------------CLEAR FIXES----------------------------------------
+div hr {
+  clear: both;
+  border-color: #414244;
+}
+.clearfix,
+body,
+article,
+section {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+//---------------------------Customized Portfolio Scrollbar--------------------------
+.scrollbar {
+	&::-webkit-scrollbar-track	{
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		background-color: transparent;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar        {
+		margin: 0 10px;
+		width: 10px;
+		border-radius: 10px;
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-thumb	{
+		border-radius: 10px;
+		background-color: #0ae;
+		background: -webkit-linear-gradient(left, color(main) 0%, #207cca 50%, color(main) 100%)
+	}
+}
+
+#logoImg {
+	max-width: 300px;
+	width: 40%;
+	margin: 10px;
+	cursor: pointer;
+}
+
+nav {
+	float: right;
+  top: 5px;
+  margin-right: 10px;
+  ul {margin-top: 10px; padding: 0;}
+  li {
+    display: inline-block;
+    list-style-type: none;
+    vertical-align: top;
+    text-align: center;
+    a {
+      display: block;
+      position: relative;
+
+      color: color(darkmain);
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 500;
+      letter-spacing: 2px;
+
+      cursor: $cursor;
+      i {@include prefix('transition', 'all 0.3s ease-out');}
+
+      span {
+        display: block;
+        position: relative;
+        opacity: 0;
+
+        width: 150%;
+        bottom: 18px;
+
+        margin-left: -25%;
+
+        color: color(text);
+        font-family: font(main);
+        font-size: 9px;
+        letter-spacing: 2px;
+
+        @include prefix('transition', 'all 0.3s ease-out');
+      }
+      &:hover {
+        i {opacity: 0;}
+        span {opacity: 1;}
+      }
+    }
+    .active, a:hover {color:black;}
+    
+    a .nav-link {
+			width: 75px;
+			height: 30px;
+			line-height: 30px;
+      font-family: font(link);
+      font-size: 1.1em;
+      font-weight: 600;
+			letter-spacing: 2px;
+    }
+			
+    //DD BUTTON "CODING"
+    #dropdown {position: relative;}
+    #dropdownContent {
+			display: none;
+      position: absolute;
+      
+			width: auto;
+      margin-top: -1.6px;
+			margin-left: -8px;
+			
+      color: color(darkmain);
+			background-color: color(secondary);
+      font-family: font(link);
+
+			z-index: z(dropdown);
+		}
+  //END DROPDOWN AREA
+  }
+}
+
+//HOMEPAGE
+aside.portrait_img {
+	position: relative;
+  float: right;
+  margin: 10px;
+  p {
+		font-family: font(block);
+		text-align: right;
+		font-size: 1.1em;
+		float: left;
+		width: 300px;
+		bottom: 0;
+		position: absolute;
+		margin-left: -315px;
+    
+		strong {
+      font-family: font(main);
+      color: color(darkmain);
+    }
+  	span {
+    	float: right;
+    	width: 500px;
+    	font-style: italic;
+    	font-size: 0.8em;
+    }
+		&:first-child{bottom: 50px;}
+  }
+	img[class^='portrait_img'] {
+    border: 2px black solid;
+    filter: grayscale(100%);
+    
+    &[class$='-small'] {
+      display: none;
+      width: 200px;
+      height: auto;
+    }
+    &[class$='-large'] {
+      width : 320px;
+      height: 400px;
+    }
+  }
+}
+
+#homepageGet {
+  font-family: font(main);
+  font-size: 3em;
+  @include prefix('transform', 'rotate(-12deg)');
+  top : 18%;
+  left: 24%;
+	
+	padding: 0 50px;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+
+/*-------------------------------------- CALL TO ACTIONS -----------------------------------------*/
+.callToAction {
+	text-align: center;
+	width: 100%;
+	height: 4rem;
+	line-height: 4rem;
+	
+	margin: 4% 0;
+	
+	button {
+		cursor: $cursor;
+    
+		display: inline-block;
+		position: relative;
+    overflow: hidden;
+		font-family: font(main);
+		
+		outline: none !important;
+		background: transparent;
+		border: 2px solid color(main);
+		text-decoration: none;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+		
+		height: 50px;
+		width: 250px;
+		padding: 10px 25px;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		z-index: 1;
+	}
+}
+/*=================================SHUTTER===================================*/
+.callToAction.shutter button {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top   : 0;
+    right : 0;
+    bottom: 0;
+    left  : 0;
+
+    height: 100%;
+    width: 200%;
+
+    z-index: -1;
+    @include prefix('transform', 'translate3D(-50%,0,0) rotate(-50deg)');
+    background: transparentize(color(main), .5);
+    transform-origin: 0 bottom;
+    transition: all .25s;
+  }
+  &::before {
+    background: darken(color(main), .5);
+    transition-delay: .25s;
+    opacity: .4;
+    z-index: -2;
+  }
+  
+  &:hover {
+    color: white;
+    border-color: black;
+  }
+  &:hover::before,
+  &:hover::after {@include prefix('transform', 'translate3D(-50%,0,0) rotate(0deg)');}
+}
+/*=================================UNDERLINE=================================*/
+.callToAction.underline button {
+  overflow: visible;
+	&::before,
+	&::after {
+		position: absolute;
+		content: ' ';
+		z-index: -1;
+		width: 10%;
+		top  : 50%;
+		height: 2px;
+		background: color(main);
+		transition: all 0.3s ease;
+	}
+	&::before {left: -10%;}
+	&::after {right: -10%;}
+
+	&:hover {font-size: 1.1rem;}
+	&:hover::before,
+	&:hover::after {
+		width: 40%;
+		top  : 75%;
+	}
+	&:hover::before {left: 10%;}
+	&:hover::after {right: 10%;}
+}
+/*=================================CURTAIN===================================*/
+.callToAction.curtain button {
+	&::before,
+	&::after {
+		content: '';
+		z-index: -1;
+		
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width :  50%;
+		
+		background: color(main);
+		transition: all .5s ease;
+	}
+	&::before {left: -50%;}
+	&::after {right: -50%;}
+
+	&:hover {
+		color: white;
+		border-color: black;
+	}
+	&:hover::before {left: 50%;}
+	&:hover::after {right: 50%;}
+}
+/*=================================SPIN======================================*/
+.callToAction.spin button {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top   : 0;
+    right : 0;
+    bottom: 0;
+    left  : 0;
+
+    height: 100%;
+    width: 200%;
+
+    z-index: -1;
+    background: transparentize(color(main), .5);
+    transform-origin: 0 bottom;
+    transition: all .5s ease;
+  }
+  &::before {@include prefix('transform', 'translate3D(-75%,    0,0) rotate(-50deg)');}
+  &::after  {@include prefix('transform', 'translate3D(125%,-100%,0) rotate( 50deg)');}
+  
+  &:hover {
+    color: white;
+    border-color: black;
+  }
+  &:hover::before {@include prefix('transform', 'translate3D(-75%,    0,0) rotate(  0deg)');}
+  &:hover::after  {@include prefix('transform', 'translate3D(125%,-100%,0) rotate(180deg)');}
+}
+/*=================================CUT=======================================*/
+.callToAction.cut button {
+  color: white;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top   : 0;
+    right : 0;
+    bottom: 0;
+    left  : 0;
+
+    height: 110%;
+    width: 200%;
+
+    z-index: -1;
+    background: transparentize(color(main), .2);
+    
+    transform-origin: 0 bottom;
+    transition: all 2s ease;
+  }
+  &::before {@include prefix('transform', 'translate3D( -25%, -46%,0) rotate( 11deg)');}
+  &::after  {@include prefix('transform', 'translate3D(  75%, -60%,0) rotate(191deg)');}
+  
+  &:hover {
+    color: black;
+    border-color: black;
+  }
+  &:hover::before {@include prefix('transform', 'translate3D(-75%,    0,0) rotate(-50deg)');}
+  &:hover::after  {@include prefix('transform', 'translate3D(125%,-100%,0) rotate( 50deg)');}
+}
+/*=================================GROW======================================*/
+.callToAction.grow button {
+  overflow: visible;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  text-shadow: 2px 4px 3px transparentize(color(main), .4);
+  border-color: black;
+  
+	&::before,
+	&::after {
+		position: absolute;
+		content: ' ';
+		z-index: -1;
+		width: 10%;
+		top  : 50%;
+		height: 2px;
+		background: black;
+		transition: all .5s ease;
+	}
+	&::before {left: -10%;}
+	&::after {right: -10%;}
+
+	&:hover {
+    font-size: .9rem;
+    box-shadow: none;
+    color: white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.7);
+    border-color: color(darkmain);
+    background-color: transparentize(color(main), .3);
+    @include prefix('transform', 'scaleX(1.7) scaleY(1.5)');
+  }
+	&:hover::before,
+	&:hover::after {
+    @include prefix('transform', 'rotate(-90deg)');
+    background: color(darkmain);
+		width: 10%;
+		top  : 50%;
+	}
+	&:hover::before {left: 5%;}
+	&:hover::after {right: 5%;}
+}
+/*=================================BOUNCE====================================*/
+.callToAction.bounce button {
+	&::before,
+	&::after {
+		content: '';
+		z-index: -1;
+		
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width :  50%;
+		
+		background: color(main);
+		transition: all 2s cubic-bezier(.41,1.37,.02,-0.03);
+	}
+	&::before {left: -50%;}
+	&::after {right: -50%;}
+
+	&:hover {
+		color: color(main);
+		border-color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+	}
+	&:hover::before {left: 150%;}
+	&:hover::after {right: 150%;}
+}
+/*-------------------------------------- CALL TO ACTIONS -----------------------------------------*/
+
+
+
+footer {
+	display: block;
+	position: relative;
+	width: 111.1%;
+	margin-left: -5.7%;
+	text-align: right;
+	@include value-prefix('background', 'linear-gradient('color(darkmain)' 70%, black)');
+  
+	div {
+		&.bio {
+			text-align: left;
+			div {
+				display: inline-block;
+				position: relative;
+				vertical-align: text-top;
+        
+				margin: 4px 0;
+				font-family: font(block);
+				color: #fff;
+        
+        &.text {
+          padding-left: 1rem;
+          width: 30%;
+        }
+        &.stats {
+          text-align: center;
+          width: 65%;
+          div {
+            width: 30%;
+            padding: 2px 5px;
+
+            &:nth-of-type(2) {
+              border-width: 0 2px;
+              border-style: solid;
+              border-color: color(text);
+            }
+            span {
+              font-family: font(main);
+              font-size: 5rem;
+              
+              @include letterpress(white, rgba(color(main), 0.3), '3px');
+            }
+          }
+        }
+      }
+		}
+		
+		&.sub {
+			font-family: font(block);
+			color: white;
+			height: 2rem;
+			line-height: 2rem;
+			span {
+				padding: 2px 5px;
+				&.copywrite {
+					position: absolute;
+					left:   0;
+          bottom: 0;
+          font-family: font(link);
+          letter-spacing: 1.5px;
+          font-size: 0.7rem;
+				}
+				&.compatibility {font-size: 1rem;}
+			}
+		}
+	}
+}
+
+div.contactBar {
+	text-align: right;
+	height: 75px;
+	p.title {
+		/*BRADLEY ROUNDS*/
+		font-family: font(main);
+		font-size: 44px;
+		text-align: left;
+	}
+	div.desc {
+		font-family: font(block);
+		font-size: 15px;
+		text-indent: 1rem;
+		text-align: left;
+		span:not(:last-of-type)::after {
+			display: inline;
+			content: ' - ';
+		}
+	}
+  div.contactRight {
+		font-family: font(block);
+		vertical-align: middle;
+		text-align: left;
+		display: inline-block;
+		
+		width: 222px;
+		
+    padding: 0 10px 0 4px;
+		margin: 0 11%;
+		position: relative;
+		top: -60px;
+		
+		background-color: white;
+		border-left: 1px grey solid;
+		border-right: 1px grey solid;
+		
+		p {
+			display: inline;
+			font-size: 15px;
+			margin-right: 0;
+		}
+		section#socialMedia {
+			margin: 5px 0;
+			text-align: center;
+			
+      a i {margin: 0 2.5px;}
+			.shareTooltip {
+				position: relative;
+				display: inline-block;
+        &:hover + .shareTooltipText {opacity: 1;}
+			}
+			.shareTooltipText {
+        display: block;
+				width: 175px;
+        
+				position: absolute;
+				top: 102%;
+				left: 50%;
+        
+				margin-left: -90px;
+				border-radius: 6px;
+				padding: 5px 0;
+        
+				opacity: 0;
+				background-color: color(darkmain);
+				color: white;
+				text-align: center;
+				z-index: z(default) + 1;
+				transition: .5s opacity;
+				
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 100%;
+					margin-left: -5px;
+					border-width: 5px;
+					border-style: solid;
+					border-color: borderarrow(up);
+				}
+					
+        $leftAmt: 9% 25% 42% 58% 74% 91%;
+				// loops through 6 times
+				@for $i from 1 through length($leftAmt) {
+					// for each child move the area
+					&:nth-of-type(#{$i})::after {left: nth($leftAmt, $i);}
+				}
+			}
+			
+			#sharePopup {
+				display: none;
+				position: fixed;
+				top : 0;
+				left: 0;
+				z-index: z(modal);
+				
+				height: calc(100% - 4px);
+				width : calc(100% - 4px);
+				
+				border: 2px black dotted;
+				background-color: rgba(0,0,0, 0.8);
+				
+        div {margin-top: 50px;}
+				a img {
+				  width: 128px;
+				  height: 128px;
+				}
+				span.close {
+					color: white;
+					position: absolute;
+					top: -25px;
+					right: 25px;
+					font-size: 8em;
+					font-weight: 700;
+					cursor: $cursor;
+				}
+			}
+		}
+	}
+}
+#resume {
+	article {
+		width: 56%;
+		float: left;
+		margin-left: 10px;
+		
+		h1:first-child {margin-top: 0}
+		h1.collapsible {
+			i {display: none;}	
+			+ div {display: block;}
+		}
+	}
+	aside {
+		position: relative;
+		float: right;
+		margin-right: 60px;
+	}
+  
+	#aboutSection {
+		font-family: font(block);
+    p {
+      text-indent: 1em;
+      font-size: .9em;
+    }
+  }
+	#degreeSection {
+		font-family: font(block);
+    :not(span) {font-size: .9em;}
+		transition: opacity 1s ease;
+		margin-left: 4em;
+		span {
+			&:first-child {
+				font-weight: 900;
+				color: black;
+			}
+			&:nth-child(2) {
+				display:block;
+				text-indent: 2em;
+			}
+		}
+	}
+	#workSection {
+		:not(span) {font-size: .9em;}
+		letter-spacing: 1px;
+		font-family: font(block);
+		transition: opacity 1s ease;
+		p span {
+			font-size: 1.1em;
+			font-weight: 900;
+			color: black;
+		}
+		ul {padding: 0;}
+		ul li {
+			list-style-type: none;
+			margin-left: 2em;
+		}
+		ul li span {
+			text-decoration: underline;
+			font-weight: 900;
+		}
+	}
+	#achievementSection {
+		font-family: font(block);
+    font-size: .9em;
+		transition: opacity 1s ease;
+		ul li {
+			list-style-type: none;
+			span {font-size: .8em;}
+		}
+	}
+  #certificationsSection {
+    font-size: .9em;
+    i.fa-caret-square-o-right {margin-right: 3px;}
+    ul li span {text-decoration: underline;}
+  }
+	#skillSection {
+		text-align: left;
+	 	font-family: font(block);
+	}
+	#languagesSection {
+		text-align: left;
+	 	font-family: font(block);
+		tbody:first-child td:nth-child(1) {width:  40px;}
+		tbody:first-child td:nth-child(2) {width: 133px;}
+		tr td:nth-of-type(3n) {
+			width: 80px;
+			text-align: center;
+		}
+	}
+	#programSection {
+		text-align: left;
+		font-family: font(block);
+		span:not(:first-child) {text-align: right;}
+    tr td:nth-of-type(1) {text-align: left;}
+		tr td:nth-of-type(3n) {
+			width: 80px;
+			text-align: center;
+		}
+	}
+  #skillSection, #languagesSection, #programSection {
+    h1 {
+      line-height: 1em;
+      border-bottom: 2px solid black;
+    }
+    tr {
+      td:nth-of-type(1) {width:  40px;}
+      td:nth-of-type(2) {
+        width: 180px;
+        font-weight: 700;
+      }
+      td:nth-of-type(3) {
+        width: 74px;
+        span {
+          display: inline-block;
+          width : 12px;
+          height: 12px;
+
+          vertical-align: middle;
+          line-height: 0;
+
+          border-color: color(darkmain);
+          border-style: solid;
+          border-width: 1px;
+          border-radius: 3px;
+
+          &.-o {background-color: white;}
+          &.-c {background-color: color(darkmain);}
+          &:not(:last-of-type) {margin-right: 1px;}
+        }
+      }
+    }
+    tr.indented {
+      td:nth-of-type(1)::before {content: '\00a0\00a0\00a0\00a0'}
+      td:nth-of-type(2) {
+        font-size:    0.9rem;
+        font-weight:  100;
+        padding-left: 10px;
+      }
+    }
+  }
+	#hobbieSection {
+		font-family: font(block);
+		div {
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+			h4 {text-align: center; margin: 5px 0;}
+			div {
+				font-size: 4rem;
+				line-height: 2rem;
+				margin: 0 10px;
+        padding: 10px;
+				display: inline-block;
+				border: color(main) 4px double;
+				border-radius: 10px;
+			}
+		}
+	}
+	#mapSection {
+    ul li span {font-weight: 700;}
+		div {
+      $width-height: 640;
+      $zoom: 4;
+			background-repeat: no-repeat;
+			background-image: url("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAE0mz1ppVHe3gW0d0gIAEBWVz0A8RkZ1k&center=Kansas&zoom="+$zoom+"&format=png&size="+$width-height+"x"+$width-height+"&maptype=roadmap&markers=color:red|Boulder,CO"+/*&markers=color:green|Norfolk,VA*/"&style=feature:administrative|element:geometry|lightness:30|weight:1.5&style=feature:administrative|element:labels|lightness:100|visibility:simplified&style=feature:administrative.land_parcel|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:simplified&style=feature:administrative.neighborhood|element:labels|visibility:off&style=feature:landscape|color:0x19baee&style=feature:landscape.man_made|saturation:-65&style=feature:poi|visibility:off&style=feature:poi|element:labels|visibility:off&style=feature:road|color:0xffffff|lightness:25|visibility:off&style=feature:road|element:labels.icon|visibility:off&style=feature:road|element:labels.text|visibility:simplified&style=feature:road|element:labels.text.stroke|visibility:off&style=feature:road.local|lightness:55&style=feature:road.local|element:labels|visibility:off&style=feature:transit|visibility:off&style=feature:water|lightness:-30|visibility:simplified&style=feature:water|element:labels.icon|visibility:off");
+			width:  640px;
+			height: 640px;
+			
+			margin: 20px auto;
+			display: block;
+			border: 2px solid black;
+			position: relative;
+		}
+    div.mapoverlay::before {
+      position: absolute;
+      content: '';
+      top:  0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+
+      background: radial-gradient(
+        ellipse at center, 
+        rgba(30,  87, 153, 0) 0%,
+        rgba(27, 153, 210, 0) 67%,
+        rgba(25, 186, 238, 1) 100%
+      );
+    }
+	}
+}
+#loading {
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  background-color: white;
+  z-index: z(modal);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  
+  progress {
+    width: 90%;
+    margin: 30% auto;
+    height: 2em;
+    
+    border: none;
+    @include prefix('appearance', 'none')
+      
+    &::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+    &::-moz-progress-bar {background: color(main);}
+    &::-webkit-progress-value {background: color(main);}
+    color: color(main);
+  }
+}
+
+.iconImg{
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+.title {
+  font-variant: small-caps;
+  font-weight: 900;
+  font-size: 1.6em;
+  font-family: font(title);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.codingHeader {
+	font-family: font(main);
+	text-align: center;
+	font-size: 44px;
+	height: 50px;
+	margin-top: -50px;
+}
+.subtitle {
+  font-size: 25px;
+  font-family: font(title);
+  color: #333;
+  padding-left: 5px;
+  margin-top: 10px;
+}
+#gallery {
+	position: relative;
+	margin: 0 auto;
+	width: 85%;
+  p#page_desc {font-family: font(main);}
+	h1 {
+		font-size: 1.8em;
+		letter-spacing: 1px;
+		font-variant: small-caps;
+		text-align: left;
+		margin: 8px 0;
+		padding-left: 50px;
+
+		background: color(main);
+    @include value-prefix('background', 'linear-gradient(right, 'color(main)', white)');
+	}
+	article::before {
+    //Fadeout on right end of bar
+		content: '';
+		display: block;
+		position: absolute;
+		float: right;
+		right: 0;
+		
+		width: 40%;
+		height: 260px;
+		
+		background: transparent;
+    @include value-prefix('background', 'linear-gradient(left, transparent, white)');
+		
+		pointer-events: none;
+	}
+}
+
+/*------------------------------------------- LIGHTBOX ------------------------------------*/
+
+// lightboxColorScheme //
+$lightbox_background: white;
+$lightbox_text: black;
+
+.myLightbox { /* The lightbox (Main Container) */
+  display: none;
+  position: relative;
+  
+  background-color: $lightbox_background;
+  border: 2px solid black;
+	z-index: z(lightbox);
+}
+.lightbox_content { /* lightbox Content */
+  position: relative;
+	text-align: center;
+  background-color: $lightbox_background;
+  margin: 70px auto 30px;
+  width: 90%;
+  max-width: 1290px;
+}
+.lightbox_row {
+  height: 277px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+	> img {
+		width: auto;
+		height: 250px;
+		border-width: 4px;
+		border-style: solid;
+		border-color: white;
+    
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    @include prefix('animation', 'border 5s linear 1s infinite');
+	}
+}
+@keyframes border {
+	0%   {border-color: white;}
+	25%  {border-color: black;}
+	50%  {border-color: cyan ;}
+	75%  {border-color:	black;}
+	100% {border-color: white;}
+}
+
+.lightbox_row-placeholder {
+	width: 35%;
+	height: 250px;
+	display: inline-block;
+	position: relative;
+	background: transparent;
+}
+.lightbox_close {
+  cursor: $cursor;
+  /* The Close Button */
+  color: $lightbox_text;
+  position: absolute;
+  top: 0;
+	right: 20px;
+  text-decoration: none;
+  font-size: 4em;
+  font-weight: 700;
+}
+.lightbox_close:hover,
+.lightbox_close:focus {color: #999;}
+
+.lightboxSlides {
+  display: block;
+  margin: 0 auto;
+  max-width: 875px;
+  width: auto;
+  height: auto;
+  > img,
+	> object {
+    max-width:100%;
+    max-height:100%;
+  }
+}
+[class*='-lightbox_previewImg'] {
+  opacity: 0.6;
+  height: 124px;
+  padding: 4px;
+}
+.lightbox_prevBtn, .lightbox_nextBtn { 
+  position: absolute;
+  left: 0;
+  top: 448px;
+  padding: 14px;
+  color: $lightbox_text;
+  background-color: transparentize(color(main), .5);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lightbox_nextBtn {
+  right: 0;
+	left: auto;
+  border-radius: 3px 0 0 3px; }
+.lightbox_prevBtn:hover,
+.lightbox_nextBtn:hover {background-color: $lightbox_background;}
+
+.lightbox_numbertext { /* Number text (1/3 etc) */
+  position: absolute;
+  top: -50px;
+  left: 0;
+  padding: 8px 12px;
+  font-family: font(block);
+  color: $lightbox_text;
+  font-size: 1.1em;
+  letter-spacing: -0.1em;
+}
+div.lightbox_captionContainer {
+  font-family: font(main);
+  color: $lightbox_text;
+  padding: 2px 16px;
+}
+.lightbox_column {display: inline;}
+p.lightbox_description {
+  font-family: font(block);
+  text-align: left;
+  color: $lightbox_text;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  height: auto;
+  width: 90%;
+  max-width: 1290px;
+  strong {
+    font-family: font(main);
+    font-variant: small-caps;
+  }
+}
+.activelightbox,
+[class$='-lightbox_previewImg']:hover {opacity: 1;}
+
+#animation-controls {
+  display: block;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  
+  a {font-size: 3em;}
+  a:last-of-type {display: none;}
+  div.grayout {
+    display: block;
+    z-index: 3;
+    position: absolute;
+    top : 0;
+    left: 0;
+    width : 100%;
+    height: 70%;
+    background-color: rgba(0,0,0,0.3);
+  }
+}
+
+.code_box {
+  background-color: ghostwhite;
+  text-align: left;
+  padding: 0 5px 5px;
+  margin: 0;
+	margin-top: 8px;
+  height: 50em;
+  overflow-y: scroll;
+	font-size: .95em;
+}
+
+stringdata 		{color: green;}
+commentdata 	{color: grey;}
+functiondata 	{color: #900090;}
+locationdata 	{color: darkorange;}
+eventdata 		{color: darkcyan;}
+booleandata 	{color: green;}
+methoddata 		{color: #0055FF;}
+variabledata 	{color: #0055FF;}
+externaldata 	{color: darkorange;}
+attrdata 			{color: darkorange;}
+tagdata 			{color: #8A2C33;}
+pythondata		{color: darkorange;}
+pythoncomment {color: red;}
+
+stringdata {
+	commentdata,	functiondata,	locationdata,	eventdata,
+	booleandata,	methoddata,	variabledata,	attrdata,
+	tagdata,	pythondata,	pythoncomment {color: inherit;}
+}
+commentdata, pythoncomment {
+	commentdata,	stringdata,	functiondata,	locationdata,
+	eventdata,	booleandata,	methoddata,	variabledata,
+	attrdata,	tagdata,	pythondata,	pythoncomment {color: inherit;}
+}
+attrdata {
+	functiondata {color: inherit;}
+}
+variabledata {
+	attrdata,	methoddata {color: inherit;}
+}
+
+.tab {
+	text-align: left;
+	width: 100%;
+	display: block;
+	button {
+		cursor: $cursor;
+		vertical-align: middle;
+		background-color: white;
+		font-family: font(link);
+		font-size: 1.22em;
+		height: 50px;
+		padding: 10px 14px;
+		border: none;
+		transition: 0.3s;
+		
+		&:hover {background-color: #ddd;}
+		&.active {background-color: #ccc;}
+	}
+}
+
+//Codebox title letterpress (Watermark effect)
+main section div h1.title {
+	margin: 0;
+	margin-left: 50px;
+	font-size: 4rem;
+	
+	position: absolute;
+	right:  9%;
+	top  : 45%;
+	
+  @include letterpress(#c8, rgba(ghostwhite, 0.7), '1px');
+}
+/*--------------------------------------FORM STYLE SWITCHER------------------------------------*/
+#change-style {
+  width: 100%;
+  font-family: font(main);
+  padding: .3em 0;
+  position: fixed;
+  bottom: -1px;
+}
+
+/*----------------------------------------------------------------------------------*/
+@media screen and (max-width: 1200px) {
+  body {
+    width: 100%;
+		border: 0;
+    margin: 0;
+	}
+  #loading {width: 100%;}
+  .codingHeader:first-of-type {margin-top: 0;}
+	footer {
+		margin: 0;
+		width: 100%;
+		div.bio div.stats div {
+      max-width: 200px;
+      span {font-size: 4rem;}
+    }
+	}
+	article {padding-top: 10px;}
+	/*GENERAL LAYOUT*/
+	#resume article {
+    width: 90%;
+    float: none;
+    h1 {margin-left: 40px;}
+    div[id$="Section"] {margin-left: 60px;}
+	}
+	#hobbieSection {text-align: center;}
+	#resume aside {
+		display: block;
+		float: none;
+		margin: 0 auto;
+		width: 75%;
+		text-align: center;
+		font-size: .9em;
+		div {display: inline-block;}
+	}
+	.myLightbox {
+  	left: calc(100% - 96%);
+		width: calc(100% - 8%);
+	}
+}
+/*----------------------------------------------------------------------------------*/
+@media screen and (max-width: 831px) {
+  /*INDEX*/
+  aside.portrait_img {
+    float: left;
+    margin: 10px;
+    p {
+      float: right;
+      margin-left: 215px;
+      text-align: left;	
+      span {float: left;}
+    }
+  }
+  aside.portrait_img img[alt="Portrait of Me"]{display: inline-block;}
+  .portrait_imglarge{display: none;}
+  .portrait_img {
+    display: inline-block;
+    position: relative;
+	}
+  #homepageGet {
+    position: relative;
+    @include prefix('transform', 'rotate(20deg)');
+    margin-top: 3em;
+		padding: 0;
+    width: 90%;
+		left: 0;
+	}
+  /*END INDEX*/
+
+  /*HEADER INFO*/
+  #logoImg {
+    display: block;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+  nav {
+    float: none;
+    position: relative;
+		text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    li {
+      a span {
+        opacity: 1;
+        bottom: -2px;
+      }
+      #dropdownContent {
+		    background-color: white;
+		    width: 1300%;
+		    left:  -600%;
+		    padding-bottom: 1rem;
+		    margin: 0 auto;
+        margin-top: 2px;
+        text-align: center;
+      }
+      a {
+        &:hover span {
+          opacity: 1;
+          text-decoration: underline;
+        }
+        &:hover i {opacity: 1;}
+      }
+      a {padding-top: 10px;}
+    }
+  }
+  .tab {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+  }
+	div.contactBar {
+		height: auto;
+		text-align: center;
+		p.title {text-align: center;}
+
+		div.desc {
+			text-indent: 0;
+			text-align: center;
+			span {
+				display: block;
+				text-align: center;
+				&::after {content: '';}
+        &:not(:last-of-type)::after {content: '';}
+			}
+		}
+		div.contactRight {
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0);
+			margin: 0;
+			margin-top: 15px;
+			
+			float: none;
+			top: auto;
+			border: 0;
+			padding: 0 10px 0 0;
+			width: 100%;
+			div {
+				display: inline-block;
+				border: 0;
+				padding: 0 5px 0 0;
+			}
+		}
+	}
+  .codingHeader {margin-top: 0;}
+	footer {
+		font-size: 15px;
+		div.bio {
+			div {height: auto;}
+			div.text {
+				display: block;
+				margin: 0 auto;
+				width: 90%;
+				height: auto;
+				padding: 1rem;
+			}
+			div.stats {
+				width: 90%;
+				margin: 0 auto;
+				display: block;
+				div {
+          width: auto;
+          display: block;
+          max-width: none;
+          padding: 0;
+          border-width: 0 2px;
+          border-color: black;
+          border-style: solid;
+        }
+				div	span {font-size: 4rem;}
+			}
+		}
+		div.sub {padding-top: 1rem;}
+	}
+  .lightbox_row {
+    max-width: 490px;
+    margin: 0 auto;
+    height: auto;
+    max-height: 277px;
+  }
+  .lightbox_row-placeholder {display: none;}
+	#resume #mapSection div {
+    $width-height: 440;
+    $zoom: 4;
+		background-image: url("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAE0mz1ppVHe3gW0d0gIAEBWVz0A8RkZ1k&center=Kansas&zoom="+$zoom+"&format=png&size="+$width-height+"x"+$width-height+"&maptype=roadmap&markers=color:red|Boulder,CO"+/*&markers=color:green|Norfolk,VA*/"&style=feature:administrative|element:geometry|lightness:30|weight:1.5&style=feature:administrative|element:labels|lightness:100|visibility:simplified&style=feature:administrative.land_parcel|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:simplified&style=feature:administrative.neighborhood|element:labels|visibility:off&style=feature:landscape|color:0x19baee&style=feature:landscape.man_made|saturation:-65&style=feature:poi|visibility:off&style=feature:poi|element:labels|visibility:off&style=feature:road|color:0xffffff|lightness:25|visibility:off&style=feature:road|element:labels.icon|visibility:off&style=feature:road|element:labels.text|visibility:simplified&style=feature:road|element:labels.text.stroke|visibility:off&style=feature:road.local|lightness:55&style=feature:road.local|element:labels|visibility:off&style=feature:transit|visibility:off&style=feature:water|lightness:-30|visibility:simplified&style=feature:water|element:labels.icon|visibility:off");
+		
+		width:  $width-height + px;
+		height: $width-height + px;
+	}
+  #gallery {
+    h1 {padding-left: 20px;}
+    article::before {display: none !important;}
+  }
+
+  main div h1.title {display: none;}
+}
+/*----------------------------------------------------------------------------------*/
+@media screen and (max-width: 650px) {
+  nav a:hover {
+    i {opacity: 1;}
+    &~ span {text-decoration: underline;}
+  }
+  
+	#resume {
+		article {
+			text-align: left;
+			position: relative;
+			top: auto;
+			h1 {margin-left: 10px;}
+			div[id$="Section"] {margin-left: 25px;}
+			div#hobbieSection {margin-left: 10px;}
+		}
+		#workSection {
+			text-indent: 0;
+			p span:first-child::after {
+				content: ' ';
+				display: block;	}
+		}
+		#hobbieSection {
+			div h4 {width: 90px;}
+			div {
+				margin: 0;
+				margin-top: 15px;
+				div {
+					margin: 0 auto;
+					font-size: 3rem;
+					line-height: 2rem;
+				}
+			}
+		}
+    #achievementSection ul {margin-left: 0;}
+	}
+  .codingHeader {
+    height: auto;
+    margin: auto;
+  }
+}
+/*------------------------------------ MOBLE NAV -----------------------------------*/
+@media screen and (max-width: 550px) {
+  /*NAV INFO*/
+  nav {
+    text-align: center;
+    float: none;
+    li {
+      text-align: center;
+      .nav-link {
+        padding: 0;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 auto;
+      }
+    }
+  }
+  /*END NAV*/  
+  body {width: 100vw;}
+  
+  /*HOMEPAGE INFO*/
+  #homepageGet {
+    @include prefix('transform', 'rotate(0deg)');
+    padding: 0 25px;
+    font-size: 2em;
+    margin-top: 0;
+  }
+  aside.portrait_img {
+    float: none;
+    text-align: center;
+    img[alt="Portrait of Me"] {
+      position: relative;
+      bottom: 0;
+    }
+    p {
+			&:first-child{bottom:0;}
+      border-top: 2px solid black; 
+      text-align: center;
+      font-size: 1em;
+      float: none;
+      position: relative;
+      width: 100%;
+      padding: 8px 0;
+      margin: 0 auto;
+      span {
+        float: none;
+        margin: 0 auto;
+      }
+    }
+  }
+	div.contactBar div.contactRight div::after {display: block;}
+  /*END HOMEPAGE*/  
+    
+  #resume {
+		article {
+			h1 {
+				padding: 5px;
+				background-color: #cccccc;
+				transition-delay: 1s;
+				transition-timing-function: ease-in;
+			}
+			/*ul.fa-ul {margin-left: 0;}*/
+      h1.collapsible {
+        cursor: $cursor;
+        i {display: inline-block;}
+        + div {display: none;}
+        &:first-of-type {margin-top: 0;}
+      }
+    }
+    #skillSection tr td:nth-of-type(3), #languagesSection tr td:nth-of-type(3), #programSection tr td:nth-of-type(3) {width: 150px;}
+		#mapSection div {
+      $width-height: 300;
+      $zoom: 3;
+			background-image: url("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAE0mz1ppVHe3gW0d0gIAEBWVz0A8RkZ1k&center=Kansas&zoom="+$zoom+"&format=png&size="+$width-height+"x"+$width-height+"&maptype=roadmap&markers=color:red|Boulder,CO"+/*&markers=color:green|Norfolk,VA*/"&style=feature:administrative|element:geometry|lightness:30|weight:1.5&style=feature:administrative|element:labels|lightness:100|visibility:simplified&style=feature:administrative.land_parcel|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:simplified&style=feature:administrative.neighborhood|element:labels|visibility:off&style=feature:landscape|color:0x19baee&style=feature:landscape.man_made|saturation:-65&style=feature:poi|visibility:off&style=feature:poi|element:labels|visibility:off&style=feature:road|color:0xffffff|lightness:25|visibility:off&style=feature:road|element:labels.icon|visibility:off&style=feature:road|element:labels.text|visibility:simplified&style=feature:road|element:labels.text.stroke|visibility:off&style=feature:road.local|lightness:55&style=feature:road.local|element:labels|visibility:off&style=feature:transit|visibility:off&style=feature:water|lightness:-30|visibility:simplified&style=feature:water|element:labels.icon|visibility:off");
+
+			width : $width-height + px;
+			height: $width-height + px;
+		}
+	}	
+  #gallery {width: 95%;}
+}
+/*----------------------------------------------------------------------------------*/
+/*
+(max-width: 1200px)
+(max-width: 831px)
+(max-width: 650px)
+(max-width: 550px)
+*/

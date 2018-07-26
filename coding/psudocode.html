@@ -1,0 +1,886 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../_css/styles.css">
+  <link href="../_css/styles.css"                                                     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron"                       rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web"                  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway"                        rel="stylesheet">
+	<link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css"                   rel="stylesheet">
+	<link href="../fonts/PortfolioIcons/style.css"                                      rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--Recommended Meta Tags-->
+	<meta charset="utf-8">
+	<meta name="language" content="english"> 
+	<meta name="author" content="Bradley Rounds">
+
+	<!--Search Engine Optimization Meta Tags-->
+	<title>Psudocode | Bradley's Portfolio</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="7 days">
+	<meta name="distribution" content="web">
+	<meta name="robots" content="noodp">
+
+	<!--Optional Meta Tags-->
+	<meta name="distribution" content="web">
+	<meta name="web_author" content="Bradley Rounds">
+	<meta name="rating" content="general">
+	<meta name="subject" content="Personal">
+	<meta name="title" content="Bradley Rounds - Official Portfolio.">
+	<meta name="copyright" content="Copyright 2017">
+	<meta name="reply-to" content="rounds.bradley@gmail.com">
+	<meta name="abstract" content="">
+	<meta name="city" content="Boulder">
+	<meta name="country" content="USA">
+	<meta name="distribution" content="global">
+	<meta name="classification" content="">
+
+	<!--Meta Tags for HTML pages on Mobile-->
+	<meta name="HandheldFriendly" content="true"/> 
+	<meta name="viewport" content="width=device-width"/>
+</head>
+<body onload="colorCode('psudo')">
+<header>
+	<img id="logoImg" src="../images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('../index.html')">
+  <nav>
+    <ul>
+      <li class="nav-item">
+				<a href="../index.html"><div class="nav-link"><i class="fa fa-home fa-lg"></i></div>
+          <span>HOME</span>
+        </a>
+			</li>
+      <li class="nav-item">
+				<a href="../portfolio.html"><div class="nav-link"><i class="fa fa-book fa-lg"></i></div>
+          <span>PORTFOLIO</span>
+        </a>
+			</li>
+      <li class="nav-item">
+        <div id="dropdown">
+          <a id="dropdownButton" href="#"><div class="nav-link"><i class="fa fa-gear fa-lg"></i></div>
+            <span>CODING</span>
+          </a>
+          <div id="dropdownContent">
+            <a href="javascript.html"><i class="fa fa-coffee fa-lg"></i>
+              <span>JAVASCRIPT</span>
+            </a>
+            <a href="php.html"><i class="fa fa-server fa-lg"></i>
+              <span>PHP</span>
+            </a>
+            <a href="#"><i class="fa fa-cogs fa-lg"></i>
+              <span>PSUDOCODE</span>
+            </a>
+						<a href="python.html"><i class="icon-python fa-lg"></i>
+              <span>PYTHON</span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+				<a href="../contact_me.html"><div class="nav-link"><i class="fa fa-envelope fa-lg"></i></div>
+          <span>CONTACT</span>
+        </a>
+			</li>
+    </ul>
+  </nav>
+</header>
+<main>
+	<h1 class="title codingHeader">Psudocode</h1>
+	<hr>
+	<div class="tab">
+	  <button class="tablinks" onclick="openTopic(event,'maxmin')">Max &amp; Min</button>
+	  <button class="tablinks" onclick="openTopic(event,'slotmachine')">Slot Machine</button>
+	  <button class="tablinks" onclick="openTopic(event,'rockpaperscissors')">Rock, Paper, Scissors</button>
+	  <button class="tablinks" onclick="openTopic(event,'calculatepi')">Calculate Pi</button>
+	</div>
+	<hr>
+	
+<section>
+<div id="maxmin" class="tabcontent">
+	<h1 class="title">Min/Max</h1>
+<pre class="code_box">
+/////////////////////////////////////////////////////////////////////////////////
+// Author:  Bradley R
+// Date:    3/9/2017
+// 
+// Description: Largest and Smallest Numbers 
+/////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////
+// Main module, calls to inputs and compute within a looped SENTINEL while
+// Parameters:
+//          SENTINEL        [Constant]
+/////////////////////////////////////////////////////////////////////////////////
+
+Constant Integer SENTINEL = -99
+
+Module main()
+    Declare Integer number, min = 99999, max = -99999
+
+    Call inputNumber(number)    
+        While NOT (number == SENTINAL ) //Ask for input untill SENTINEL is called
+            Call findMinMax(number, min, max)
+            Call inputNumber(number) 
+        End While
+    Call showResults(min, max)
+End Module
+/////////////////////////////////////////////////////////////////////////////////
+// Input a number / Program intro
+// Parameters:
+//          Number          [input]
+//          
+/////////////////////////////////////////////////////////////////////////////////
+
+Module inputNumber(Integer Ref number)
+	Display "Enter a number or ", SENTINEL, " to exit: ";
+	Input number
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Set each number to the new min/max if applicable
+// Parameters:
+//          number      user inputed
+//          min         [output]
+//          max         [output]
+/////////////////////////////////////////////////////////////////////////////////
+
+Module findMinMax(Integer number, Integer Ref min, Integer Ref max)
+   If number &lt; min Then Set min = number End If
+   If number &gt; max Then Set max = number End If
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Display the results
+// Parameters:
+//          min         computed
+//          max         computed  
+/////////////////////////////////////////////////////////////////////////////////
+
+Module showResults(Integer min, Integer max)
+	Call lineBreak()
+	Display " Minimum Number: ", min
+	Display " Maximum Number: ", max
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Module to call for organizing output
+// Parameters:
+//      NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module lineBreak()
+	Display "==================================================================="
+End Module
+</pre>
+</div>
+
+<div id="slotmachine" class="tabcontent">
+	<h1 class="title">Slot Machine</h1>
+<pre class="code_box">
+/////////////////////////////////////////////////////////////////////////////////
+// Author:  Bradley R
+// Date:    3/16/2017
+// 
+// Description: Slot Machine
+//
+// Declare all main variables and call each part of the program
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module main()
+    Declare Integer betValue        = 0             //betValue            [user inputed]
+    Declare Integer winnings        = 0             //winnings            amount of money won from the multiplier
+    Declare Integer bank            = 500           //bank                starting amount of cash
+    Declare Integer winningsTotal   = 0             //winningsTotal       running total of the winnings
+    Declare Integer betTotal        = 0             //betTotal            running total of each bet
+    Declare Integer multiplyAmount  = 0             //multiplyAmount      what the multiplier is
+    
+    Call intro(bank)
+    Call getAmount(betValue, bank, betTotal, winnings)
+    Call winMultiplier(bank, betValue, winnings, multiplyAmount, winningsTotal)
+    Call showWinnings(bank, betValue, winnings, winningsTotal, betTotal, multiplyAmount)
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Introduce the program, tell the user their starting bank
+// Parameters:
+//          bank            The amount of money the user starts with
+/////////////////////////////////////////////////////////////////////////////////
+
+Module intro(Integer bank)
+    Display Tab,Tab,"   Welcome to the Slot Machine!"
+    Call lineBreak()
+    Display "You have ", currency(bank), " in your bank,"
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Ask the user how much they want to bet into the machine
+// Parameters:
+// Parameters:
+//          betValue            [output] amount they want to bet      
+//          winnings            amount of money won from the multiplier     
+//          bank                [output] starting amount of cash - bet amount        
+//          betTotal            [output] a running total of each bet
+/////////////////////////////////////////////////////////////////////////////////
+
+Module getAmount(Integer Ref betValue, Integer Ref bank, Integer Ref betTotal, Integer winnings)
+    If betTotal != 0 Then
+        Call endResults(bank, betValue, winnings)
+    End If
+    Display "How much would you like to bet in the slot machine?"
+    
+    Do
+    Input betValue
+    If betValue &gt; bank OR betValue &lt; 0 Then
+        Display "You only have ", currency(bank), " remaining, value entered is out of bounds."
+        Input betValue
+    End If
+    Until betValue &lt;= bank AND betValue &gt; 0
+    
+    Set bank = bank - betValue
+    Set betTotal = betTotal + betValue
+    Display 
+    Display "============================================"
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// "Spin" the slot wheel a few times then display the results + calculate the multiplyer if the user won
+// Parameters:
+//          bank                [output] starting amount of cash + winnings amount   
+//          betValue            (user inputed)
+//          winnings            [output] amount of money won from the multiplier     
+//          multiplyAmount      [output] what the multiplier is                      
+//          winningsTotal       [output] running total of the winnings               
+/////////////////////////////////////////////////////////////////////////////////
+
+Module winMultiplier(Integer Ref bank, Integer betValue, Integer Ref winnings, Integer Ref multiplyAmount, Integer Ref winningsTotal)
+    Declare String spin1 ="", spin2="", spin3=""
+    
+    Call spinWheel(spin1, spin2, spin3)                         //Simulate a spinning wheel
+    Call spinWheel(spin1, spin2, spin3)
+    Call spinWheel(spin1, spin2, spin3)
+    Call spinWheel(spin1, spin2, spin3)
+    Call spinWheel(spin1, spin2, spin3)
+    
+    Set spin1 = slotSpin()                                      //Actual spin and results from it
+    Set spin2 = slotSpin()
+    Set spin3 = slotSpin()
+    Display Tab,spin1,"    ",spin2,"    ",spin3
+    
+    If spin1 == spin2 OR spin2 == spin3 OR spin1 == spin3 Then
+        Set winnings = betValue * 2                             //Multiplier *2
+        Set multiplyAmount = 2        
+    Else
+        Set winnings = 0
+    End If
+    If spin1 == spin2 AND spin1 == spin3 Then
+        Set winnings = betValue * 3                             //Multiplier *3
+        Set multiplyAmount = 3
+    End If
+    Set bank = bank + winnings
+    Set winningsTotal = winningsTotal + winnings
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Simulate a spinning wheel
+// Parameters:
+//          spin1           first random slot choise
+//          spin2           second random slot choise
+//          spin3           third random slot choise
+/////////////////////////////////////////////////////////////////////////////////
+
+Module spinWheel(String spin1, String spin2, String spin3)
+    Set spin1 = slotSpin()
+    Set spin2 = slotSpin()
+    Set spin3 = slotSpin()
+    Display Tab,spin1,"    ",spin2,"    ",spin3,CR
+    Call sleep(0.5)
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Display the users bet, their winnins and why the winnings were the value
+// Parameters:
+//          bank                final amount of cash
+//          betValue            (user inputed)
+//          winnings            amount of money won from the multiplier
+//          winningsTotal       running total of the winnings
+//          betTotal            running total of each bet
+//          multiplyAmount      what the multiplier is
+/////////////////////////////////////////////////////////////////////////////////
+
+Module showWinnings(Integer bank, Integer betValue, Integer winnings, Integer winningsTotal, Integer betTotal, Integer multiplyAmount)
+    Display "============================================"
+    Display
+    Display Tab,Tab," Bet ",Tab," Winnings "
+    Display Tab,Tab,"-----",Tab,"----------"
+    Display Tab,Tab," $",betValue,Tab,"   $",winnings
+    Display
+    Select multiplyAmount
+        Case 2:  Display "Two of a kind! Winnings 2 times your bet"
+        Case 3:  Display "Three of a kind!!!! Winnings tripple your bet"
+    End Select
+    Call lineBreak()
+    Call playAgain(bank, betValue, winnings, winningsTotal, betTotal, multiplyAmount)
+End Module>
+
+/////////////////////////////////////////////////////////////////////////////////
+// Question to play again and calls to simulate main module without intro
+// Parameters:
+//          bank                final amount of cash
+//          betValue            (user inputed)
+//          winnings            amount of money won from the multiplier
+//          winningsTotal       running total of the winnings
+//          betTotal            running total of each bet
+//          multiplyAmount      what the multiplier is
+/////////////////////////////////////////////////////////////////////////////////
+
+Module playAgain(Integer bank, Integer betValue, Integer winnings, Integer winningsTotal, Integer betTotal, Integer multiplyAmount)
+    Declare String restart
+    If bank != 0 Then
+        Display "Would you like to keep playing?"
+        Display "Yes to continue or No to stop"
+        Input restart
+    
+        If toUpper(restart) == "YES" Then                        //Look for a possible yes input to continue
+            Call lineBreak()
+            Call getAmount(betValue, bank, betTotal, winnings)
+            Call winMultiplier(bank, betValue, winnings, multiplyAmount, winningsTotal)
+            Call showWinnings(bank, betValue, winnings, winningsTotal, betTotal, multiplyAmount)
+        Else If toUpper(restart) == "NO" Then
+            Call lineBreak()
+            Call endSummary(bank, betValue, winnings, winningsTotal, betTotal)  //If inputed NO, or any other answer
+        Else
+            Display "Not understood, displaying final results"                  //Any other inputed value
+            Call lineBreak()
+            Call endSummary(bank, betValue, winnings, winningsTotal, betTotal)
+        End If
+    Else
+        Call lineBreak()
+        Call endSummary(bank, betValue, winnings, winningsTotal, betTotal)
+    End If
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Info to display between roles
+// Parameters:
+//          bank                final amount of cash
+//          betValue            (user inputed)
+//          winnings            amount of money won from the multiplier
+/////////////////////////////////////////////////////////////////////////////////
+
+Module endResults(Integer bank, Integer betValue, Integer winnings)
+    Display "You", gainLoss(bank, betValue, winnings);
+    Display currency(betValue), " taking your bank to ", currency(bank)
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Ending summary to display with bank == 0 and when they chose not to role again
+// Parameters:
+//          bank                final amount of cash
+//          betValue            (user inputed)
+//          winnings            amount of money won from the multiplier
+//          winningsTotal       running total of the winnings
+//          betTotal            running total of each bet
+/////////////////////////////////////////////////////////////////////////////////
+
+Module endSummary(Integer bank, Integer betValue, Integer winnings, Integer winningsTotal, Integer betTotal)
+    Display "Overall you bet a total of ",currency(betTotal), " and won a total of ", currency(winningsTotal);
+    Display " leaving the slot machine with ", endTotal(bank)
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Functon to randomly choose a slot output
+// Parameters:
+//          RETRUNS String type
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String slotSpin()
+    Declare Integer randomNum = random(1,6)
+    
+    Select randomNum
+        Case 1: Return "Cherries"
+        Case 2: Return "Oranges"
+        Case 3: Return "Plums"
+        Case 4: Return "Bells"
+        Case 5: Return "Melons"
+        Case 6: Return "Bars"
+    End Select
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Function to determine if the user made or lost funds
+// Parameters:
+//          bank                final amount of cash
+//          betValue            (user inputed)
+//          winnings            amount of money won from the multiplier
+//          RETURNS String "made"/"lost"
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String gainLoss(Integer bank, Integer betValue, Integer winnings)
+    Declare String gainLoss
+    Declare Integer intBank = 0
+    
+    Set intBank = bank - winnings + betValue    //Determine starting bank if declare is changed
+    
+    If intBank &lt; bank + winnings Then
+        Set gainLoss = " made "
+    Else If intBank &gt; bank + winnings Then
+        Set gainLoss = " lost "
+    End If
+
+    Return gainLoss
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Trying out the append function
+// Parameters:
+//          bank                Final of cash
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String endTotal(Integer bank)
+    Declare String return
+    
+    If bank == 0 Then
+        Set return = "nothing"
+    Else
+        Set return = append(bank, " dollars.")
+    End If
+
+    Return return
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Line break to orgainze output
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module lineBreak()
+    Display "___________________________________________________________________"
+    Display
+End Module
+</pre>
+</div>
+
+<div id="rockpaperscissors" class="tabcontent">
+	<h1 class="title">Rock - Paper - Sissors</h1>
+<pre class="code_box">
+/////////////////////////////////////////////////////////////////////////////////
+// Author:  Bradley R
+// Date:    3/23/2017
+// 
+// Description: Rock, Paper, Scissors Modification
+/////////////////////////////////////////////////////////////////////////////////
+
+Constant Integer DIV_LENGTH = 69
+Constant String  DIVEQ_TYPE = "="
+Constant String  DIVHY_TYPE = "-"
+Constant String  DIV = diveq()
+Constant String  DIVHY = divhy()
+
+Constant String PAPER   = "Paper"
+Constant String ROCK    = "Rock"
+Constant String SISSORS = "Sissors"
+
+Constant String PAPERSYB   = "\u2636"
+Constant String ROCKSYB    = "\u270a"
+Constant String SISSORSSYB = "\u2700"
+
+Module main()
+    Declare Integer playerChoise = 0
+    Declare Integer programChoise
+
+    
+    Do
+        Call intro()
+        Do
+            Set programChoise = random(1,3)
+            Call getPlayerInput(playerChoise)
+            Call oneTwoThree()
+            Call gameResults(playerChoise, programChoise)
+        While gameTie(playerChoise, programChoise)
+    While playAgain()
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Program description
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module intro()
+    Display Tab,Tab,"Lets play Rock, Paper, Sissors!"
+    Display DIV
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Get both inputs and loop validate values w/ Display niceties
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module getPlayerInput(Real Ref playerChoise)
+    Declare String input
+    
+    Display Tab,"Enter Your Choise: ";
+    Display Tab,"Rock,",Tab,"Paper,",Tab,"or Sissors"
+    Display DIVHY
+    Do
+        Set input = toUpper(getInput())
+        If input == "ROCK"    Then Set playerChoise = 1 End If
+        If input == "PAPER"   Then Set playerChoise = 2 End If
+        If input == "SISSORS" Then Set playerChoise = 3 End If
+        If playerChoise == 0 Then
+            Display "Please enter either: ",ROCK,", ",PAPER," or ",SISSORS
+        End If
+    While input == "" OR playerChoise == 0
+
+    Display DIV
+    Display
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Call and Return input
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String getInput()
+    Declare String value
+    Input value
+    Return value
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Ask at end if want to restart program
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Function Boolean gameTie(Integer playerChoise, Integer programChoise)
+    Declare String restart
+    
+    If playerChoise == programChoise Then
+        Return True
+    Else
+        Return False
+    End If
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Display and format the output
+// Parameters:
+//          playerChoise        [user input]
+//          programChoise       auto generated
+/////////////////////////////////////////////////////////////////////////////////
+
+Module gameResults(Integer playerChoise, Integer programChoise)
+    If (playerChoise == 1 AND programChoise == 3) OR (playerChoise == 2 AND programChoise == 1) OR (playerChoise == 3 AND programChoise == 2) Then
+        Display optionSelect(playerChoise), " DESTROYS ", optionSelect(programChoise)
+        Display Tab,"\u2728 CONGRATS YOU WIN!! \u2728"
+        Display
+        Display playAgain()
+    Else If NOT(playerChoise == programChoise) Then
+        Call formatOutput(playerChoise,programChoise)
+        Display
+        Display Tab,Tab,"The computer won? You must try again then..."
+        Display
+    Else If playerChoise == programChoise Then
+        Call formatOutput(playerChoise,programChoise)
+        Display
+        Display Tab,Tab,"Its a tie! Rematch!!"
+        Display DIV
+    End If
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Input value to return string
+// Parameters:
+//          VALUE           the program or player rock papaer sissors choise
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String optionSelect(Integer value)
+    Select value
+        Case 1: Return ROCK
+        Case 2: Return PAPER
+        Case 3: Return SISSORS
+    End Select
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// 1,2,3 start to rock, paper, sissors
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module oneTwoThree()
+    Declare Integer delay = 1
+    Display Tab,Tab,Tab,ROCKSYB,"   ","Rock","   ",ROCKSYB
+    Call sleep(delay)
+    Set delay = delay - (0.3)
+    Display Tab,Tab,Tab,PAPERSYB,"   ","Paper","   ",PAPERSYB
+    Call sleep(delay)
+    Set delay = delay - (0.3)
+    Display Tab,Tab,Tab,SISSORSSYB,"  ","Sissors","  ",SISSORSSYB
+    Call sleep(delay)
+    Display
+    Display Tab,Tab,Tab,"    ","Shoot!"
+    Display DIV
+    Call sleep(delay)
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Repeat program at user choise
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Function Boolean playAgain()
+    Declare String input = "a"
+    Display "Do you want to play again\u203d "
+    
+    Do
+        Display " \"Y\" or \"N\" ";
+        Input input
+        If toUpper(input) == "Y" Then
+            Display Tab,"Lets get ready to RUMMMBBBLLEE!!!"
+            Call sleep(1)
+            Display CLR
+            Return True
+        Else If toUpper(input) == "N" Then
+            Display "Have a nice day then!"
+            Return False
+        Else If NOT(toUpper(input) == "N" OR toUpper(input) == "Y") Then
+            Display " \"Y\" or \"N\" please"
+        End If
+    While toUpper(input) != "Y" AND toUpper(input) != "N"
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Summary
+// Parameters:
+/////////////////////////////////////////////////////////////////////////////////
+
+Module formatOutput(Integer playerChoise, Integer programChoise)
+    Display Tab,"  Player  ",Tab,"  Program  "
+    Display Tab,"=--------=",Tab,"=---------="
+    Display Tab,"  ",optionSelect(playerChoise),Tab,Tab,"  ",optionSelect(programChoise)
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Create dividing line with EQUAL SIGNS
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String diveq()
+    Declare Integer i
+    Declare String div = DIVEQ_TYPE
+    
+    For i = 1 To DIV_LENGTH
+        Set div = append(DIVEQ_TYPE,div)
+    End For
+    Return div
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Create dividing line with HYPHEN CHARS
+// Parameters:
+//          NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Function String divhy()
+    Declare Integer i
+    Declare String div = DIVHY_TYPE
+    
+    For i = 1 To DIV_LENGTH
+        Set div = append(DIVHY_TYPE,div)
+    End For
+    Return div
+End Function
+</pre>
+</div>
+
+<div id="calculatepi" class="tabcontent">
+	<h1 class="title">Calculate Pi</h1>
+<pre class="code_box">
+/////////////////////////////////////////////////////////////////////////////////
+// Author:  Bradley R
+// Date:    3/16/2017
+// 
+// Description: Generate Pi using random numbers
+//---------------------------------------------------------------
+// area of circle = pi * (DIAMETER/2) ^ 2 = pi DIAMERTER^2 / 4
+// area of box    = DIAMETER ^ 2
+//---------------------------------------------------------------
+// ratio          = circle/box = pi / 4
+// pi             = ratio * 4
+/////////////////////////////////////////////////////////////////////////////////
+
+Constant Integer DIAMETER   = 50000                 //Big Square
+Constant Integer ITERATIONS = 1000000               //# of Itterations
+Constant Real            PI = 3.14159265            //Value of Pi
+Constant Integer SHOW_EVERY = 10000                 //Show result every number of iterations
+
+
+Module main()         
+    Declare Integer hits = 0
+    Declare Real pi
+    
+    Call showTableHeader()
+    Set pi = throwDarts(ITERATIONS, hits)
+    Call showSumary(ITERATIONS, hits, pi)
+    
+End Module
+
+/////////////////////////////////////////////////////////////////////////////////
+// Throws darts and computes pi over iterations
+// Parameters:
+//          ITTERATIONS     total throws to make
+//          hits            [output] total hit on the circle
+//      Returns:
+//          pi      estimated pi
+/////////////////////////////////////////////////////////////////////////////////
+
+Function Real throwDarts(Integer iterations, Integer Ref hits)
+    Declare Integer throws
+    Declare Real pi
+    
+    For throws = 1 To iterations
+        If throwDart(DIAMETER) Then
+            Set hits = hits + 1
+            Set pi = computePi(throws, hits)
+            Call showPi(throws, hits, pi)
+        End If
+    End For
+    
+    Return pi
+
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Computes estimated pi based on ration of hits to misses
+// Parameters:
+//          throws      total throws
+//          hits        total hits in the circle
+//
+///Returns:
+//      estimated pi
+/////////////////////////////////////////////////////////////////////////////////
+
+Function Real computePi(Integer throws, Integer hits)
+    Return (4.0 * hits)  / toReal(throws)
+End Function
+
+/////////////////////////////////////////////////////////////////////////////////
+// Display iterator estimate of pi, shows throws, estimated pi
+// Parameters:
+//      throws          Total throws at the wall
+//      hits            Total hits on the circle
+//      pi              estimated value of pi
+/////////////////////////////////////////////////////////////////////////////////
+
+Module showPi(Integer throws, Integer hits, Real pi)
+    If throws MOD SHOW_EVERY == 0 Then
+        Display throws, Tab, Tab, round (pi,5), Tab, Tab, round (PI-pi,5)
+    End If
+End Module
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Program ending summary
+// Parameters:
+//      throws          Total throws at the wall
+//      hits            Total hits on the circle
+//      pi              estimated value of pi
+/////////////////////////////////////////////////////////////////////////////////
+
+Module showSumary(Integer throws, Integer hits, Real pi)
+    Display "After ", throws, " Throws " ,hits, " darts hit, pi = ", pi
+End Module
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Formats the output display
+// Parameters:
+//			NONE
+/////////////////////////////////////////////////////////////////////////////////
+
+Module showTableHeader()
+    Display "Iteration", Tab, "Calc Pi", Tab, Tab, "Error"
+    Display "---------", Tab, "-------", Tab, Tab, "-----"
+End Module
+
+
+/////////////////////////////////////////////////////////////////////////////////
+// Summary
+//      take the diameter of the square and throw a dart at it
+// Parameters:
+//          r = radus
+//          x = 
+//          y = 
+//          d = 
+/////////////////////////////////////////////////////////////////////////////////
+
+Function Boolean throwDart(Real diameter)
+    Declare Real r = diameter / 2
+    Declare Real x = random(0,diameter-1)
+    Declare Real y = random(0,diameter-1)
+    Declare Real d = hypotenuse(x-r,y-r)
+    
+    Return d &lt; r
+End Function
+
+Function Real hypotenuse(Real x, Real y)
+    Return sqrt(x*x+y*y)
+End Function
+</pre>
+</div>
+</section>
+	<hr>
+	<div class="callToAction grow">
+		<button onclick="window.location.assign('python.html')">My Python doodles!</button>
+	</div>
+</main>
+
+<!-- TAB Script -->
+<script>
+	document.getElementsByClassName("tab")[0].getElementsByTagName("button")[0].click();
+	function openTopic(evt, topicName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(topicName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+</script>
+<!-- Empty Node Removal -->
+<script>
+  function clean(node) {
+    for (var n = 0; n < node.childNodes.length; n ++) {
+      var child = node.childNodes[n];
+      if (child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue))) {
+        node.removeChild(child);
+        n --;
+      } else if(child.nodeType === 1) {
+        clean(child);
+      }
+    }
+  }
+  clean(document);
+</script>
+<script src="codeColor.js"></script>
+<script src="../scripts/dropdown-nav.js"></script>
+</body>
+</html>

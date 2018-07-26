@@ -1,0 +1,644 @@
+@font-face {
+  font-family: 'MainFont';
+  src: url("../fonts/mainframe-bb.regular.ttf");
+}
+
+/*-------------------------------------------DEFAULT FORM---------------------------------------*/
+/* line 6, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* line 13, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+.formDefaultStyle {
+  background: #19BAEE;
+  color: black;
+  font-family: "Orbitron";
+  text-align: center;
+  font-size: 2em;
+}
+
+/* line 21, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+button#formNextButton {
+  width: 50vw;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: MainFont;
+  line-height: 2em;
+  letter-spacing: .125em;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.75);
+  transition: opacity 1s ease-in;
+  opacity: 0;
+  border: 0;
+  border-radius: 3px;
+}
+
+/* line 37, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+div#SubmitingDelay {
+  display: none;
+  width: 90vw;
+  position: fixed;
+  top: 46%;
+  left: 45%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  line-height: 3em;
+  letter-spacing: .0625em;
+  padding: .5em 0;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.75), 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* line 52, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form {
+  font-family: "Orbitron";
+  background-color: white;
+  overflow: hidden;
+  color: #19BAEE;
+  position: fixed;
+  /*LABEL TEXT (ABOVE INPUT)*/
+  /*TIP (BELOW INPUT)*/
+}
+
+/* line 59, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input,
+form textarea,
+form button {
+  width: 70vw;
+  top: 50%;
+  left: 45%;
+  font-family: inherit;
+  position: fixed;
+  display: block;
+  -webkit-transform: translate(-50%, -300%);
+  -moz-transform: translate(-50%, -300%);
+  -ms-transform: translate(-50%, -300%);
+  -o-transform: translate(-50%, -300%);
+  transform: translate(-50%, -300%);
+  opacity: 0;
+  outline: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
+}
+
+/* line 74, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input,
+form textarea {
+  padding: .25rem 0;
+  border: 0;
+  background: transparent;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  letter-spacing: .125rem;
+  transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
+  border-bottom: 1px solid #19BAEE;
+}
+
+/* line 85, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form textarea {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  height: 7rem;
+}
+
+/* line 90, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form label[for='input-4'] span.label-text {
+  padding: 0 0 4.5rem;
+}
+
+/* line 92, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .contact-button,
+form .contact-button-trigger {
+  width: 70vw;
+  top: 50%;
+  left: 45%;
+  position: fixed;
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  padding: .25rem 0;
+  line-height: 3.6rem;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity .4s .3s;
+}
+
+/* line 104, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .contact-button span,
+form .contact-button-trigger span {
+  font-family: MainFont;
+}
+
+/* line 106, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .contact-button-trigger {
+  opacity: 0;
+  pointer-events: auto;
+}
+
+/* line 110, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .contact-button {
+  letter-spacing: .0625rem;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.75), 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* line 116, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus,
+form button:focus,
+form textarea:focus {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  pointer-events: auto;
+  transition: all 0.4s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.5s;
+  z-index: 10;
+}
+
+/* line 125, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus ~ input,
+form input:focus ~ button,
+form input:focus ~ textarea {
+  -webkit-transform: translate(-50%, 500%);
+  -moz-transform: translate(-50%, 500%);
+  -ms-transform: translate(-50%, 500%);
+  -o-transform: translate(-50%, 500%);
+  transform: translate(-50%, 500%);
+  transition: all .5s ease-in;
+}
+
+/* line 132, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus ~ label .label-text,
+form textarea:focus ~ label .label-text {
+  -webkit-transform: translate(-50%, 300%);
+  -moz-transform: translate(-50%, 300%);
+  -ms-transform: translate(-50%, 300%);
+  -o-transform: translate(-50%, 300%);
+  transform: translate(-50%, 300%);
+  transition: all .5s ease-in;
+}
+
+/* line 138, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus ~ .tip,
+form textarea:focus ~ .tip {
+  opacity: 1;
+}
+
+/* line 141, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus ~ .contact-button,
+form button:focus ~ .contact-button,
+form textarea:focus ~ .contact-button {
+  opacity: 0;
+}
+
+/* line 145, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus + label .label-text,
+form textarea:focus + label .label-text {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  transition: all 0.3s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.4s;
+}
+
+/* line 151, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input:focus + label .boxC,
+form textarea:focus + label .boxC {
+  transform: scale(1.5);
+  border: 1px solid black;
+}
+
+/* line 156, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .tip,
+form .error {
+  width: 70vw;
+  position: fixed;
+  top: 50%;
+  left: 45%;
+  transform-origin: center top;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: .9rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: right;
+  transition: opacity .25s .5s;
+  opacity: 0;
+}
+
+/* line 176, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form div.error {
+  text-align: center;
+  top: 56%;
+  left: 45%;
+  padding: 2px;
+  opacity: 1;
+  display: none;
+}
+
+/* line 184, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form input[type='submit'] {
+  width: 50vw;
+  position: fixed;
+  top: 60%;
+  left: 45%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.75);
+  opacity: 1;
+  display: none;
+  border: 0;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: .0625rem;
+}
+
+/* line 203, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .label-text {
+  width: 70vw;
+  position: fixed;
+  left: 45%;
+  top: 44%;
+  -webkit-transform: translate(-50%, -300%);
+  -moz-transform: translate(-50%, -300%);
+  -ms-transform: translate(-50%, -300%);
+  -o-transform: translate(-50%, -300%);
+  transform: translate(-50%, -300%);
+  padding: 3rem 0 1.5rem;
+  opacity: 0;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: .125rem;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0.25, 0.8, 0.3) 0.05s;
+}
+
+/* line 223, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .nav-dot p {
+  transition: all 1s;
+  position: absolute;
+  top: 1px;
+  width: 200px;
+  text-align: right;
+  font-size: .8rem;
+  right: -100px;
+  opacity: 0;
+}
+
+/* line 233, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form label[for="input-1"] .validation-master {
+  margin-top: -131px;
+}
+
+/* line 234, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form label[for="input-2"] .validation-master {
+  margin-top: -100px;
+}
+
+/* line 235, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form label[for="input-3"] .validation-master {
+  margin-top: -69px;
+}
+
+/* line 236, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form label[for="input-4"] .validation-master {
+  margin-top: -25px;
+}
+
+/* line 238, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .validation-master {
+  position: fixed;
+  top: 55%;
+  right: -60px;
+  transition: all 1s;
+  cursor: pointer;
+  width: 60px;
+}
+
+/* line 239, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .validation-master * {
+  box-sizing: border-box;
+}
+
+/* line 249, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxA {
+  background: transparent;
+  display: inline-block;
+  transition: all 1s;
+  -webkit-transform: scaleX(1.5) rotate(45deg);
+  -moz-transform: scaleX(1.5) rotate(45deg);
+  -ms-transform: scaleX(1.5) rotate(45deg);
+  -o-transform: scaleX(1.5) rotate(45deg);
+  transform: scaleX(1.5) rotate(45deg);
+  border-width: 0 0 2px 2px;
+  border-color: black;
+  border-style: solid;
+  position: relative;
+  left: 20px;
+  width: 15px;
+  height: 15px;
+}
+
+/* line 262, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxC {
+  background-color: #19BAEE;
+  display: inline-block;
+  position: relative;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 4px;
+  margin: 4.5px 0;
+  transition: all 0.3s;
+}
+
+/* line 273, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxB {
+  display: inline-block;
+  background: transparent;
+  position: relative;
+  right: 0;
+  -webkit-transform: scaleX(1.5) rotate(45deg);
+  -moz-transform: scaleX(1.5) rotate(45deg);
+  -ms-transform: scaleX(1.5) rotate(45deg);
+  -o-transform: scaleX(1.5) rotate(45deg);
+  transform: scaleX(1.5) rotate(45deg);
+  border-width: 2px 2px 0 0;
+  border-color: black;
+  border-style: solid;
+  width: 15px;
+  height: 15px;
+  transition: all 1s;
+}
+
+/* line 286, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxA_Error {
+  left: 30px;
+  border-color: red;
+  -webkit-transform: scaleX(1) rotate(45deg);
+  -moz-transform: scaleX(1) rotate(45deg);
+  -ms-transform: scaleX(1) rotate(45deg);
+  -o-transform: scaleX(1) rotate(45deg);
+  transform: scaleX(1) rotate(45deg);
+}
+
+/* line 291, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxB_Error {
+  right: 10px;
+  border-color: red;
+  -webkit-transform: scaleX(1) rotate(45deg);
+  -moz-transform: scaleX(1) rotate(45deg);
+  -ms-transform: scaleX(1) rotate(45deg);
+  -o-transform: scaleX(1) rotate(45deg);
+  transform: scaleX(1) rotate(45deg);
+}
+
+/* line 296, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxA_Valid {
+  animation: Valid_A;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* line 303, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxB_Valid {
+  animation: Valid_B;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background: transparent;
+}
+
+/* line 311, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+form .boxC_Valid {
+  background-color: white;
+  animation: Valid_C;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* line 321, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+#error_message {
+  font-family: "Orbitron";
+  background: #19BAEE;
+  color: rgba(0, 0, 0, 0.15);
+  width: 70vw;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.75);
+  -webkit-transform: translate(-50%, -100%);
+  -moz-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  cursor: pointer;
+  position: fixed;
+  top: 47%;
+  left: 45%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 0;
+  letter-spacing: .13rem;
+  font-size: 1.2rem;
+}
+
+@keyframes Valid_A {
+  66% {
+    left: 23px;
+    border-width: 1px;
+    -webkit-transform: scaleX(1.5) rotate(45deg);
+    -moz-transform: scaleX(1.5) rotate(45deg);
+    -ms-transform: scaleX(1.5) rotate(45deg);
+    -o-transform: scaleX(1.5) rotate(45deg);
+    transform: scaleX(1.5) rotate(45deg);
+  }
+  100% {
+    left: 23px;
+    border-width: 1px;
+    -webkit-transform: scaleX(1) rotate(0deg) scale(1.1);
+    -moz-transform: scaleX(1) rotate(0deg) scale(1.1);
+    -ms-transform: scaleX(1) rotate(0deg) scale(1.1);
+    -o-transform: scaleX(1) rotate(0deg) scale(1.1);
+    transform: scaleX(1) rotate(0deg) scale(1.1);
+  }
+}
+
+@keyframes Valid_B {
+  66% {
+    right: 3px;
+    border-width: 0;
+  }
+  100% {
+    right: 3px;
+    border-width: 0;
+  }
+}
+
+@keyframes Valid_C {
+  0% {
+    width: 4px;
+  }
+  33% {
+    width: 4px;
+    height: 2px;
+  }
+  66% {
+    width: 4px;
+    height: 8px;
+  }
+  100% {
+    width: 4px;
+    height: 8px;
+    border-width: 0 1px 1px 0;
+    border-color: green;
+    border-style: solid;
+    border-radius: 0 0 1.5px 0;
+    margin: 4.5px 0;
+    -webkit-transform: scale(3.8) scaleY(1.7) rotate(37deg);
+    -moz-transform: scale(3.8) scaleY(1.7) rotate(37deg);
+    -ms-transform: scale(3.8) scaleY(1.7) rotate(37deg);
+    -o-transform: scale(3.8) scaleY(1.7) rotate(37deg);
+    transform: scale(3.8) scaleY(1.7) rotate(37deg);
+    background-color: transparent;
+    position: relative;
+    top: -20px;
+    left: 17px;
+    z-index: 100;
+  }
+}
+
+/*-----------------------------FORM LOGIC CHECK-BOXES-------------------------------*/
+/* line 393, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+input.validation-ex, input.validation-check {
+  display: none;
+}
+
+/*----------------------------------------------------------------------------------*/
+@media screen and (min-width: 1200px) {
+  /* line 400, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form button#formNextButton,
+  form .label-text,
+  form .tip,
+  form .error,
+  form .contact-button,
+  form .contact-button-trigger,
+  form input,
+  form textarea,
+  form button,
+  form input[type='submit'] {
+    width: 50vw;
+    left: 55%;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  /* line 417, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form input, form textarea, form .tip, form .error, form .label-text,
+  form .contact-button, form .contact-button-trigger {
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* line 422, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  button#formNextButton {
+    top: 75%;
+    left: 50%;
+    width: 80vw;
+    font-size: 1em;
+    line-height: 3em;
+  }
+  /* line 429, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  #SubmitingDelay {
+    left: 49%;
+    top: 42%;
+    width: 94vw;
+    font-size: 1.5em;
+    text-shadow: none;
+  }
+  /* line 439, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form input,
+  form textarea {
+    font-size: 1.2em;
+    line-height: 2em;
+    width: 90vw;
+    left: 50%;
+    top: 50%;
+  }
+  /* line 448, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form .contact-button,
+  form .contact-button-trigger {
+    font-size: 1.2em;
+    line-height: 2em;
+    width: 90vw;
+    top: 50%;
+  }
+  /* line 455, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form .label-text {
+    top: 28%;
+    left: 38%;
+  }
+  /* line 459, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form .tip, form .error {
+    top: 50%;
+    left: 50%;
+    width: 90vw;
+  }
+  /* line 464, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form .validation-master {
+    width: 60px;
+    top: 90%;
+    right: -400px;
+  }
+  /* line 469, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form label[for="input-1"] .validation-master {
+    margin: 0 48% 0 0;
+  }
+  /* line 470, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form label[for="input-2"] .validation-master {
+    margin: 0 32% 0 0;
+  }
+  /* line 471, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form label[for="input-3"] .validation-master {
+    margin: 0 16% 0 0;
+  }
+  /* line 472, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-def.scss */
+  form label[for="input-4"] .validation-master {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=../_css/form-def.map */
