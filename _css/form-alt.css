@@ -4,7 +4,6 @@
 }
 
 /*-------------------------------------------BACKUP FORM---------------------------------------*/
-/* line 8, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 .formDefaultStyle {
   background: #19BAEE;
   color: black;
@@ -18,25 +17,21 @@
 }
 
 @media screen and (max-width: 550px) {
-  /* line 8, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
   .formDefaultStyle {
     font-size: 1.8em;
   }
 }
 
-/* line 21, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 .contact-button {
   order: -1;
   margin-bottom: 1em;
   line-height: 3em;
 }
 
-/* line 25, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 .contact-button span {
   font-family: MainFont;
 }
 
-/* line 28, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form {
   display: flex;
   flex-direction: column;
@@ -51,13 +46,11 @@ form {
 }
 
 @media screen and (max-width: 550px) {
-  /* line 28, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
   form {
     width: 95vw;
   }
 }
 
-/* line 46, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form input,
 form textarea,
 form button {
@@ -71,12 +64,10 @@ form button {
   font-family: "Orbitron";
 }
 
-/* line 59, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form textarea {
   height: 7rem;
 }
 
-/* line 60, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form input[type='submit'] {
   margin: 1em auto;
   border-radius: 5px;
@@ -85,20 +76,17 @@ form input[type='submit'] {
 }
 
 @media screen and (max-width: 550px) {
-  /* line 60, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
   form input[type='submit'] {
     width: 90%;
   }
 }
 
 @media screen and (max-width: 550px) {
-  /* line 60, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
   form input[type='submit'] {
     font-size: 1.2em;
   }
 }
 
-/* line 70, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay {
   display: none;
   position: relative;
@@ -107,12 +95,10 @@ form input[type='submit'] {
   padding: 1em;
 }
 
-/* line 77, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .text span {
   font-size: 4em;
 }
 
-/* line 79, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner {
   width: 150px;
   height: 75px;
@@ -121,7 +107,6 @@ form input[type='submit'] {
   top: 1em;
 }
 
-/* line 86, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner > div {
   background-color: #333;
   height: 100%;
@@ -130,7 +115,6 @@ form input[type='submit'] {
   animation: stretchdelay 1.7s infinite ease-in-out;
 }
 
-/* line 95, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect2 {
   -webkit-animation-delay: -1.6s;
   -moz-animation-delay: -1.6s;
@@ -139,7 +123,6 @@ form input[type='submit'] {
   animation-delay: -1.6s;
 }
 
-/* line 96, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect3 {
   -webkit-animation-delay: -1.5s;
   -moz-animation-delay: -1.5s;
@@ -148,7 +131,6 @@ form input[type='submit'] {
   animation-delay: -1.5s;
 }
 
-/* line 97, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect4 {
   -webkit-animation-delay: -1.4s;
   -moz-animation-delay: -1.4s;
@@ -157,7 +139,6 @@ form input[type='submit'] {
   animation-delay: -1.4s;
 }
 
-/* line 98, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect5 {
   -webkit-animation-delay: -1.3s;
   -moz-animation-delay: -1.3s;
@@ -166,7 +147,6 @@ form input[type='submit'] {
   animation-delay: -1.3s;
 }
 
-/* line 99, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect6 {
   -webkit-animation-delay: -1.2s;
   -moz-animation-delay: -1.2s;
@@ -175,7 +155,6 @@ form input[type='submit'] {
   animation-delay: -1.2s;
 }
 
-/* line 100, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect7 {
   -webkit-animation-delay: -1.1s;
   -moz-animation-delay: -1.1s;
@@ -184,7 +163,6 @@ form input[type='submit'] {
   animation-delay: -1.1s;
 }
 
-/* line 101, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect8 {
   -webkit-animation-delay: -1.0s;
   -moz-animation-delay: -1.0s;
@@ -193,7 +171,6 @@ form input[type='submit'] {
   animation-delay: -1.0s;
 }
 
-/* line 102, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect9 {
   -webkit-animation-delay: -0.9s;
   -moz-animation-delay: -0.9s;
@@ -202,7 +179,6 @@ form input[type='submit'] {
   animation-delay: -0.9s;
 }
 
-/* line 103, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #SubmitingDelay .spinner .rect10 {
   -webkit-animation-delay: -0.8s;
   -moz-animation-delay: -0.8s;
@@ -220,25 +196,21 @@ form input[type='submit'] {
   }
 }
 
-/* line 112, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form div.error {
   margin: .5em 1em;
   padding: .5em 0;
 }
 
-/* line 115, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form div.error p {
   display: inline-block;
   text-align: left;
   font-family: "Raleway";
 }
 
-/* line 121, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form label {
   text-align: left;
 }
 
-/* line 123, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form label span.label-text {
   position: relative;
   top: -81px;
@@ -246,12 +218,10 @@ form label span.label-text {
   font-family: MainFont;
 }
 
-/* line 130, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form label:last-of-type span.label-text {
   top: -143px;
 }
 
-/* line 135, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .nav-dot p {
   transition: all 1s;
   position: absolute;
@@ -263,7 +233,6 @@ form .nav-dot p {
   opacity: 0;
 }
 
-/* line 147, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .validation-master {
   cursor: pointer;
   display: block;
@@ -274,17 +243,14 @@ form .validation-master {
   transition: all 1s ease;
 }
 
-/* line 148, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .validation-master * {
   box-sizing: border-box;
 }
 
-/* line 158, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form label[for="input-4"] .validation-master {
   margin-top: -126px;
 }
 
-/* line 160, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxA {
   background: transparent;
   display: inline-block;
@@ -303,7 +269,6 @@ form .boxA {
   height: 15px;
 }
 
-/* line 173, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxC {
   background-color: #19BAEE;
   display: inline-block;
@@ -316,7 +281,6 @@ form .boxC {
   transition: all 0.3s;
 }
 
-/* line 184, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxB {
   display: inline-block;
   background: transparent;
@@ -335,7 +299,6 @@ form .boxB {
   transition: all 1s;
 }
 
-/* line 198, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxA_Error {
   left: 30px;
   border-color: red;
@@ -346,7 +309,6 @@ form .boxA_Error {
   transform: scaleX(1) rotate(45deg);
 }
 
-/* line 203, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxB_Error {
   right: 10px;
   border-color: red;
@@ -357,7 +319,6 @@ form .boxB_Error {
   transform: scaleX(1) rotate(45deg);
 }
 
-/* line 208, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxA_Valid {
   animation: Valid_A;
   animation-duration: 1s;
@@ -366,7 +327,6 @@ form .boxA_Valid {
   animation-fill-mode: forwards;
 }
 
-/* line 215, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxB_Valid {
   animation: Valid_B;
   animation-duration: 1s;
@@ -376,7 +336,6 @@ form .boxB_Valid {
   background: transparent;
 }
 
-/* line 223, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 form .boxC_Valid {
   background-color: white;
   animation: Valid_C;
@@ -451,7 +410,6 @@ form .boxC_Valid {
   }
 }
 
-/* line 284, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 #formNextButton,
 div.contact-button-trigger,
 .tip {
@@ -459,9 +417,6 @@ div.contact-button-trigger,
 }
 
 /*-----------------------------FORM LOGIC CHECK-BOXES-------------------------------*/
-/* line 289, C:/Users/B-Rad/Documents/Websites/Portfolio v3 --current--/_scss/form-alt.scss */
 [class^='validation-'] {
   display: none;
 }
-
-/*# sourceMappingURL=../_css/form-alt.map */

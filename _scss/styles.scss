@@ -105,7 +105,7 @@ footer {
 #logoImg {
 	max-width: 300px;
 	width: 40%;
-	margin: 10px;
+	margin: 28px 10px;
 	cursor: pointer;
   
   @media screen and (max-width: 831px) {
@@ -118,6 +118,7 @@ footer {
 }
 
 #loading {	
+  display: none;
   position: absolute;
   top: 0;
   margin: 0 auto;
@@ -136,7 +137,7 @@ footer {
 		left: 50%;
 		margin: -415px -400px 0;
 		position: absolute;
-		top: 50%;
+		top: 450px;
 		transform: scale(0);
 		width: 800px;
 	}
