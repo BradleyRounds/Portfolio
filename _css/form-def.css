@@ -1,6 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 @font-face {
-  font-family: 'MainFont';
-  src: url("../fonts/mainframe-bb.regular.ttf");
+  font-family: 'Mainframe';
+  src: url("../fonts/mainframe-bb.regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-RegularItalic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic;
 }
 
 /*-------------------------------------------DEFAULT FORM---------------------------------------*/
@@ -27,7 +57,7 @@ button#formNextButton {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-family: MainFont;
+  font-family: "Mainframe";
   line-height: 2em;
   letter-spacing: .125em;
   box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.75);
@@ -127,7 +157,7 @@ form .contact-button-trigger {
 
 form .contact-button span,
 form .contact-button-trigger span {
-  font-family: MainFont;
+  font-family: "Mainframe";
 }
 
 form .contact-button-trigger {

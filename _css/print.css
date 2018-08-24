@@ -13,6 +13,7 @@
 		float: right 	  !important;
     width: 200px    !important;
     height: auto    !important;
+    margin: 10px    !important;
 	}
 	nav {display: none   !important;}
 	body {

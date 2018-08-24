@@ -1,6 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 @font-face {
-  font-family: 'MainFont';
-  src: url("../fonts/mainframe-bb.regular.ttf");
+  font-family: 'Mainframe';
+  src: url("../fonts/mainframe-bb.regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-RegularItalic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic;
 }
 
 /*-------------------------------------------BACKUP FORM---------------------------------------*/
@@ -29,7 +59,7 @@
 }
 
 .contact-button span {
-  font-family: MainFont;
+  font-family: "Mainframe";
 }
 
 form {
@@ -215,7 +245,7 @@ form label span.label-text {
   position: relative;
   top: -81px;
   left: 8px;
-  font-family: MainFont;
+  font-family: "Mainframe";
 }
 
 form label:last-of-type span.label-text {

@@ -1,8 +1,39 @@
 @import "_functions.scss";
+
 @font-face {
-    font-family: 'MainFont';
-    src: url('../fonts/mainframe-bb.regular.ttf');
+    font-family: 'Mainframe';
+    src: url('../fonts/mainframe-bb.regular.ttf') format('truetype');
 }
+$font-Mainframe: Mainframe;
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-v4020-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-v4020-RegularItalic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-v4020-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-v4020-BoldItalic.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+$font-Raleway: Raleway;
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 
 $colors: (
 	"main"     : #19BAEE,
@@ -11,7 +42,7 @@ $colors: (
   "darkmain" : darken(#19BAEE, 20)
 );
 $fonts: (
-	"main" : MainFont,
+	"main" : 'Mainframe',
 	"link" : 'Orbitron',
 	"title": 'Titillium Web',
 	"block": 'Raleway'

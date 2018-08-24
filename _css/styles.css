@@ -1,6 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 @font-face {
-  font-family: 'MainFont';
-  src: url("../fonts/mainframe-bb.regular.ttf");
+  font-family: 'Mainframe';
+  src: url("../fonts/mainframe-bb.regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-RegularItalic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("../fonts/Raleway-v4020-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic;
 }
 
 html {
@@ -658,7 +688,7 @@ nav li a span {
   bottom: 18px;
   margin-left: -25%;
   color: black;
-  font-family: MainFont;
+  font-family: "Mainframe";
   font-size: 9px;
   letter-spacing: 2px;
   -webkit-transition: all 0.3s ease-out;
@@ -782,7 +812,7 @@ aside.portrait_img p {
 }
 
 aside.portrait_img p strong {
-  font-family: MainFont;
+  font-family: "Mainframe";
   color: #0b7496;
 }
 
@@ -859,7 +889,7 @@ aside.portrait_img img[class^='portrait_img'][class$='-large'] {
 }
 
 #homepageGet {
-  font-family: MainFont;
+  font-family: "Mainframe";
   font-size: 3em;
   margin: 120px auto 0;
   max-width: 1000px;
@@ -920,7 +950,7 @@ aside.portrait_img img[class^='portrait_img'][class$='-large'] {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  font-family: MainFont;
+  font-family: "Mainframe";
   outline: none !important;
   background: transparent;
   border: 2px solid #19BAEE;
@@ -1365,7 +1395,7 @@ footer div.bio div.stats div:nth-of-type(2) {
 }
 
 footer div.bio div.stats div span {
-  font-family: MainFont;
+  font-family: "Mainframe";
   font-size: 5rem;
   color: transparent;
   background-color: white;
@@ -1439,7 +1469,7 @@ div.contactBar {
 
 div.contactBar p.title {
   /*BRADLEY ROUNDS*/
-  font-family: MainFont;
+  font-family: "Mainframe";
   font-size: 44px;
   text-align: left;
 }
@@ -2074,7 +2104,7 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
 }
 
 #gallery p#page_desc {
-  font-family: MainFont;
+  font-family: "Mainframe";
 }
 
 #gallery h1 {
@@ -2137,7 +2167,7 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
 }
 
 .codingHeader {
-  font-family: MainFont;
+  font-family: "Mainframe";
   text-align: center;
   font-size: 44px;
   height: 50px;
@@ -2341,7 +2371,7 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
 }
 
 div.lightbox_captionContainer {
-  font-family: MainFont;
+  font-family: "Mainframe";
   color: black;
   padding: 2px 16px;
 }
@@ -2363,7 +2393,7 @@ p.lightbox_description {
 }
 
 p.lightbox_description strong {
-  font-family: MainFont;
+  font-family: "Mainframe";
   font-variant: small-caps;
 }
 
@@ -2537,7 +2567,7 @@ main section div h1.title {
 /*--------------------------------------FORM STYLE SWITCHER------------------------------------*/
 #change-style {
   width: 100%;
-  font-family: MainFont;
+  font-family: "Mainframe";
   padding: .3em 0;
   position: fixed;
   bottom: -1px;
