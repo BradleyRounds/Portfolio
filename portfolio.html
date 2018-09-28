@@ -36,7 +36,7 @@
 	<meta name="HandheldFriendly" content="true"/> 
 	<meta name="viewport" content="width=device-width"/>
 </head>
-<body class="noscroll" translate="false">
+<body class="noscroll" translate="true">
 <header>
   <div id="loading" class="noprint">
 	<div id="poof"></div>
@@ -71,7 +71,7 @@
     <div class="msg">Loading...</div>
 	</main>
 </div>
-  <img id="logoImg" src="images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('index.html')">
+  <img id="logoImg" src="images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('index.html')" style="display: none;">
   <script>
     if (document.referrer.split('/').pop() === 'index.html') {
       $('body').removeClass('noscroll').attr('translate', 'true');
@@ -899,11 +899,11 @@
 		  <a class="lightbox_nextBtn" onclick="plusSlides(1) ">&#10095;</a>
 			<div class="lightbox_content">
 				<div class="lightboxSlides lightboxWeb">
-					<div class="lightbox_numbertext">1 / 2</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/web-bashpowerdjs.jpg"  alt="BashPower Entertainment Mobile DJ's">
 				</div>
 				<div class="lightboxSlides lightboxWeb">
-					<div class="lightbox_numbertext">2 / 2</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/web-artsouldesignstudios.jpg"  alt="Art & Soul Design Studios">
 				</div>
 
@@ -947,27 +947,27 @@
       
 			<div class="lightbox_content">
 				<div class="lightboxSlides lightboxSchool">
-					<div class="lightbox_numbertext">1 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/school-roundscomics.png"  alt="Rounds Comics">
 				</div>
 				<div class="lightboxSlides lightboxSchool">
-					<div class="lightbox_numbertext">2 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/school-hardwarewebsite.png"  alt="Hardware Website">
 				</div>
 				<div class="lightboxSlides lightboxSchool">
-					<div class="lightbox_numbertext">3 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/school-educationalwebsitevertion3.png" alt="Educational Website Vertion 3">
 				</div>
 				<div class="lightboxSlides lightboxSchool">
-					<div class="lightbox_numbertext">4 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/school-educationalwebsitevertion2.png" alt="Educational Website Vertion 2">
 				</div>
 				<div class="lightboxSlides lightboxSchool">
-					<div class="lightbox_numbertext">5 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/school-educationalwebsitevertion1.png" alt="Educational Website Vertion 1">
 				</div>
 				<div class="lightboxSlides lightboxSchool">
-					<div class="lightbox_numbertext">6 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/school-web2.0.png" alt="Web 2.0 Research Project">
 				</div>
 				<div class="lightboxSlides lightboxSchool">
@@ -1023,15 +1023,15 @@
 		  <a class="lightbox_nextBtn" onclick="plusSlides(1)">&#10095;</a>
 			<div class="lightbox_content">
 				<div class="lightboxSlides lightboxPortfolio">
-					<div class="lightbox_numbertext">1 / 3</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/portfolio-v3.png" alt=" Current Online Portfolio">
 				</div>
 				<div class="lightboxSlides lightboxPortfolio">
-					<div class="lightbox_numbertext">2 / 3</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/portfolio-v2.png" alt="Spring 2017 Portfolio">
 				</div>
 				<div class="lightboxSlides lightboxPortfolio">
-					<div class="lightbox_numbertext">3 / 3</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/portfolio-v1.png" alt="2015 - 2016 Portfolio">
 				</div>
 
@@ -1076,44 +1076,34 @@
 		  <a class="lightbox_nextBtn" onclick="plusSlides(1)">&#10095;</a>
 			<div class="lightbox_content">
 				<div class="lightboxSlides lightboxIllustration">
-					<div class="lightbox_numbertext">1 / 6</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/illustration-GovernorsBallPoster.png" alt="My poster design of the Governors Ball Music Festival">
 				</div>
 				<div class="lightboxSlides lightboxIllustration">
-					<div class="lightbox_numbertext">2 / 6</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/illustration-LDT_SugarPlumTeaParty.png" alt="">
 				</div>
 				<div class="lightboxSlides lightboxIllustration">
-					<div class="lightbox_numbertext">3 / 6</div>
+					<div class="lightbox_numbertext"></div>
 					<img src="images/portfolioimages/gallery/illustration-LDT_TheNutcrackerColor.png" alt="">
 				</div>
 				<div class="lightboxSlides lightboxIllustration">
-					<div class="lightbox_numbertext">4 / 6</div>
-					<img src="images/portfolioimages/gallery/illustration-EarthASS1.jpg" alt="Meaning through illustration - Part 1 - Word: Earth">
+					<div class="lightbox_numbertext"></div>
+					<img src="images/portfolioimages/gallery/illustration-EarthASS1.jpg" alt="Meaning through illustration - Word: Earth">
 				</div>
-				<!--
-				<div class="lightboxSlides lightboxIllustration">
-					<div class="lightbox_numbertext">5 / 6</div>
-					<img src="images/portfolioimages/gallery/illustration-WindASS1.jpg" alt="Meaning through illustration - Part 2 - Word: Wind">
-				</div>
-				<div class="lightboxSlides lightboxIllustration">
-					<div class="lightbox_numbertext">6 / 6</div>
-					<img src="images/portfolioimages/gallery/illustration-LiquidASS1.jpg" alt="Meaning through illustration - Part 3 - Word: Liquid">
-				</div>
-				-->
         
 				<div class="lightbox_captionContainer">
 					<p></p>
 				</div>
 
 				<div class="lightbox_column">
-					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-GovernorsBallPoster.png" onclick="currentSlide(1)" alt="My poster design of the Governors Ball Music Festival">
+					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-GovernorsBallPoster.png" onclick="currentSlide(1)" alt="Poster design for the Governors Ball Music Festival">
 				</div>
 				<div class="lightbox_column">
-					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-LDT_SugarPlumTeaParty.png" onclick="currentSlide(2)" alt="">
+					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-LDT_SugarPlumTeaParty.png" onclick="currentSlide(2)" alt="Longmont (Colorado) Dance Theater Academy Promotional Flyer - Sugar Plum Tea Party ">
 				</div>
 				<div class="lightbox_column">
-					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-LDT_TheNutcrackerColor.png" onclick="currentSlide(3)" alt="">
+					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-LDT_TheNutcrackerColor.png" onclick="currentSlide(3)" alt="Longmont (Colorado) Dance Theater Academy Promotional Flyer - The Nutcracker">
 				</div>
 				<div class="lightbox_column">
 					<img class="Illustration-lightbox_previewImg" src="images/portfolioimages/gallery/illustration-EarthASS1.jpg" onclick="currentSlide(4)" alt="Meaning through illustration - Part 1 - Word: Earth">
@@ -1133,6 +1123,7 @@
 	</article>
 	
 	<h1 class="title">Animations</h1>
+  <h3 class="subTitle">Sound Warning!</h3>
 	<!-- Animations Lightbox-->
 	<article>
 		<div class="lightbox_row scrollbar">
@@ -1150,28 +1141,28 @@
       
 			<div class="lightbox_content">
 				<div class="lightboxSlides lightboxAnimation">
-					<div class="lightbox_numbertext">1 / 4</div>
+					<div class="lightbox_numbertext"></div>
 					<object id="GovernorsBallAnimation" width="470" height="470" data="images/portfolioimages/gallery/animation-GovernorsBall.swf" autostart="0" autoplay="0" onclick="playpauseSwitch()">
 						<param name="movie" value="images/portfolioimages/gallery/animation-GovernorsBall.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxAnimation">
-					<div class="lightbox_numbertext">2 / 4</div>
-					<object id="KineticTypeAnimation" width="550" height="400" data="images/portfolioimages/gallery/animation-KineticType.swf" autostart="0" autoplay="0" onclick="playpauseSwitch()">
+					<div class="lightbox_numbertext"></div>
+					<object id="KineticTypeAnimation" width="550" height="400" data="images/portfolioimages/gallery/animation-KineticType.swf" autostart="0" autoplay="0" onclick="playpauseSwitch()" muted>
 						<param name="movie" value="images/portfolioimages/gallery/animation-KineticType.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxAnimation">
-					<div class="lightbox_numbertext">3 / 4</div>
+					<div class="lightbox_numbertext"></div>
 					<object id="AnimatedAdvertismentAnimation" width="857" height="913" data="images/portfolioimages/gallery/animation-AnimatedAdvertisment.swf" autostart="0" autoplay="0" onclick="playpauseSwitch()">
 						<param name="movie" value="images/portfolioimages/gallery/animation-AnimatedAdvertisment.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxAnimation">
-					<div class="lightbox_numbertext">4 / 4</div>
+					<div class="lightbox_numbertext"></div>
 					<object id="PickleRickCharacterAnimation" width="128" height="370" data="images/portfolioimages/gallery/animation-PickleRickCharacter.swf" autostart="0" autoplay="0" onclick="playpauseSwitch()">
 						<param name="movie" value="images/portfolioimages/gallery/animation-PickleRickCharacter.swf" />
 						<param name="swfversion" value="8.0.35.0" />
@@ -1228,21 +1219,21 @@
 		  <a class="lightbox_nextBtn" onclick="plusSlides(1)">&#10095;</a>
 			<div class="lightbox_content">
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">1 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="640" height="480" data="coding/games/wack_a_capsule.swf" type="application/x-shockwave-flash" title="Wack A Capsule">
 						<param name="movie" value="coding/games/wack_a_capsule.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">2 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="481" height="400" data="coding/games/brick_breaker_customized.swf" type="application/x-shockwave-flash" title="Brick Breaker">
 						<param name="movie" value="coding/games/testlevel.txt" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">3 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="400" height="500" data="coding/games/moon_fighter.swf" type="application/x-shockwave-flash" title="Moon Fighter">
 						<param name="movie" value="coding/games/moon_fighter.swf" />
 						<param name="movie" value="coding/games/testlevel.txt" />
@@ -1250,28 +1241,28 @@
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">4 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="550" height="400" data="coding/games/aa_bomb_drop.swf" type="application/x-shockwave-flash" title="AA Bomb Drop">
 						<param name="movie" value="games/aa_bomb_drop.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">5 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="500" height="380" data="coding/games/sound_hunter.swf" type="application/x-shockwave-flash" title="Sound Hunter">
 						<param name="movie" value="coding/games/sound_hunter.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">6 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="988" height="640" data="coding/games/jungle_adventure.swf" type="application/x-shockwave-flash" title="Jungle Adventure">
 						<param name="movie" value="coding/games/jungle_adventure.swf" />
 						<param name="swfversion" value="8.0.35.0" />
 					</object>
 				</div>
 				<div class="lightboxSlides lightboxGames">
-					<div class="lightbox_numbertext">7 / 7</div>
+					<div class="lightbox_numbertext"></div>
 					<object width="640" height="480" data="coding/games/mars_racer.swf" type="application/x-shockwave-flash" title="Mars Racer">
 						<param name="movie" value="coding/games/mars_racer.swf" />
 						<param name="swfversion" value="8.0.35.0" />
@@ -1325,13 +1316,13 @@
     maxTime = parseInt((EstimatedTime / 1000) % 60) * 100,
     timeoutVal = Math.floor(maxTime/100);
   
-  console.log('EstimatedTime: ', EstimatedTime, 'ms');
-  console.log('TimeoutVal: ', timeoutVal, 'ms');
-  console.log('maxTime: ', maxTime, 'ms');
+  //console.log('EstimatedTime: ', EstimatedTime, 'ms');
+  //console.log('TimeoutVal: ', timeoutVal, 'ms');
+  //console.log('maxTime: ', maxTime, 'ms');
   
   maxTime = (maxTime < 6000 ? 6000 : maxTime);
   
-  console.log('Adjusted maxTime: ', maxTime, 'ms');
+  //console.log('Adjusted maxTime: ', maxTime, 'ms');
   
   animateUpdate();
   

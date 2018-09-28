@@ -229,7 +229,6 @@ footer::after {
 }
 
 #loading {
-  display: none;
   position: absolute;
   top: 0;
   margin: 0 auto;
@@ -2166,6 +2165,15 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
   padding-bottom: 0;
 }
 
+.subTitle {
+  font-family: "Titillium Web";
+  font-size: 1.2em;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  width: 100%;
+}
+
 .codingHeader {
   font-family: "Mainframe";
   text-align: center;
@@ -2339,6 +2347,8 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
   padding: 14px;
   color: black;
   background-color: rgba(25, 186, 238, 0.5);
+  border: 1px solid white;
+  border-left: 0;
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
@@ -2350,12 +2360,15 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
 .lightbox_nextBtn {
   right: 0;
   left: auto;
+  border-left: 1px;
+  border-right: 0;
   border-radius: 3px 0 0 3px;
 }
 
 .lightbox_prevBtn:hover,
 .lightbox_nextBtn:hover {
   background-color: white;
+  border-color: black;
 }
 
 .lightbox_numbertext {

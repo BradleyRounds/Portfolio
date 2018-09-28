@@ -118,7 +118,7 @@ footer {
 }
 
 #loading {	
-  display: none;
+  //display: none;
   position: absolute;
   top: 0;
   margin: 0 auto;
@@ -1528,6 +1528,14 @@ div.contactBar {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+.subTitle {
+  font-family: font(title);
+  font-size: 1.2em;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  width: 100%;
+}
 .codingHeader {
 	font-family: font(main);
 	text-align: center;
@@ -1656,6 +1664,8 @@ $lightbox_text: black;
   padding: 14px;
   color: $lightbox_text;
   background-color: transparentize(color(main), .5);
+  border: 1px solid $lightbox_background;
+  border-left: 0;
   font-weight: bold;
   font-size: 20px;
   transition: 0.6s ease;
@@ -1666,9 +1676,14 @@ $lightbox_text: black;
 .lightbox_nextBtn {
   right: 0;
 	left: auto;
+  border-left: 1px;
+  border-right: 0;
   border-radius: 3px 0 0 3px; }
 .lightbox_prevBtn:hover,
-.lightbox_nextBtn:hover {background-color: $lightbox_background;}
+.lightbox_nextBtn:hover {
+  background-color: $lightbox_background;
+  border-color: black;
+}
 
 .lightbox_numbertext { /* Number text (1/3 etc) */
   position: absolute;

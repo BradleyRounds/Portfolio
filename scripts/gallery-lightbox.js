@@ -12,10 +12,14 @@ var slideIndex = 1,
 
 function openLightboxWeb()          {
   order = 0;
+  MaxSlideIndex = $('.Web-lightbox_previewImg').length;
+
+  for (var i = 1; i <= MaxSlideIndex; i++) {
+    $('.lightboxWeb .lightbox_numbertext').eq(i-1).text(i + ' / ' + MaxSlideIndex);
+  };
     
-  $('.lightbox:eq(' + order + ')').slideDown();
-  $('.lightbox_row:eq(' + order + ')').slideUp();
-  MaxSlideIndex = 2;
+  $('.lightbox').eq(order).slideDown();
+  $('.lightbox_row').eq(order).slideUp();
   descriptions = [""];
   slides = $('.lightboxWeb');
   descriptionText = $('.lightbox_description').eq(order);
@@ -24,10 +28,14 @@ function openLightboxWeb()          {
 }
 function openLightboxSchool()       {
   order = 1;
+  MaxSlideIndex = $('.School-lightbox_previewImg').length;
 
-  $('.lightbox:eq(' + order + ')').slideDown();
-  $('.lightbox_row:eq(' + order + ')').slideUp();
-  MaxSlideIndex = 7;
+  for (var i = 1; i <= MaxSlideIndex; i++) {
+    $('.lightboxSchool .lightbox_numbertext').eq(i-1).text(i + ' / ' + MaxSlideIndex);
+  };
+
+  $('.lightbox').eq(order).slideDown();
+  $('.lightbox_row').eq(order).slideUp();
   descriptions = [
     "This site was made in my last semester of my Associates Degree, the site was all about PHP and database dependancy. We first sent in a project proposal detailing what we had in mind for mind cented around selling my comic book collection, it went something like this.<br><br><pre>Bradley Rounds<br>CWB-208<br>9/30/2017<br>Website Propose: <br>Sell my comic book collection (The ones I don’t want to keep)<br>At the very least, get all the information for the collection into a database.<br><br>Pages:<br>Intro/Home Page<br>Comic Book Series	(Semi static html page, images of the series volume 1 as the links to the books page)<br>Books Within Series (Multiple Pages, A layout populated with data from SQL Database)<br>Order Request Form Page (Linked to from the books page)<br><br>Form Inputs:<br>Series 		(Auto Filled from SQL) (Not changeable at form)<br>Issue #A	(Auto filled from SQL and Overwritable)<br>Issue #B	(Auto filled from SQL and Overwritable) (A and B to create a Range) (Optional)<br><br><br>Price		(Auto Filled from SQL)<br>Contact Info<br>	FirstName 		[Text Input]<br>	LastName		[Text Input]<br>	Email			[Text Input]<br>	Mailing Address		[Text Input]<br>		(Address)<br>		(City)<br>		(State)<br>		(Country)	[Default USA]<br>	Payment Option	[Radial Button Choices]<br><br><br>SQL Databases:<br>Prices<br>CREATE TABLE  (<br>  PriceCode int,			[Primary Key]<br>  Price float(5,2)<br>);<br><br><br>Books <br>CREATE TABLE books (<br>  SeriesID int,	[Primary Key]<br>  SeriesTitle varchar(20),		 [NotNull]<br>  BookTitle varchar(20),		 [NotNull]<br>  IssueNum int,<br>  Condition varchar(10),<br>  Publisher varchar(50),<br>  Year date,<br>  PriceCode int,	(Foreign Key)<br>);<br><br><br>Users<br>CREATE TABLE contact (<br>  PersonID int,				[Primary Key]<br>  LastName varchar(20),			[NotNull]<br>  FirstName varchar(25),<br>  Address varchar(75),<br>  City varchar(255),<br>  State char(2),<br> Country varchar(10),<br> PayPreferance int,<br>);</pre><br><br>A few things changed along the way after my proposal was approved, I first decided to go with a single page site, with a simple AJAX theme. Create, remove, hide and show div's and tables populated with the contents of the database. Running Queries and Inserts in the background of the site. The project was completed using simple HTML5 structure, SCSS for the design and layout, jQuery/javascript for the User experiance, SQL for the database interaction and phpMyAdmin for the databases' design and population.",
     "This website I created in the second class of the CTE program, and it reviews the Hardware, Software, and other computer things that we learned; like OS's (Operating systems), Securities, Storage, computer components, computer repair, networking and servers.",
@@ -43,10 +51,14 @@ function openLightboxSchool()       {
 }
 function openLightboxPortfolio()    {
   order = 2;
+  MaxSlideIndex = $('.Portfolio-lightbox_previewImg').length;
 
-  $('.lightbox:eq(' + order + ')').slideDown();
-  $('.lightbox_row:eq(' + order + ')').slideUp();
-  MaxSlideIndex = 3;
+  for (var i = 1; i <= MaxSlideIndex; i++) {
+    $('.lightboxPortfolio .lightbox_numbertext').eq(i-1).text(i + ' / ' + MaxSlideIndex);
+  };
+
+  $('.lightbox').eq(order).slideDown();
+  $('.lightbox_row').eq(order).slideUp();
   descriptions = [
     "This is the portfolio that you are currently browsing, I made the bulk of this site in the fall of 2017. This site contains my portfolio pieces of Web Design, Illustration, Animation, Game Design as well as some coding projects of languages like Javascript, Python and PHP",
     "This website was my jumping point to this current one, while creating this site I was only focused on simple HTML structure and enough CSS to display all of my content within a reasonable amount of pages. As you can see with the screen-shot most of the structure has stayed the same through to this version.",
@@ -58,10 +70,13 @@ function openLightboxPortfolio()    {
 }
 function openLightboxIllustration() {
   order = 3;
+  MaxSlideIndex = $('.Illustration-lightbox_previewImg').length;
 
-  $('.lightbox:eq(' + order + ')').slideDown();
-  $('.lightbox_row:eq(' + order + ')').slideUp();
-  MaxSlideIndex = 6;
+  for (var i = 1; i <= MaxSlideIndex; i++) {
+    $('.lightboxIllustration .lightbox_numbertext').eq(i-1).text(i + ' / ' + MaxSlideIndex);
+  };
+  $('.lightbox').eq(order).slideDown();
+  $('.lightbox_row').eq(order).slideUp();
   descriptions = [
     "For a final project in my animation 1 class at Front Range we had to make a poster for a music festival, real or imaginary using vector art and all of our own illustrations if we had any. I decided to do my own take on The Governors Ball, a real festival that takes place in NYC every year.",
     "",
@@ -74,10 +89,14 @@ function openLightboxIllustration() {
 }
 function openLightboxAnimation()    {
   order = 4;
+  MaxSlideIndex = $('.Animation-lightbox_previewImg').length;
 
-  $('.lightbox:eq(' + order + ')').slideDown();
-  $('.lightbox_row:eq(' + order + ')').slideUp();
-  MaxSlideIndex = 4;
+  for (var i = 1; i <= MaxSlideIndex; i++) {
+    $('.lightboxAnimation .lightbox_numbertext').eq(i-1).text(i + ' / ' + MaxSlideIndex);
+  };
+
+  $('.lightbox').eq(order).slideDown();
+  $('.lightbox_row').eq(order).slideUp();
   descriptions = [
     "",
     "",
@@ -90,10 +109,14 @@ function openLightboxAnimation()    {
 }
 function openLightboxGames()        {
   order = 5;
+  MaxSlideIndex = $('.Games-lightbox_previewImg').length;
 
-  $('.lightbox:eq(' + order + ')').slideDown();
-  $('.lightbox_row:eq(' + order + ')').slideUp();
-  MaxSlideIndex = 7;
+  for (var i = 1; i <= MaxSlideIndex; i++) {
+    $('.lightboxGames .lightbox_numbertext').eq(i-1).text(i + ' / ' + MaxSlideIndex);
+  };
+
+  $('.lightbox').eq(order).slideDown();
+  $('.lightbox_row').eq(order).slideUp();
   descriptions = [
     "Wack-a-Capsule<br><br>The first game I created was the Wack-A-Capsule game. The game plays like the classic Wack-a-Mole arcade game.<br><br><strong>Objective </strong>:Smack the 'Capsules' back down as they dodge in and out of their tubes trying to get a high score before the time runs out.<br><strong>Instructions: </strong>Click the Capsules with the mouse when they are visible.",
     "The second game I created is the classic Brick Breaker game, the old flip phone game. The game works by controling a paddle bouncing a ball at a block of seperate bricks, and when hitting them, you destroy them. When all of the briks are destroyed the game is over. For this game we learned to create animations inside of graphics and play them with an action.<br><br><strong>Objective </strong>:Get the Highest score you can while clearing all the blocks on the level.<br><strong>Instructions: </strong>Move the paddle side to side with the mouse.",
