@@ -107,6 +107,13 @@
 	  <button class="tablinks" onclick="openTopic(event,'')"></button>
 	  <button class="tablinks" onclick="openTopic(event,'')"></button>
 	</div>
+	<h1 class="title codingHeader">ReactJS</h1>
+  <hr>
+	<div class="tab">
+    <button class="tablinks" onclick="openTopic(event,'ticktactoe')">Tick Tac Toe</button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	  <button class="tablinks" onclick="openTopic(event,'')"></button>
+	</div>
   <hr>
 	
 <section>
@@ -581,8 +588,8 @@ function colorCode(type) {
 </pre>
 </div>
 
-<div id="ajaxsimple" class="tabcontent">
-	<h1 class="title">Learning AJAX</h1>
+<div id="" class="tabcontent">
+	<h1 class="title"></h1>
 <pre class="code_box">
 
 </pre>
@@ -591,6 +598,160 @@ function colorCode(type) {
 <div id="" class="tabcontent">
 	<h1 class="title"></h1>
 <pre class="code_box">
+
+</pre>
+</div>
+
+<div id="ticktactoe" class="tabcontent">
+	<h1 class="title">React Tick-Tac-Toe</h1>
+<pre class="code_box reactJS">
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+
+function Square(props) {
+  return (
+    &lt;button className="square" onClick={props.onClick}&gt;
+      {props.value}
+    &lt;/button&gt;
+  );
+}
+
+class Board extends React.Component {
+  renderSquare(i) {
+    return (
+      &lt;Square
+        value={this.props.squares[i]}
+        onClick={() =&gt; this.props.onClick(i)}
+      /&gt;
+    );
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;div className="board-row"&gt;
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        &lt;/div&gt;
+        &lt;div className="board-row"&gt;
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        &lt;/div&gt;
+        &lt;div className="board-row"&gt;
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: [{
+        squares: Array(9).fill(null),
+      }],
+      stepNumber: 0,
+      xIsNext: true,
+    };
+  }
+  handleClick(i) {
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const current = history[history.length - 1];
+    const squares = current.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      history: history.concat([{
+        squares: squares,
+      }]),
+      stepNumber: history.length,
+      xIsNext: !this.state.xIsNext,
+    });
+  }
+  jumpTo(step) {
+    this.setState({
+      stepNumber: step,
+      xIsNext: (step % 2) === 0,
+    });
+  }
+
+  render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
+    const winner = calculateWinner(current.squares);
+
+    const moves = history.map((step, move) =&gt; {
+      const desc = move ?
+            'Go to move #' + move :
+            'Go to game start';
+      return (
+        &lt;li key={move}&gt;
+          &lt;button onClick={() =&gt; this.jumpTo(move)}&gt;{desc}&lt;/button&gt;
+        &lt;/li&gt;
+      );
+    });
+
+    let status;
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
+
+    return (
+      &lt;div className="game"&gt;
+        &lt;div className="game-board"&gt;
+          &lt;Board
+            squares={current.squares}
+            onClick={(i) =&gt; this.handleClick(i)}
+          /&gt;
+        &lt;/div&gt;
+        &lt;div className="game-info"&gt;
+          &lt;div>{status}&lt;/div&gt;
+          &lt;ol>{moves}&lt;/ol&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i &lt; lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] &amp;&amp; squares[a] === squares[b] &amp;&amp; squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
+
+
+// ========================================
+
+ReactDOM.render(
+  &lt;Game /&gt;,
+  document.getElementById('root')
+);
 
 </pre>
 </div>
@@ -644,6 +805,61 @@ function colorCode(type) {
   clean(document);
 </script>
 <script src="codeColor.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.reactJS').each(function() {
+      var words = [
+        ['function',
+         'return',
+         'var',
+         'const',
+         'let',
+         'for',
+         'while',
+         'if',
+         'else',
+         'this',
+         'import',
+         'from',
+         'extends'],
+        ['true',
+         'false']
+      ],
+      keywords = '/',
+      types = ['functiondata','booleandata'],
+      list = {},
+      c = 0;
+
+      //KEYWORDS
+      for (var i = 0; i < words.length; i++) {
+        for (var j = 0; j < words[i].length; j++) {
+          keywords += '\\b';
+          keywords += words[i][j]
+          keywords += '\\b|';
+        }
+      }
+      keywords = keywords.slice(0, -1);
+      keywords += '/g';
+
+      //LIST
+      for (var i = 0; i < words.length; i++) {
+        for (var j = 0; j < words[i].length; j++) {
+          list[words[i][j]] = '<' + types[i] + '>' + words[i][j] + '<' + types[i] + '>';
+        }
+      }
+      console.log(keywords);
+      console.log(list);
+
+      var oldHTML = $(this).html();
+      console.log(oldHTML);
+      // FOR JAVASCRIPT KEYWORD LIST
+      oldHTML = oldHTML.replace(keywords, function(x){return list[x]});
+
+      oldHTML = oldHTML.replace(/\t/g, "  ");
+      $(this).html(oldHTML);
+    });
+  });
+</script>
 <script src="../scripts/dropdown-nav.js"></script>
 </body>
 </html>

@@ -92,7 +92,7 @@ var	htmlKeywords = /\bname\b|\bcharset\b|\btype\b|\brel\b|\bhref\b|\bsrc\b|\bcon
 		'toUpper'	: "<span style='" + psudocodeDict.funct + "'>toUpper</span>"
 	},
 		
-	javascriptKeywords = /\bfunction\b|\bvar\b|\bfor\b|\bwhile\b|\bthis\b|\breturn\b|\bif\b|\belse\b|(\$\()|\bwindow\b|\bdocument\b|\bconsole\b|\be\b|\bevt\b|\bevent\b|\btrue\b|\bfalse\b/g,
+	javascriptKeywords = /\bfunction\b|\bvar\b|\bconst\b|\blet\b|\bfor\b|\bwhile\b|\bthis\b|\breturn\b|\bif\b|\belse\b|\$\(|\bwindow\b|\bdocument\b|\bconsole\b|\be\b|\bevt\b|\bevent\b|\btrue\b|\bfalse\b/g,
 		
 	javascriptList = {
 		'function': "<functiondata>function</functiondata>",
@@ -236,12 +236,13 @@ function colorCode(type) {
 			oldHTML = oldHTML.replace(/'(?:[^'\\]|\\.){0,60}'/g, "<stringdata>$&</stringdata>");
 			// FOR TEXT WITHIN DOUBLE QUOTES
 			oldHTML = oldHTML.replace(/"(?:[^"\\]|\\.){0,100}"/g, "<stringdata>$&</stringdata>");
-			// FOR JAVASCRIPT LIST
-			oldHTML = oldHTML.replace(javascriptKeywords, function(x){return javascriptList[x]});
 			// FOR SINGLE LINE COMMENTS
 			oldHTML = oldHTML.replace(/((?:\n)|[\t])\/\/(?:.*)/g, "<commentdata>$&</commentdata>");
 			// FOR BLOCK COMMENTS
 			oldHTML = oldHTML.replace(/\/\*\n((.*?)\n)+\*\//g, "<commentdata>$&</commentdata>");
+
+			// FOR JAVASCRIPT KEYWORD LIST
+			oldHTML = oldHTML.replace(javascriptKeywords, function(x){return javascriptList[x]});
 		}
 		if (type === 'php') {
 			// FOR SINGLE QUOTES

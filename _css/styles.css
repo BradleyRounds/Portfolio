@@ -237,6 +237,7 @@ footer::after {
   width: 90%;
   height: 100%;
   text-align: center;
+  cursor: progress;
 }
 
 @media screen and (max-width: 1200px) {
