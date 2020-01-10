@@ -23,6 +23,7 @@
 		border: 0					!important;
     
     font-size: 0.9em  !important;
+    -webkit-print-color-adjust: exact !important;
 	}
 	#resume {
     margin: 0 !important;
@@ -51,7 +52,7 @@
 
   #printBG {
     width: 100% !important;
-    height: 54.52em !important;
+    height: 48.25em !important;
     background: transparent !important;
     background: linear-gradient(bottom, rgba(20,200,255,1) 0%, rgba(255,255,255,0) 90%) !important;
     background: -o-linear-gradient(bottom, rgba(20,200,255,1) 0%, rgba(255,255,255,0) 90%) !important;
@@ -92,6 +93,7 @@
   #aboutSection           {}
   #degreeSection          {}
   #workSection            {}
+  #workSection div.pagebreak  {margin-top: 2em !important;}
   #achievementSection     {}
   #certificationsSection  {}
   #hobbieSection          {}

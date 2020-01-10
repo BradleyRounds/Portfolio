@@ -212,6 +212,7 @@ footer::after {
 }
 
 #logoImg {
+  display: none;
   max-width: 300px;
   width: 40%;
   margin: 28px 10px;
@@ -243,6 +244,12 @@ footer::after {
 @media screen and (max-width: 1200px) {
   #loading {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 831px) {
+  #loading {
+    display: none;
   }
 }
 
@@ -605,6 +612,12 @@ footer::after {
 
 header {
   height: 175px;
+}
+
+@media screen and (max-width: 831px) {
+  header {
+    height: 200px;
+  }
 }
 
 nav {
@@ -1514,13 +1527,12 @@ div.contactBar div.desc span:not(:last-of-type)::after {
 }
 
 div.contactBar div.contactRight {
-  font-family: "Raleway";
+  font-family: "Titillium Web";
   vertical-align: middle;
   text-align: left;
   display: inline-block;
-  width: 222px;
   padding: 0 10px 0 4px;
-  margin: 0 11%;
+  margin: 0 7%;
   position: relative;
   top: -60px;
   background-color: white;
@@ -1680,7 +1692,7 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
 }
 
 #resume article {
-  width: 56%;
+  width: 48%;
   float: left;
   margin-left: 10px;
 }
@@ -1818,14 +1830,14 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
   transition: opacity 1s ease;
 }
 
-#resume #workSection :not(span) {
-  font-size: .9em;
-}
-
 @media screen and (max-width: 650px) {
   #resume #workSection {
     text-indent: 0;
   }
+}
+
+#resume #workSection p {
+  margin-bottom: 0;
 }
 
 #resume #workSection p span {
@@ -1843,11 +1855,20 @@ div.contactBar div.contactRight section#socialMedia #sharePopup span.close {
 
 #resume #workSection ul {
   padding: 0;
+  list-style-type: none;
+}
+
+#resume #workSection ul :not(span) {
+  font-size: .9em;
 }
 
 #resume #workSection ul li {
-  list-style-type: none;
   margin-left: 2em;
+}
+
+#resume #workSection ul li ul {
+  font-size: 1em;
+  list-style-type: circle;
 }
 
 #resume #workSection ul li span {

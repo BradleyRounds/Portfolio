@@ -103,6 +103,7 @@ footer {
 }
 
 #logoImg {
+  display: none;
 	max-width: 300px;
 	width: 40%;
 	margin: 28px 10px;
@@ -129,6 +130,9 @@ footer {
   text-align: center;
   cursor: progress;
   @media screen and (max-width: 1200px) {width: 100%;}
+  @media screen and (max-width: 831px) {
+    display: none;
+  }
   
 	#poof {
 		animation: a-h .5s 1.25s 1 linear forwards, a-nt .6s 1.25s 1 cubic-bezier(0,0,.2,1);
@@ -442,7 +446,10 @@ footer {
 	100% {transform: none;}
 }
 
-header {height: 175px;}
+header {
+  height: 175px;
+  @media screen and (max-width: 831px) {height: 200px;}
+}
 nav {
 	float: right;
   top: 5px;
@@ -1068,13 +1075,12 @@ div.contactBar {
     }
 	}
   div.contactRight {
-		font-family: font(block);
+		font-family: font(title);
 		vertical-align: middle;
 		text-align: left;
 		display: inline-block;
-		width: 222px;
     padding: 0 10px 0 4px;
-		margin: 0 11%;
+		margin: 0 7%;
 		position: relative;
 		top: -60px;
 		background-color: white;
@@ -1195,7 +1201,7 @@ div.contactBar {
 
 #resume {
 	article {
-		width: 56%;
+		width: 48%;
 		float: left;
 		margin-left: 10px;
     @media screen and (max-width: 1200px) {
@@ -1276,33 +1282,42 @@ div.contactBar {
 		}
 	}
 	#workSection {
-		:not(span) {font-size: .9em;}
 		letter-spacing: 1px;
 		font-family: font(block);
 		transition: opacity 1s ease;
     @media screen and (max-width: 650px) {text-indent: 0;}
       
-		p span {
-			font-size: 1.1em;
-			font-weight: 900;
-			color: black;
-      @media screen and (max-width: 650px) {
-        &:first-child::after {
-				  content: ' ';
-				  display: block;
+		p {
+      margin-bottom: 0;
+      span {
+        font-size: 1.1em;
+        font-weight: 900;
+        color: black;
+        @media screen and (max-width: 650px) {
+          &:first-child::after {
+            content: ' ';
+            display: block;
+          }
+        }
+      }
+    }
+		ul {
+		  :not(span) {font-size: .9em;}
+      padding: 0;
+      list-style-type: none;
+      li {
+			  margin-left: 2em;
+        ul {
+          font-size: 1em;
+          list-style-type: circle;
+        }
+        span {
+          text-decoration: underline;
+          font-weight: 900;
         }
       }
 		}
-		ul {padding: 0;}
-		ul li {
-			list-style-type: none;
-			margin-left: 2em;
-		}
-		ul li span {
-			text-decoration: underline;
-			font-weight: 900;
-		}
-	}
+  }
 	#achievementSection {
 		font-family: font(block);
     font-size: .9em;
