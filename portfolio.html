@@ -36,7 +36,7 @@
 	<meta name="HandheldFriendly" content="true"/> 
 	<meta name="viewport" content="width=device-width"/>
 </head>
-<body class="noscroll" translate="true">
+<body class="noscroll" animation="false">
 <header>
   <div id="loading" class="noprint">
 	<div id="poof"></div>
@@ -73,10 +73,10 @@
 </div>
   <img id="logoImg" src="images/logo.png" alt="My Logo, A Handmade BR Tag" onclick="window.location.assign('index.html')">
   <script>
+    console.log(document.referrer.split('/').pop());
     if (document.referrer.split('/').pop() === 'index.html') {
-      $('body').removeClass('noscroll').attr('translate', 'true');
+      $('body').removeClass('noscroll').attr('animation', 'true');
       $('#loading').show();
-      $('#logoImg').hide();
     }
   </script>
   <nav>
@@ -1416,7 +1416,7 @@
     perfData = window.performance.timing,
     // The PerformanceTiming interface represents timing-related performance information
     EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
-    maxTime = parseInt((EstimatedTime / 1000) % 60) * 100,
+    maxTime = parseInt((EstimatedTime / 1500) % 60) * 100,
     timeoutVal = Math.floor(maxTime/100);
   
   //console.log('EstimatedTime: ', EstimatedTime, 'ms');
@@ -1426,7 +1426,8 @@
   maxTime = (maxTime < 3000 ? 3000 : maxTime);
   
   //console.log('Adjusted maxTime: ', maxTime, 'ms');
-  animateUpdate();
+  if ($('body').attr('animation') == 'true')
+    animateUpdate();
   
   function animateUpdate() {
     var now = new Date(),
@@ -1438,9 +1439,8 @@
       setTimeout(animateUpdate, timeoutVal);
     } else {
       $('body').removeClass('noscroll');
-      if ($('body').attr('translate') === 'true')
-        $('#loading').addClass('translate');
-      $('#loading article').attr('onclick', "window.location.assign('index.html')");
+      if ($('body').attr('animation') === 'true')
+        $('#loading').hide();
     }
   }
 </script>

@@ -103,7 +103,6 @@ footer {
 }
 
 #logoImg {
-  display: none;
 	max-width: 300px;
 	width: 40%;
 	margin: 28px 10px;
@@ -119,7 +118,7 @@ footer {
 }
 
 #loading {	
-  //display: none;
+  display: none;
   position: absolute;
   top: 0;
   margin: 0 auto;
@@ -362,40 +361,6 @@ footer {
 
     animation: a-s .25s 1.25s 1 forwards;
     opacity: 0;
-  }
-}
-#loading.translate {
-  position: absolute;
-  transition: background-color 1s ease;
-  
-  animation: a-fp 3s 1.5s 1 forwards;
-  background-color: transparent;
-  transform-origin: top left;
-  
-  progress {display: none;}
-  .msg {display: none;}
-  main {
-    width:  465px;
-    height: 250px;
-    margin: 0 auto;
-    article {cursor: pointer;}
-  }
-  .spacer {height: 0; margin-bottom: 0;}
-  #left-bracket  {background-color: transparent;}
-  #right-bracket {background-color: transparent;}
-}
-
-//Move to final position
-@keyframes a-fp {
-  10%  {
-    height: 250px;
-    transform: scale(.7);
-  }
-  100% {
-    height: 250px;
-    width : 500px;
-    transform: scale(.7);
-    
   }
 }
 
@@ -946,6 +911,7 @@ footer {
   
 	div {
 		&.bio {
+      @include prefix('box-shadow', '0px 0px 19px 0px rgba(0,0,0,0.75)');
 			text-align: left;
 			div {
 				display: inline-block;
